@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ducuex5p520wp"]
+
+[ext_resource type="Script" path="res://scripts/gravity_test_controller.gd" id="1_gclhx"]
+[ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_llap1"]
+[ext_resource type="Script" path="res://scripts/black_hole.gd" id="2_trij0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_32w4t"]
+radius = 48.4505
+
+[node name="GravityTestController" type="Node2D"]
+script = ExtResource("1_gclhx")
+
+[node name="BlackHole" type="Area2D" parent="."]
+position = Vector2(699, 386)
+script = ExtResource("2_trij0")
+
+[node name="Sprite2D" type="Sprite2D" parent="BlackHole"]
+texture = ExtResource("2_llap1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackHole"]
+scale = Vector2(7.85, 7.85)
+shape = SubResource("CircleShape2D_32w4t")
+
+[node name="DirectionRayCast" type="RayCast2D" parent="BlackHole"]
+unique_name_in_owner = true
+position = Vector2(-699, -386)
+
+[connection signal="body_entered" from="BlackHole" to="BlackHole" method="_on_body_entered"]

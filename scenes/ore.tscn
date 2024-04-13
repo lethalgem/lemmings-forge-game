@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cblc8d61rklt4"]
+
+[ext_resource type="Script" path="res://scripts/ore.gd" id="1_4ayun"]
+[ext_resource type="Texture2D" uid="uid://o0d3d0s21ldq" path="res://assets/ore_sprite.png" id="1_wsyv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inxgt"]
+size = Vector2(144, 142)
+
+[node name="Ore" type="CharacterBody2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_4ayun")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wsyv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_inxgt")
