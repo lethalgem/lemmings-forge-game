@@ -11,11 +11,17 @@ func setParent(parent):
 func addCrate(ore_instance):
 	ores_in_gravity_well.append(ore_instance)
 	
+var _currentGravity = -1
 func setInitalGravity(gravity):
+	_currentGravity = gravity
 	%HSlider.value = gravity
 	
+func gravityChanged(newValue: float):
+	_currentGravity = newValue
+	
 func _physics_process(delta):
-	var gravityModifier:float = float(%HSlider.value)
+	#var gravityModifier:float = float(%HSlider.value)
+	var gravityModifier:float = _currentGravity
 	
 	var gravityBase:float = 400000
 

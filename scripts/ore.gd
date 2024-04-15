@@ -38,12 +38,15 @@ func update(direction:Vector2, distance:float, gravity:float, delta:float):
 	if distance > 700 or _inGravityBubble:
 		return
 
-	var impactVector = _speedModifier * direction * gravity * delta / (pow(distance, 1.5))
+	var impactVector = pow(_speedModifier, 2.0/3) * direction * gravity * delta / (pow(distance, 1.5))
+	#var impactVector = _speedModifier * direction * gravity * delta / (pow(distance, 1.5))
 	var newVector = (current_direction * current_velocity) + impactVector 
 	
 	var originalVelocity = current_velocity
 	current_velocity = newVector.length()
-	current_velocity = min(originalVelocity * pow(1.05, _speedModifier), current_velocity)
-	current_velocity = max(originalVelocity * pow(.95, _speedModifier), current_velocity)
+	#current_velocity = min(originalVelocity * (1.05 + (pow(1.05, _speedModifier) - 1.05) / 3), current_velocity)
+	#current_velocity = max(originalVelocity * (.95 - (.95 - pow(.95, _speedModifier)) / 3), current_velocity)
+	current_velocity = min(originalVelocity * 1.05, current_velocity)
+	current_velocity = max(originalVelocity * .95, current_velocity)
 		
 	current_direction = newVector.normalized()

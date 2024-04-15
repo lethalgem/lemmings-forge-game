@@ -18,7 +18,7 @@ func setInitalGravity(gravity):
 func _physics_process(delta):
 	var gravityModifier:float = float(%HSlider.value)
 	
-	var gravityBase:float = 400000
+	var gravityBase:float = 400000 * 1.2
 
 	for ore in ores_in_gravity_well:
 		var direction_from_ore_to_self = ore.global_position.direction_to(global_position)
