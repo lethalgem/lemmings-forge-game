@@ -1,17 +1,26 @@
-extends Area2D
+extends Node2D
 
 @onready var ore = preload("res://scenes/ore.tscn")
 @onready var cast_to_ore = %DirectionRayCast
 var ores_in_gravity_well = []
 
-func startCrates():
-	var ore_instance = ore.instantiate()
-	add_child(ore_instance)
-	ore_instance.global_position = Vector2(-50,200) # get_global_mouse_position()
+@onready var _parent = null
+func setParent(parent):
+	_parent = parent
+
+#func startCrates():
+	#var ore_instance = ore.instantiate()
+	#add_child(ore_instance)
+	#ore_instance.global_position = Vector2(-50,200) # get_global_mouse_position()
+	#ores_in_gravity_well.append(ore_instance)
+	#
+	#await get_tree().create_timer(.1).timeout
+	#startCrates()
+	#
+func addCrate(ore_instance):
 	ores_in_gravity_well.append(ore_instance)
 	
-	await get_tree().create_timer(.1).timeout
-	startCrates()
+	
 #func _input(event):
 	#if event.is_action_pressed("left_click"):
 		#var ore_instance = ore.instantiate()
@@ -24,6 +33,11 @@ func startCrates():
 # 	for ore in ores_in_gravity_well:
 # 		draw_line(global_position, ore.global_position, Color(255,0, 255), 10)
 
+
+func setInitalGravity(gravity):
+	%HSlider.value = gravity
+	
+	
 func _physics_process(delta):
 	#var gravityModifier:float = float(%GravityText.text)
 	var gravityModifier:float = float(%HSlider.value)
@@ -44,13 +58,15 @@ func _on_body_entered(body):
 	if body is Ore:
 		print("ore entered gravity well")
 		
-		if not body.beenDetected():
-			body.setBeenDetected()
-			return
-		
+		#if not body.beenDetected():
+			#body.setBeenDetected()
+			#return
+		#
 		var index = ores_in_gravity_well.find(body)
 		if index >= 0:
 			ores_in_gravity_well.remove_at(index)
-			remove_child(body)
+			#remove_child(body)
+			_parent.deleteOre(body)
+		#_parent.deleteOre(body)
 			 
 		#ores_in_gravity_well.append(body)

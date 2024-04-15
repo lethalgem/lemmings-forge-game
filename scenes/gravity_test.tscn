@@ -1,42 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://ducuex5p520wp"]
+[gd_scene load_steps=4 format=3 uid="uid://ducuex5p520wp"]
 
 [ext_resource type="Script" path="res://scripts/gravity_test_controller.gd" id="1_gclhx"]
-[ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_llap1"]
-[ext_resource type="Script" path="res://scripts/black_hole.gd" id="2_trij0"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_32w4t"]
-radius = 7.89911
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="2_bjwv3"]
+[ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="3_bpyfn"]
 
 [node name="GravityTestController" type="Node2D"]
+position = Vector2(366, 330)
 script = ExtResource("1_gclhx")
 
-[node name="BlackHole" type="Area2D" parent="."]
+[node name="BlackHole1" parent="." instance=ExtResource("2_bjwv3")]
 unique_name_in_owner = true
-position = Vector2(997, 702)
-script = ExtResource("2_trij0")
+position = Vector2(708, 408)
 
-[node name="HSlider" type="HSlider" parent="BlackHole"]
+[node name="BlackHole2" parent="." instance=ExtResource("2_bjwv3")]
 unique_name_in_owner = true
-offset_left = -83.0
-offset_top = 108.0
-offset_right = 97.0
-offset_bottom = 124.0
-max_value = 50.0
-step = 0.1
-value = 10.0
-metadata/_edit_use_anchors_ = true
+position = Vector2(1314, 750)
 
-[node name="Sprite2D" type="Sprite2D" parent="BlackHole"]
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("2_llap1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackHole"]
-position = Vector2(1, 1)
-scale = Vector2(7.85, 7.85)
-shape = SubResource("CircleShape2D_32w4t")
-
-[node name="DirectionRayCast" type="RayCast2D" parent="BlackHole"]
+[node name="BlackHole3" parent="." instance=ExtResource("2_bjwv3")]
 unique_name_in_owner = true
-position = Vector2(-699, -386)
+position = Vector2(1896, 210)
 
-[connection signal="body_entered" from="BlackHole" to="BlackHole" method="_on_body_entered"]
+[node name="EndPlanet" parent="." instance=ExtResource("3_bpyfn")]
+unique_name_in_owner = true
+position = Vector2(2466, 468)
+
+[node name="StartPlanet" parent="." instance=ExtResource("3_bpyfn")]
+unique_name_in_owner = true
+position = Vector2(30, 636)

@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5exmk65lrs0v"]
+
+[ext_resource type="Script" path="res://scripts/black_hole.gd" id="1_itekg"]
+[ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_ft5es"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
+radius = 7.89911
+
+[node name="BlackHole" type="Node2D"]
+script = ExtResource("1_itekg")
+
+[node name="BlackHole" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, 0)
+
+[node name="HSlider" type="HSlider" parent="BlackHole"]
+unique_name_in_owner = true
+offset_left = -83.0
+offset_top = 108.0
+offset_right = 97.0
+offset_bottom = 124.0
+min_value = 0.25
+max_value = 20.0
+step = 0.1
+value = 5.05
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="BlackHole"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("2_ft5es")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackHole"]
+position = Vector2(1, 1)
+scale = Vector2(7.85, 7.85)
+shape = SubResource("CircleShape2D_ysjjs")
+
+[node name="DirectionRayCast" type="RayCast2D" parent="BlackHole"]
+unique_name_in_owner = true
+position = Vector2(-699, -386)
+
+[connection signal="body_entered" from="BlackHole" to="." method="_on_body_entered"]

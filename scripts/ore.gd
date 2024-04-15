@@ -1,9 +1,15 @@
 class_name Ore
 extends CharacterBody2D
 
-@onready var current_direction = Vector2(1,0)
+#@onready var current_direction = Vector2(1,0)
+var current_direction = Vector2(1,0)
 @onready var current_velocity = 300
 
+var createdPlanet = null
+func setCreatePlanet(planet):
+	createdPlanet = planet 
+	
+	
 
 @onready var _beenDetected = false
 func beenDetected():
@@ -11,6 +17,8 @@ func beenDetected():
 func setBeenDetected():
 	_beenDetected = true
 	
+func forceDirection(direction:Vector2):
+	current_direction = direction.normalized()
 
 func _physics_process(delta):
 	var new_position = global_position + (current_direction * current_velocity * delta)
@@ -29,7 +37,7 @@ func _physics_process(delta):
 
 func update(direction:Vector2, distance:float, gravity:float, delta:float):
 
-	if distance > 750:
+	if distance > 700:
 		return
 
 	#distance = max(distance, 750)
