@@ -29,5 +29,5 @@ func startCrates():
 	ore_instance.setCreatePlanet(self)
 	_parent.crateAdded(ore_instance)
 	
-	await get_tree().create_timer(.4).timeout
+	await get_tree().create_timer(.2).timeout
 	startCrates()
