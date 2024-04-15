@@ -1,19 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5exmk65lrs0v"]
+[gd_scene load_steps=5 format=3 uid="uid://guylsgegxwxb"]
 
-[ext_resource type="Script" path="res://scripts/black_hole.gd" id="1_itekg"]
-[ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_ft5es"]
+[ext_resource type="Script" path="res://scripts/white_hole.gd" id="1_h7gu7"]
+[ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_a7r8o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
 radius = 7.89911
 
-[node name="BlackHole" type="Node2D"]
-script = ExtResource("1_itekg")
+[sub_resource type="CircleShape2D" id="CircleShape2D_blx7q"]
+radius = 7.89911
 
-[node name="BlackHole" type="Area2D" parent="."]
+[node name="WhiteHole" type="Node2D"]
+script = ExtResource("1_h7gu7")
+
+[node name="Area" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-1, 0)
 
-[node name="HSlider" type="HSlider" parent="BlackHole"]
+[node name="HSlider" type="HSlider" parent="Area"]
 unique_name_in_owner = true
 offset_left = -83.0
 offset_top = 108.0
@@ -25,16 +28,15 @@ step = 0.1
 value = 5.05
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="BlackHole"]
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("2_ft5es")
+[node name="Sprite2D" type="Sprite2D" parent="Area"]
+texture = ExtResource("2_a7r8o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackHole"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
 position = Vector2(1, 1)
 scale = Vector2(7.85, 7.85)
 shape = SubResource("CircleShape2D_ysjjs")
 
-[node name="DirectionRayCast" type="RayCast2D" parent="BlackHole"]
+[node name="DirectionRayCast" type="RayCast2D" parent="Area"]
 unique_name_in_owner = true
 position = Vector2(-699, -386)
 
@@ -44,8 +46,8 @@ position = Vector2(-2, 0)
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea"]
 position = Vector2(2, 1)
 scale = Vector2(61.6225, 61.6225)
-shape = SubResource("CircleShape2D_ysjjs")
+shape = SubResource("CircleShape2D_blx7q")
 
-[connection signal="body_entered" from="BlackHole" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="OuterArea" to="." method="_on_outer_collision_entered"]
 [connection signal="body_exited" from="OuterArea" to="." method="_on_outer_collision_exited"]

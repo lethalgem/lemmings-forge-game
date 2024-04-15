@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxfxcynteimyc"]
+
+[ext_resource type="Script" path="res://scripts/gravity_bubble.gd" id="1_udqu7"]
+[ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_pl40x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
+radius = 42.56
+
+[node name="GravityBubble" type="Node2D"]
+script = ExtResource("1_udqu7")
+
+[node name="Area" type="Area2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 0.611765, 0.733333, 0.333333)
+position = Vector2(-1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area"]
+scale = Vector2(4.6383, 4.6383)
+texture = ExtResource("2_pl40x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(1, 1)
+scale = Vector2(7.85, 7.85)
+shape = SubResource("CircleShape2D_ysjjs")
+
+[node name="DirectionRayCast" type="RayCast2D" parent="Area"]
+unique_name_in_owner = true
+position = Vector2(-699, -386)
+
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_body_exited"]

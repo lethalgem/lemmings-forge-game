@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ducuex5p520wp"]
+[gd_scene load_steps=6 format=3 uid="uid://ducuex5p520wp"]
 
 [ext_resource type="Script" path="res://scripts/gravity_test_controller.gd" id="1_gclhx"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="2_bjwv3"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="3_bpyfn"]
+[ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="4_tauxd"]
+[ext_resource type="PackedScene" uid="uid://bxfxcynteimyc" path="res://scenes/gravity_bubble.tscn" id="5_mosx5"]
 
 [node name="GravityTestController" type="Node2D"]
 position = Vector2(366, 330)
@@ -10,7 +12,7 @@ script = ExtResource("1_gclhx")
 
 [node name="BlackHole1" parent="." instance=ExtResource("2_bjwv3")]
 unique_name_in_owner = true
-position = Vector2(708, 408)
+position = Vector2(2084, 1082)
 
 [node name="BlackHole2" parent="." instance=ExtResource("2_bjwv3")]
 unique_name_in_owner = true
@@ -27,3 +29,10 @@ position = Vector2(2466, 468)
 [node name="StartPlanet" parent="." instance=ExtResource("3_bpyfn")]
 unique_name_in_owner = true
 position = Vector2(30, 636)
+
+[node name="WhiteHole1" parent="." instance=ExtResource("4_tauxd")]
+unique_name_in_owner = true
+position = Vector2(592, 172)
+
+[node name="GravityBubble" parent="." instance=ExtResource("5_mosx5")]
+position = Vector2(841, 636)

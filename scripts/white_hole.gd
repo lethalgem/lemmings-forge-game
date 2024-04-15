@@ -14,6 +14,7 @@ func addCrate(ore_instance):
 func setInitalGravity(gravity):
 	%HSlider.value = gravity
 	
+	
 func _physics_process(delta):
 	var gravityModifier:float = float(%HSlider.value)
 	
@@ -22,7 +23,8 @@ func _physics_process(delta):
 	for ore in ores_in_gravity_well:
 		var direction_from_ore_to_self = ore.global_position.direction_to(global_position)
 		var distance_to_ore = ore.global_position.distance_to(global_position)
-		ore.update(direction_from_ore_to_self, distance_to_ore, gravityModifier * gravityBase, delta)
+		ore.update(-direction_from_ore_to_self, distance_to_ore, gravityModifier * gravityBase, delta)
+
 
 func _on_body_entered(body):
 	if body is Ore:
