@@ -1,4 +1,4 @@
-class_name Planet
+class_name Starship
 extends Node2D
 
 @onready var ore = preload("res://scenes/ore.tscn")
@@ -40,9 +40,10 @@ func _on_body_entered(body):
 			#_level.deleteOre(body)
 		if body.createdPlanet != self:
 			_level.deleteOre(body)
+			sendCrate()
 
 
-func startCrates():
+func sendCrate():
 	var ore_instance = ore.instantiate()
 	#add_child(ore_instance)
 	#ore_instance.global_position = Vector2(-50 + randf_range(-5,5),200 + randf_range(-5,5)) # get_global_mouse_position()
@@ -52,4 +53,4 @@ func startCrates():
 	_level.crateAdded(ore_instance)
 
 	await get_tree().create_timer(.1).timeout
-	startCrates()
+	#startCrates()

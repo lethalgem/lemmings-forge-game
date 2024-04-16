@@ -11,10 +11,10 @@ debug_enabled = true
 planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_jcugo")]
-position = Vector2(111, 446)
+position = Vector2(118, 319)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_qbjau")]
-position = Vector2(1006, 262)
+position = Vector2(1045, 312)
 level = NodePath("..")
 
 [node name="OreCountLabel" type="Label" parent="Forge"]
@@ -27,4 +27,4 @@ text = "Ore Delivered: 0/10"
 
 [node name="BlackHole" parent="." instance=ExtResource("4_5vav4")]
 unique_name_in_owner = true
-position = Vector2(630, 506)
+position = Vector2(591, 308)

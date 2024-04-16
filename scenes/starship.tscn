@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvklsx0dou66p"]
+
+[ext_resource type="Script" path="res://scripts/starship.gd" id="1_15l1s"]
+[ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_a5ufl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bro4d"]
+radius = 4.4586
+height = 19.3631
+
+[node name="Starship" type="Node2D"]
+script = ExtResource("1_15l1s")
+
+[node name="Area" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area"]
+modulate = Color(0.415686, 0.686275, 0.360784, 1)
+scale = Vector2(1, 0.496454)
+texture = ExtResource("2_a5ufl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Area"]
+modulate = Color(0.415686, 0.686275, 0.360784, 1)
+position = Vector2(-48, 24.3759)
+scale = Vector2(0.541667, 0.246466)
+texture = ExtResource("2_a5ufl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area"]
+modulate = Color(0.415686, 0.686275, 0.360784, 1)
+position = Vector2(-48, -29.6241)
+scale = Vector2(0.541667, 0.246466)
+texture = ExtResource("2_a5ufl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(0, 1)
+rotation = 1.5708
+scale = Vector2(7.85, 7.85)
+shape = SubResource("CapsuleShape2D_bro4d")
+
+[node name="VSlider" type="VSlider" parent="."]
+unique_name_in_owner = true
+offset_left = -109.0
+offset_top = -67.0
+offset_right = -93.0
+offset_bottom = 66.0
+min_value = -90.0
+max_value = 90.0
+
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
+[connection signal="value_changed" from="VSlider" to="." method="rotationChanged"]

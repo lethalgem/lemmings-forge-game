@@ -5,8 +5,10 @@ extends CharacterBody2D
 var current_direction = Vector2(1,0)
 var _level_id: int
 
-@onready var _speedModifier = 4
+#@onready var _speedModifier = 4
+@onready var _speedModifier = 1
 @onready var current_velocity = 300 * _speedModifier
+const minSpeed = 250
 
 var createdPlanet = null
 func setCreatePlanet(planet, level_id):
@@ -53,5 +55,7 @@ func update(direction:Vector2, distance:float, gravity:float, delta:float):
 	#current_velocity = max(originalVelocity * (.95 - (.95 - pow(.95, _speedModifier)) / 3), current_velocity)
 	current_velocity = min(originalVelocity * 1.05, current_velocity)
 	current_velocity = max(originalVelocity * .95, current_velocity)
+	current_velocity = max(minSpeed, current_velocity)
+	
 
 	current_direction = newVector.normalized()

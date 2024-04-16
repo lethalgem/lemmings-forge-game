@@ -1,6 +1,5 @@
-class_name BlackHole
+class_name ExtraDarkBlackHole
 extends Node2D
-
 
 
 var increaseGravity = false
@@ -46,12 +45,12 @@ func addCrate(ore_instance):
 var _currentGravity = -1
 func setInitalGravity(gravity):
 	_currentGravity = gravity
-	%HSlider.value = gravity
-	%GravityLabel.text = str(_currentGravity)
+	#%HSlider.value = gravity
+	#%GravityLabel.text = str(_currentGravity)
 
 func gravityChanged(newValue: float):
 	_currentGravity = newValue
-	%GravityLabel.text = str(_currentGravity)
+	#%GravityLabel.text = str(_currentGravity)
 
 
 

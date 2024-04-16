@@ -12,6 +12,9 @@ signal level_completed
 
 var ores_delivered = 0
 
+func setPlanet(thisPlanet):
+	planet = thisPlanet
+
 func _ready():
 	planet.setLevel(self)
 	if debug_enabled:

@@ -1,3 +1,4 @@
+class_name WhiteHole
 extends Node2D
 
 @onready var ore = preload("res://scenes/ore.tscn")
