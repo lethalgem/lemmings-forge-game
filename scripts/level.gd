@@ -1,7 +1,7 @@
 class_name Level
 extends Node2D
 
-signal level_completed(level_id: int)
+signal level_completed
 
 @export var debug_enabled = false
 @export var id = 0
@@ -33,13 +33,13 @@ func crateAdded(ore_instance):
 func ore_absorbed():
 	if ores_delivered < ore_goal:
 		ores_delivered += 1
-	update_ore_count_label()
-	check_if_level_completed()
+		update_ore_count_label()
+		check_if_level_completed()
 
 func check_if_level_completed():
 	if ores_delivered == ore_goal:
 		print("level " + str(id) + " completed")
-		emit_signal("level_completed", id)
+		emit_signal("level_completed")
 
 func update_ore_count_label():
 	ore_count_label.text = "Ore Delivered: " + str(ores_delivered) + "/" + str(ore_goal)

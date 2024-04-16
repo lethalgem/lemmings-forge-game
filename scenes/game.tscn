@@ -7,6 +7,11 @@
 script = ExtResource("1_61p2q")
 
 [node name="Level0" parent="." instance=ExtResource("2_wjco7")]
+unique_name_in_owner = true
+position = Vector2(-492, -342)
+scale = Vector2(0.8, 0.8)
 
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
+
+[connection signal="level_completed" from="Level0" to="." method="_on_level_0_level_completed"]
