@@ -14,6 +14,9 @@ signal level_completed
 var ores_delivered = 0
 
 func _ready():
+	
+	%BlackHole.setInitalGravity(12)
+	
 	planet.setLevel(self)
 	black_hole.setParent(self)
 	if debug_enabled:
