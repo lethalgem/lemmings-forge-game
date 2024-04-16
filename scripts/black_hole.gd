@@ -1,3 +1,4 @@
+class_name BlackHole
 extends Node2D
 
 @onready var ore = preload("res://scenes/ore.tscn")
@@ -10,19 +11,19 @@ func setParent(parent):
 
 func addCrate(ore_instance):
 	ores_in_gravity_well.append(ore_instance)
-	
+
 var _currentGravity = -1
 func setInitalGravity(gravity):
 	_currentGravity = gravity
 	%HSlider.value = gravity
-	
+
 func gravityChanged(newValue: float):
 	_currentGravity = newValue
-	
+
 func _physics_process(delta):
 	#var gravityModifier:float = float(%HSlider.value)
 	var gravityModifier:float = _currentGravity
-	
+
 	var gravityBase:float = 400000
 
 	for ore in ores_in_gravity_well:
@@ -39,7 +40,7 @@ func _on_body_entered(body):
 
 func _on_outer_collision_entered(body):
 	ores_in_gravity_well.append(body)
-	
+
 func _on_outer_collision_exited(body):
 	if body is Ore:
 		var index = ores_in_gravity_well.find(body)
