@@ -6,11 +6,12 @@ extends Node2D
 
 @onready var camera = %GameCamera
 @onready var level_0 = %Level0
+@onready var level_1 = %Level1
 
 var camera_enabled = true
 
 func _ready():
-	level_0.start()
+	enter_level_0()
 
 func _process(delta):
 	# camera panning controls
@@ -36,6 +37,12 @@ func _process(delta):
 		print(camera.zoom)
 		create_tween().tween_property(camera, "zoom", new_camera_zoom.clamp(Vector2(0.1, 0.1), Vector2(5, 5)), 0.05).set_ease(Tween.EASE_IN_OUT)
 
+func enter_level_0():
+	level_0.start()
+
 func _on_level_0_level_completed():
 	print("level_0 done")
-	pass # Replace with function body.
+	enter_level_1()
+
+func enter_level_1():
+	level_1.start()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdi0jax0gnkmo"]
+[gd_scene load_steps=4 format=3 uid="uid://bdi0jax0gnkmo"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_61p2q"]
 [ext_resource type="PackedScene" uid="uid://dv05xskla0hqt" path="res://scenes/level_0.tscn" id="2_wjco7"]
+[ext_resource type="PackedScene" uid="uid://bswfqhoswxu0q" path="res://scenes/level_1.tscn" id="3_a3tgt"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
@@ -9,7 +10,13 @@ script = ExtResource("1_61p2q")
 [node name="Level0" parent="." instance=ExtResource("2_wjco7")]
 unique_name_in_owner = true
 position = Vector2(-492, -342)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.69, 0.69)
+
+[node name="Level1" parent="." instance=ExtResource("3_a3tgt")]
+unique_name_in_owner = true
+position = Vector2(932, -32)
+rotation = -3.14159
+scale = Vector2(0.69, 0.69)
 
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true

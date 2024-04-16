@@ -9,16 +9,11 @@ signal level_completed
 @export var planet: Planet
 
 @onready var ore_count_label: Label = %OreCountLabel
-@onready var black_hole: BlackHole = %BlackHole
 
 var ores_delivered = 0
 
 func _ready():
-	
-	%BlackHole.setInitalGravity(12)
-	
 	planet.setLevel(self)
-	black_hole.setParent(self)
 	if debug_enabled:
 		planet.startCrates()
 

@@ -7,6 +7,7 @@ var _level: Level
 var ores_in_gravity_well = []
 
 func setLevel(level):
+	print("setting level")
 	_level = level
 
 func _on_body_entered(body):
