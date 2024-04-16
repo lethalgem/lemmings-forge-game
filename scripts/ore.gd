@@ -27,11 +27,16 @@ func _physics_process(delta):
 	create_tween().tween_property(self, "global_position", new_position, delta)
 
 @onready var _inGravityBubble = false
-
 func enteredGravityBubble():
 	_inGravityBubble = true
 func exitedGravityBubble():
 	_inGravityBubble = false
+	
+@onready var sentThroughWormHole = false
+func enteredWormHole():
+	sentThroughWormHole = true
+func receivedThroughWormHole():
+	sentThroughWormHole = false
 
 func update(direction:Vector2, distance:float, gravity:float, delta:float):
 

@@ -36,10 +36,6 @@ position = Vector2(1, 1)
 scale = Vector2(7.85, 7.85)
 shape = SubResource("CircleShape2D_ysjjs")
 
-[node name="DirectionRayCast" type="RayCast2D" parent="Area"]
-unique_name_in_owner = true
-position = Vector2(-699, -386)
-
 [node name="OuterArea" type="Area2D" parent="."]
 position = Vector2(-2, 0)
 

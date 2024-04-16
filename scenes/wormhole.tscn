@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpqsk0tteoj51"]
+
+[ext_resource type="Script" path="res://scripts/wormhole.gd" id="1_3igjp"]
+[ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_s2mxi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oked0"]
+radius = 1.1465
+height = 28.2803
+
+[node name="WormHole" type="Node2D"]
+script = ExtResource("1_3igjp")
+
+[node name="Area1" type="Area2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.360784, 0, 0.490196, 1)
+position = Vector2(-1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area1"]
+scale = Vector2(1.51389, 0.0992908)
+texture = ExtResource("2_s2mxi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area1"]
+position = Vector2(1, 0)
+rotation = 1.5708
+scale = Vector2(7.85, 7.85)
+shape = SubResource("CapsuleShape2D_oked0")
+
+[connection signal="body_entered" from="Area1" to="." method="_on_body_entered"]

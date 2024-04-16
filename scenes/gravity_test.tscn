@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ducuex5p520wp"]
+[gd_scene load_steps=7 format=3 uid="uid://ducuex5p520wp"]
 
 [ext_resource type="Script" path="res://scripts/gravity_test_controller.gd" id="1_gclhx"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="2_bjwv3"]
+[ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="2_m4vo7"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="3_bpyfn"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="4_tauxd"]
 [ext_resource type="PackedScene" uid="uid://bxfxcynteimyc" path="res://scenes/gravity_bubble.tscn" id="5_mosx5"]
@@ -36,3 +37,12 @@ position = Vector2(592, 172)
 
 [node name="GravityBubble" parent="." instance=ExtResource("5_mosx5")]
 position = Vector2(841, 636)
+
+[node name="WormHole1" parent="." instance=ExtResource("2_m4vo7")]
+unique_name_in_owner = true
+position = Vector2(843, 371)
+rotation = 0.720821
+
+[node name="WormHole2" parent="." instance=ExtResource("2_m4vo7")]
+unique_name_in_owner = true
+position = Vector2(1212, 1408)

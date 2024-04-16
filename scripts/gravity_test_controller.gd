@@ -3,6 +3,10 @@ extends Node
 @onready var ore = preload("res://scenes/ore.tscn")
 
 func _ready():
+	
+	%WormHole1.setPair(%WormHole2)
+	%WormHole2.setPair(%WormHole1)
+	
 	%WhiteHole1.setParent(self)
 	
 	%BlackHole1.setParent(self)
