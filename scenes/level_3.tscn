@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbyyahu6gq45m"]
+[gd_scene load_steps=7 format=3 uid="uid://cbyyahu6gq45m"]
 
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_2rr6c"]
+[ext_resource type="Texture2D" uid="uid://bf5bv01nnfrx8" path="res://assets/starfield.png" id="2_23ol3"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_videb"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_qpix1"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_5bq7b"]
@@ -9,6 +10,14 @@
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_2rr6c")
 debug_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1558.0
+offset_top = -1211.0
+offset_right = 4414.0
+offset_bottom = 3033.0
+texture = ExtResource("2_23ol3")
+stretch_mode = 1
 
 [node name="Planet" parent="." instance=ExtResource("2_videb")]
 unique_name_in_owner = true
