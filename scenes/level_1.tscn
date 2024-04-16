@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bswfqhoswxu0q"]
+
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_scyny"]
+[ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="1_t0oup"]
+[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/forge.tscn" id="2_cid4t"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="3_aukuy"]
+
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("planet")]
+script = ExtResource("1_scyny")
+debug_enabled = true
+id = 1
+planet = NodePath("Planet")
+
+[node name="Planet" parent="." instance=ExtResource("1_t0oup")]
+position = Vector2(130, 554)
+
+[node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_cid4t")]
+position = Vector2(1058, 186)
+level = NodePath("..")
+
+[node name="OreCountLabel" type="Label" parent="Forge"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BlackHole" parent="." instance=ExtResource("3_aukuy")]
+unique_name_in_owner = true
+position = Vector2(536, 534)
+
+[node name="BlackHole2" parent="." instance=ExtResource("3_aukuy")]
+unique_name_in_owner = true
+position = Vector2(598, 196)

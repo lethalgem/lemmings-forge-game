@@ -13,7 +13,7 @@ script = ExtResource("1_gclhx")
 
 [node name="BlackHole1" parent="." instance=ExtResource("2_bjwv3")]
 unique_name_in_owner = true
-position = Vector2(2084, 1082)
+position = Vector2(1274, -376)
 
 [node name="BlackHole2" parent="." instance=ExtResource("2_bjwv3")]
 unique_name_in_owner = true
@@ -45,4 +45,4 @@ rotation = 0.720821
 
 [node name="WormHole2" parent="." instance=ExtResource("2_m4vo7")]
 unique_name_in_owner = true
-position = Vector2(1212, 1408)
+position = Vector2(1554, 1030)

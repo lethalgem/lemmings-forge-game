@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://dv05xskla0hqt"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_j08g6"]
+[ext_resource type="Script" path="res://scripts/level_0.gd" id="1_j34p6"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_jcugo"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_qbjau"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_5vav4"]
 
 [node name="Level0" type="Node2D" node_paths=PackedStringArray("planet")]
-script = ExtResource("1_j08g6")
+script = ExtResource("1_j34p6")
 debug_enabled = true
 planet = NodePath("Planet")
 
