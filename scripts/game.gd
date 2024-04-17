@@ -8,7 +8,6 @@ extends Node2D
 @export var fast_camera_zoom_speed = 0.1
 
 @onready var camera = %GameCamera
-@onready var level_0 = %Level0
 @onready var level_1 = %Level1
 @onready var debug_info = %DebugInfo
 
@@ -17,7 +16,7 @@ var current_camera_move_speed = default_camera_move_speed
 var current_camera_zoom_speed = default_camera_zoom_speed
 
 func _ready():
-	enter_level_0()
+	enter_level_1()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):
@@ -58,12 +57,6 @@ func _physics_process(_delta):
 
 # ------ level transitions ------
 
-func enter_level_0():
-	level_0.start()
-
-func _on_level_0_level_completed():
-	print("level_0 done")
-	enter_level_1()
 
 func enter_level_1():
 	level_1.start()

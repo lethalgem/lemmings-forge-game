@@ -1,12 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdi0jax0gnkmo"]
+[gd_scene load_steps=22 format=3 uid="uid://bdi0jax0gnkmo"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_61p2q"]
-[ext_resource type="PackedScene" uid="uid://dv05xskla0hqt" path="res://scenes/level_0.tscn" id="2_wjco7"]
 [ext_resource type="PackedScene" uid="uid://bswfqhoswxu0q" path="res://scenes/level_1.tscn" id="3_a3tgt"]
 [ext_resource type="PackedScene" uid="uid://c5c2nfrn08efw" path="res://scenes/level_2.tscn" id="4_qf4ff"]
 [ext_resource type="Texture2D" uid="uid://bwl5hksnmy0vp" path="res://planning/GameMap.png" id="5_i2kbb"]
-[ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="6_l7uvl"]
+[ext_resource type="PackedScene" uid="uid://cbyyahu6gq45m" path="res://scenes/level_3.tscn" id="6_pjsjs"]
 [ext_resource type="Texture2D" uid="uid://bf5bv01nnfrx8" path="res://assets/starfield.png" id="7_e00g7"]
+[ext_resource type="PackedScene" uid="uid://c2mvefv1k4j4m" path="res://scenes/level_4.tscn" id="7_ee6yr"]
+[ext_resource type="PackedScene" uid="uid://biy4nlylsvpb6" path="res://scenes/level_5.tscn" id="8_biq00"]
+[ext_resource type="PackedScene" uid="uid://dtwks0y7hb5fx" path="res://scenes/level_6.tscn" id="9_mv82c"]
+[ext_resource type="PackedScene" uid="uid://bjfqg0ukji3b4" path="res://scenes/level_7.tscn" id="10_v7riw"]
+[ext_resource type="PackedScene" uid="uid://wuphg0mig4uc" path="res://scenes/level_8.tscn" id="11_cp4fh"]
+[ext_resource type="PackedScene" uid="uid://dbmhitdhm32qq" path="res://scenes/level_9.tscn" id="12_m3ero"]
+[ext_resource type="PackedScene" uid="uid://fq6hu1up4vdw" path="res://scenes/level_10.tscn" id="13_ap38b"]
+[ext_resource type="PackedScene" uid="uid://8jcj6gfy8xtn" path="res://scenes/level_11.tscn" id="14_k6q3d"]
+[ext_resource type="PackedScene" uid="uid://dcjhgunti06bg" path="res://scenes/level_12.tscn" id="15_o3xso"]
+[ext_resource type="PackedScene" uid="uid://jtwkjg80jsij" path="res://scenes/level_13.tscn" id="16_deep4"]
+[ext_resource type="PackedScene" uid="uid://6owtqjmqtdxk" path="res://scenes/level_14.tscn" id="17_axvym"]
+[ext_resource type="PackedScene" uid="uid://3wxpojhk8dsv" path="res://scenes/level_15.tscn" id="18_5aceh"]
+[ext_resource type="PackedScene" uid="uid://5taa0kctdcaf" path="res://scenes/level_16.tscn" id="19_rhck7"]
+[ext_resource type="PackedScene" uid="uid://donw4f88in6vm" path="res://scenes/level_17.tscn" id="20_2tss5"]
+[ext_resource type="PackedScene" uid="uid://dqdepnf7cwdjg" path="res://scenes/level_18.tscn" id="21_ebsa2"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
@@ -20,23 +34,6 @@ offset_right = 12394.0
 offset_bottom = 1941.0
 texture = ExtResource("7_e00g7")
 stretch_mode = 1
-
-[node name="Level2" parent="." instance=ExtResource("4_qf4ff")]
-unique_name_in_owner = true
-position = Vector2(4140, 4357)
-rotation = 0.990205
-scale = Vector2(0.69, 0.69)
-
-[node name="Level0" parent="." instance=ExtResource("2_wjco7")]
-unique_name_in_owner = true
-position = Vector2(3396, 4273)
-scale = Vector2(0.69, 0.69)
-
-[node name="Level1" parent="." instance=ExtResource("3_a3tgt")]
-unique_name_in_owner = true
-position = Vector2(4848, 4617)
-rotation = -3.14159
-scale = Vector2(0.69, 0.69)
 
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
@@ -69,56 +66,59 @@ position = Vector2(1174, -8989)
 scale = Vector2(10.1512, 10.1512)
 texture = ExtResource("5_i2kbb")
 
-[node name="Planet1" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(-502, 4)
+[node name="Level1" parent="." instance=ExtResource("3_a3tgt")]
+unique_name_in_owner = true
+position = Vector2(-1054, -544)
 
-[node name="Planet2" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(358, 8)
+[node name="Level2" parent="." instance=ExtResource("4_qf4ff")]
+position = Vector2(96, -882)
 
-[node name="Planet3" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(1700, -680)
+[node name="Level3" parent="." instance=ExtResource("6_pjsjs")]
+position = Vector2(670, -1610)
 
-[node name="Planet4" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(1736, -2768)
+[node name="Level4" parent="." instance=ExtResource("7_ee6yr")]
+position = Vector2(1574, -2916)
 
-[node name="Planet5" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(3575, -1687)
+[node name="Level5" parent="." instance=ExtResource("8_biq00")]
+position = Vector2(1612, -3700)
 
-[node name="Planet6" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(5896, -3782)
+[node name="Level6" parent="." instance=ExtResource("9_mv82c")]
+position = Vector2(7050, -5172)
 
-[node name="Planet7" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(8753, -4623)
+[node name="Level7" parent="." instance=ExtResource("10_v7riw")]
+position = Vector2(5186, -5546)
 
-[node name="Planet8" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(7237, -4615)
+[node name="Level8" parent="." instance=ExtResource("11_cp4fh")]
+position = Vector2(4444, -5536)
 
-[node name="Planet9" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(5333, -5424)
+[node name="Level9" parent="." instance=ExtResource("12_m3ero")]
+position = Vector2(508, -8148)
 
-[node name="Planet10" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(696, -7886)
+[node name="Level10" parent="." instance=ExtResource("13_ap38b")]
+position = Vector2(-7051, -17141)
 
-[node name="Planet11" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(-6768, -16855)
+[node name="Level11" parent="." instance=ExtResource("14_k6q3d")]
+position = Vector2(-7779, -14686)
 
-[node name="Planet12" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(-5427, -16318)
+[node name="Level12" parent="." instance=ExtResource("15_o3xso")]
+position = Vector2(-7267, -13904)
 
-[node name="Planet13" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(-7111, -13793)
+[node name="Level13" parent="." instance=ExtResource("16_deep4")]
+position = Vector2(-1917, -12567)
 
-[node name="Planet14" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(-1678, -12324)
+[node name="Level14" parent="." instance=ExtResource("17_axvym")]
+position = Vector2(3456, -2473)
 
-[node name="Planet15" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(8925, -2495)
+[node name="Level15" parent="." instance=ExtResource("18_5aceh")]
+position = Vector2(5773, -4721)
 
-[node name="Planet16" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(8319, -9346)
+[node name="Level16" parent="." instance=ExtResource("19_rhck7")]
+position = Vector2(-5985, -16662)
 
-[node name="Planet17" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(3099, -9366)
+[node name="Level17" parent="." instance=ExtResource("20_2tss5")]
+position = Vector2(-78, -8789)
 
-[connection signal="level_completed" from="Level0" to="." method="_on_level_0_level_completed"]
+[node name="Level18" parent="." instance=ExtResource("21_ebsa2")]
+position = Vector2(-186, -8618)
+
 [connection signal="toggled" from="GameCamera/VBoxContainer/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]

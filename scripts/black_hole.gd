@@ -43,8 +43,8 @@ func rotateHole(delta):
 	target_angle = %MoreOuterCircle.rotation + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .2 / 180
 	%MoreOuterCircle.rotation = target_angle
 	
-	scale.x = _currentGravity / 10
-	scale.y = _currentGravity / 10
+	#scale.x = _currentGravity / 10
+	#scale.y = _currentGravity / 10
 
 func checkGravityUpdate(delta):
 	if increaseGravity:

@@ -7,7 +7,6 @@
 
 [node name="Level2" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_k1v52")
-debug_enabled = true
 planet = NodePath("Planet2")
 
 [node name="Planet2" parent="." instance=ExtResource("2_888p2")]
@@ -28,10 +27,8 @@ text = "Ore Delivered: 0/10"
 
 [node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_stmsv")]
 position = Vector2(1321, 265)
-initial_gravity = 9
 _parent = NodePath("..")
 
 [node name="BlackHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_stmsv")]
 position = Vector2(794, 736)
-initial_gravity = 18
 _parent = NodePath("..")

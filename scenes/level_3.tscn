@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_5bq7b"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="5_3flmo"]
 
-[node name="Level3" type="Node2D"]
+[node name="Level3" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_2rr6c")
+planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_videb")]
 unique_name_in_owner = true
@@ -27,7 +28,6 @@ text = "Ore Delivered: 0/10"
 
 [node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_5bq7b")]
 position = Vector2(1502, -527)
-initial_gravity = 15
 _parent = NodePath("..")
 
 [node name="WhiteHole1" parent="." instance=ExtResource("5_3flmo")]

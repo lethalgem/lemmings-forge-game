@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_v8ed8"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_htbi3"]
 
-[node name="Level6" type="Node2D"]
+[node name="Level6" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_yoe4y")
-debug_enabled = true
 id = 5
+planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_v8ed8")]
 position = Vector2(1704, 548)

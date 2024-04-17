@@ -7,7 +7,6 @@
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_scyny")
-debug_enabled = true
 id = 1
 planet = NodePath("Planet1")
 

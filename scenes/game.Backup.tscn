@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://brbt3hg6ppo48"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_d7m81"]
+[ext_resource type="Texture2D" uid="uid://bf5bv01nnfrx8" path="res://assets/starfield.png" id="2_1drf6"]
+[ext_resource type="PackedScene" uid="uid://c5c2nfrn08efw" path="res://scenes/level_2.tscn" id="3_qxb8l"]
+[ext_resource type="PackedScene" uid="uid://dv05xskla0hqt" path="res://scenes/level_0.tscn" id="4_m06ti"]
+[ext_resource type="PackedScene" uid="uid://bswfqhoswxu0q" path="res://scenes/level_1.tscn" id="5_cfdse"]
+[ext_resource type="Texture2D" uid="uid://bwl5hksnmy0vp" path="res://planning/GameMap.png" id="6_0ij87"]
+[ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="7_euutu"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_d7m81")
+debug_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -9034.0
+offset_top = -18935.0
+offset_right = 12394.0
+offset_bottom = 1941.0
+texture = ExtResource("2_1drf6")
+stretch_mode = 1
+
+[node name="Level2" parent="." instance=ExtResource("3_qxb8l")]
+unique_name_in_owner = true
+position = Vector2(4140, 4357)
+rotation = 0.990205
+scale = Vector2(0.69, 0.69)
+
+[node name="Level0" parent="." instance=ExtResource("4_m06ti")]
+unique_name_in_owner = true
+position = Vector2(3396, 4273)
+scale = Vector2(0.69, 0.69)
+
+[node name="Level1" parent="." instance=ExtResource("5_cfdse")]
+unique_name_in_owner = true
+position = Vector2(4848, 4617)
+rotation = -3.14159
+scale = Vector2(0.69, 0.69)
+
+[node name="GameCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameCamera"]
+offset_left = -960.0
+offset_top = -539.0
+offset_right = -916.0
+offset_bottom = -488.0
+
+[node name="DebugInfo" type="RichTextLabel" parent="GameCamera/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FPS: "
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameCamera/VBoxContainer"]
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="GameCamera/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Enable V-Sync"
+
+[node name="VsyncButton" type="CheckButton" parent="GameCamera/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="GameMap" type="Sprite2D" parent="."]
+position = Vector2(1174, -8989)
+scale = Vector2(10.1512, 10.1512)
+texture = ExtResource("6_0ij87")
+
+[node name="Planet1" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(-502, 4)
+
+[node name="Planet2" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(358, 8)
+
+[node name="Planet3" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(1700, -680)
+
+[node name="Planet4" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(1736, -2768)
+
+[node name="Planet5" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(3575, -1687)
+
+[node name="Planet6" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(5896, -3782)
+
+[node name="Planet7" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(8753, -4623)
+
+[node name="Planet8" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(7237, -4615)
+
+[node name="Planet9" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(5333, -5424)
+
+[node name="Planet10" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(696, -7886)
+
+[node name="Planet11" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(-6768, -16855)
+
+[node name="Planet12" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(-5427, -16318)
+
+[node name="Planet13" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(-7111, -13793)
+
+[node name="Planet14" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(-1678, -12324)
+
+[node name="Planet15" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(8925, -2495)
+
+[node name="Planet16" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(8319, -9346)
+
+[node name="Planet17" parent="." instance=ExtResource("7_euutu")]
+position = Vector2(3099, -9366)
+
+[connection signal="level_completed" from="Level0" to="." method="_on_level_0_level_completed"]
+[connection signal="toggled" from="GameCamera/VBoxContainer/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]
