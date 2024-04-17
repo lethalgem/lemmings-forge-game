@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://biy4nlylsvpb6"]
+
+[ext_resource type="Script" path="res://scripts/level_5.gd" id="1_k1028"]
+[ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="1_td1m8"]
+[ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="2_my68g"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_td5kd"]
+[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/forge.tscn" id="5_akci7"]
+
+[node name="Level5" type="Node2D" node_paths=PackedStringArray("planet")]
+script = ExtResource("1_k1028")
+debug_enabled = true
+id = 5
+planet = NodePath("Planet")
+
+[node name="WhiteHole" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("2_my68g")]
+position = Vector2(1552, 340)
+_parent = NodePath("..")
+
+[node name="BlackHole" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_td5kd")]
+position = Vector2(930, 654)
+_parent = NodePath("..")
+
+[node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("5_akci7")]
+position = Vector2(1816, 972)
+level = NodePath("..")
+
+[node name="Planet" parent="." instance=ExtResource("1_td1m8")]
+position = Vector2(172, 116)
