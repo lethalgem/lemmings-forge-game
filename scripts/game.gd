@@ -8,8 +8,25 @@ extends Node2D
 @export var fast_camera_zoom_speed = 0.1
 
 @onready var camera = %GameCamera
-@onready var level_1 = %Level1
 @onready var debug_info = %DebugInfo
+@onready var level_1 = %Level1
+@onready var level_2 = %Level2
+@onready var level_3 = %Level3
+@onready var level_4 = %Level4
+@onready var level_5 = %Level5
+@onready var level_6 = %Level6
+@onready var level_7 = %Level7
+@onready var level_8 = %Level8
+@onready var level_9 = %Level9
+@onready var level_10 = %Level10
+@onready var level_11 = %Level11
+@onready var level_12 = %Level12
+@onready var level_13 = %Level13
+@onready var level_14 = %Level14
+@onready var level_15 = %Level15
+@onready var level_16 = %Level16
+@onready var level_17 = %Level17
+@onready var level_18 = %Level18
 
 var camera_enabled = true
 var current_camera_move_speed = default_camera_move_speed
@@ -57,9 +74,22 @@ func _physics_process(_delta):
 
 # ------ level transitions ------
 
-
 func enter_level_1():
 	level_1.start()
+
+func _on_level_1_level_completed():
+	print("level 1 completed")
+	enter_level_2()
+
+func enter_level_2():
+	level_2.start()
+
+func _on_level_2_level_completed():
+	print("level 2 completed")
+	enter_level_3()
+
+func enter_level_3():
+	level_3.start()
 
 # ------ ----------------- ------
 
@@ -69,3 +99,4 @@ func _on_vsync_button_toggled(toggled_on):
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+

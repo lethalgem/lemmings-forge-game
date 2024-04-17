@@ -71,54 +71,90 @@ unique_name_in_owner = true
 position = Vector2(-1054, -544)
 
 [node name="Level2" parent="." instance=ExtResource("4_qf4ff")]
-position = Vector2(96, -882)
+unique_name_in_owner = true
+position = Vector2(88, -881)
+id = 2
 
 [node name="Level3" parent="." instance=ExtResource("6_pjsjs")]
+unique_name_in_owner = true
 position = Vector2(670, -1610)
+id = 3
 
 [node name="Level4" parent="." instance=ExtResource("7_ee6yr")]
+unique_name_in_owner = true
 position = Vector2(1574, -2916)
+debug_enabled = false
 
 [node name="Level5" parent="." instance=ExtResource("8_biq00")]
+unique_name_in_owner = true
 position = Vector2(1612, -3700)
+debug_enabled = false
 
 [node name="Level6" parent="." instance=ExtResource("9_mv82c")]
+unique_name_in_owner = true
 position = Vector2(7050, -5172)
+id = 6
 
 [node name="Level7" parent="." instance=ExtResource("10_v7riw")]
+unique_name_in_owner = true
 position = Vector2(5186, -5546)
+id = 7
 
 [node name="Level8" parent="." instance=ExtResource("11_cp4fh")]
+unique_name_in_owner = true
 position = Vector2(4444, -5536)
+id = 8
 
 [node name="Level9" parent="." instance=ExtResource("12_m3ero")]
+unique_name_in_owner = true
 position = Vector2(508, -8148)
+id = 9
 
 [node name="Level10" parent="." instance=ExtResource("13_ap38b")]
+unique_name_in_owner = true
 position = Vector2(-7051, -17141)
+id = 10
 
 [node name="Level11" parent="." instance=ExtResource("14_k6q3d")]
+unique_name_in_owner = true
 position = Vector2(-7779, -14686)
+id = 11
 
 [node name="Level12" parent="." instance=ExtResource("15_o3xso")]
+unique_name_in_owner = true
 position = Vector2(-7267, -13904)
+id = 12
 
 [node name="Level13" parent="." instance=ExtResource("16_deep4")]
+unique_name_in_owner = true
 position = Vector2(-1917, -12567)
+id = 13
 
 [node name="Level14" parent="." instance=ExtResource("17_axvym")]
+unique_name_in_owner = true
 position = Vector2(3456, -2473)
+id = 14
 
 [node name="Level15" parent="." instance=ExtResource("18_5aceh")]
+unique_name_in_owner = true
 position = Vector2(5773, -4721)
+id = 15
 
 [node name="Level16" parent="." instance=ExtResource("19_rhck7")]
+unique_name_in_owner = true
 position = Vector2(-5985, -16662)
+id = 16
 
 [node name="Level17" parent="." instance=ExtResource("20_2tss5")]
+unique_name_in_owner = true
 position = Vector2(-78, -8789)
+id = 17
 
 [node name="Level18" parent="." instance=ExtResource("21_ebsa2")]
+unique_name_in_owner = true
 position = Vector2(-186, -8618)
+id = 18
 
 [connection signal="toggled" from="GameCamera/VBoxContainer/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]
+[connection signal="level_completed" from="Level1" to="." method="_on_level_1_level_completed"]
+[connection signal="level_completed" from="Level2" to="." method="_on_level_2_level_completed"]
