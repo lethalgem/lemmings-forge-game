@@ -32,20 +32,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_4m1sv")]
 position = Vector2(1599, 968)
-initial_gravity = 15
 _parent = NodePath("..")
 
 [node name="BlackHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_4m1sv")]
 position = Vector2(1181, 461)
-initial_gravity = 5
 _parent = NodePath("..")
 
 [node name="WhiteHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("6_mkl1k")]
 position = Vector2(779, 979)
-initial_gravity = 12
 _parent = NodePath("..")
 
 [node name="WhiteHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("6_mkl1k")]
 position = Vector2(431, 361)
-initial_gravity = 12
 _parent = NodePath("..")

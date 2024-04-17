@@ -1,13 +1,15 @@
 class_name BlackHole
 extends Node2D
 
-@export var initial_gravity = 10
+@export var initial_gravity:float = 10
+@export var minimum_gravity:float = 1
+@export var maximum_gravity:float = 20
 @export var _parent: Level
 
 const _gravityIncreaseModifier = 4
 const _rotationIncreaseModifier = 2
 
-var _currentGravity = -1
+var _currentGravity:float = 10
 var increaseGravity = false
 var decreaseGravity = false
 var is_mouse_hovering = false
@@ -40,13 +42,18 @@ func rotateHole(delta):
 	%OuterCircle.rotation = target_angle
 	target_angle = %MoreOuterCircle.rotation + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .2 / 180
 	%MoreOuterCircle.rotation = target_angle
+	
+	scale.x = _currentGravity / 10
+	scale.y = _currentGravity / 10
 
 func checkGravityUpdate(delta):
 	if increaseGravity:
 		_currentGravity = _currentGravity + delta * _gravityIncreaseModifier
+		_currentGravity = min(_currentGravity, maximum_gravity)
 		%HSlider.value = _currentGravity
 	elif decreaseGravity:
 		_currentGravity = _currentGravity - delta * _gravityIncreaseModifier
+		_currentGravity = max(_currentGravity, minimum_gravity)
 		%HSlider.value = _currentGravity
 
 func _process(_delta):

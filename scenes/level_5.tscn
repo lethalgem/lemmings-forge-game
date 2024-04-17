@@ -20,25 +20,25 @@ position = Vector2(4288, -68)
 level = NodePath("..")
 
 [node name="WhiteHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("2_my68g")]
-position = Vector2(1072, 668)
+position = Vector2(852, -82)
 _parent = NodePath("..")
 
 [node name="WhiteHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("2_my68g")]
-position = Vector2(2248, -556)
+position = Vector2(1928, -1056)
 _parent = NodePath("..")
 
 [node name="WhiteHole3" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("2_my68g")]
-position = Vector2(4000, 76)
+position = Vector2(3300, -844)
 _parent = NodePath("..")
 
 [node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_td5kd")]
-position = Vector2(1354, 1566)
+position = Vector2(1424, 1476)
 _parent = NodePath("..")
 
 [node name="BlackHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_td5kd")]
-position = Vector2(2474, 470)
+position = Vector2(2918, 1622)
 _parent = NodePath("..")
 
 [node name="BlackHole3" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_td5kd")]
-position = Vector2(3426, -866)
+position = Vector2(3869, 954)
 _parent = NodePath("..")
