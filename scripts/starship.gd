@@ -1,9 +1,10 @@
 class_name Starship
 extends Node2D
 
+@export var _level: Level
+
 @onready var ore = preload("res://scenes/ore.tscn")
 
-var _level: Level
 var ores_in_gravity_well = []
 var is_mouse_hovering = false
 var increaseAngle = false
@@ -27,10 +28,6 @@ func _physics_process(_delta):
 	elif decreaseAngle:
 		_currentRotation -= 1
 		setLaunchVectorFromRotation()
-
-func setLevel(level):
-	print("setting level")
-	_level = level
 
 var _currentRotation = 0
 var _launchVector = Vector2(1, 0)

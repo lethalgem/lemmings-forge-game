@@ -9,6 +9,7 @@
 
 [node name="Level3" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_2rr6c")
+debug_enabled = true
 id = 3
 planet = NodePath("Planet")
 
@@ -62,6 +63,6 @@ position = Vector2(614, 924)
 initial_gravity = 20
 _parent = NodePath("..")
 
-[node name="Starship" parent="." instance=ExtResource("5_ooacw")]
-unique_name_in_owner = true
+[node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_ooacw")]
 position = Vector2(1341, 413)
+_level = NodePath("..")

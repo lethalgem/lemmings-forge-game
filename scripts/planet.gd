@@ -31,7 +31,6 @@ func _physics_process(_delta):
 		setLaunchVectorFromRotation()
 
 func setLevel(level):
-	print("setting level")
 	_level = level
 
 func setInitalRotation(initialRotation):

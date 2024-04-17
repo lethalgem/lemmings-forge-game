@@ -1,24 +1,24 @@
 class_name WhiteHole
 extends Node2D
 
+@export var _parent: Level
+@export var initial_gravity = 10
+
 @onready var ore = preload("res://scenes/ore.tscn")
 @onready var cast_to_ore = %DirectionRayCast
 var ores_in_gravity_well = []
 
-@onready var _parent = null
-func setParent(parent):
-	_parent = parent
+func _ready():
+	setInitalGravity(initial_gravity)
 
 func addCrate(ore_instance):
 	ores_in_gravity_well.append(ore_instance)
-	
+
 func setInitalGravity(gravity):
 	%HSlider.value = gravity
-	
-	
+
 func _physics_process(delta):
 	var gravityModifier:float = float(%HSlider.value)
-	
 	var gravityBase:float = 400000 * 1.2
 
 	for ore in ores_in_gravity_well:
@@ -36,7 +36,7 @@ func _on_body_entered(body):
 
 func _on_outer_collision_entered(body):
 	ores_in_gravity_well.append(body)
-	
+
 func _on_outer_collision_exited(body):
 	if body is Ore:
 		var index = ores_in_gravity_well.find(body)

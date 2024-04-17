@@ -10,6 +10,7 @@
 
 [node name="Level4" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_kywaf")
+debug_enabled = true
 id = 4
 planet = NodePath("Planet")
 
@@ -49,19 +50,20 @@ position = Vector2(2691, 717)
 initial_gravity = 20
 _parent = NodePath("..")
 
-[node name="Starship1" parent="." instance=ExtResource("5_1uurh")]
-unique_name_in_owner = true
+[node name="Starship1" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_1uurh")]
 position = Vector2(1648, 312)
+_level = NodePath("..")
 
-[node name="Starship2" parent="." instance=ExtResource("5_1uurh")]
-unique_name_in_owner = true
+[node name="Starship2" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_1uurh")]
 position = Vector2(3045, 451)
+_level = NodePath("..")
 
-[node name="WhiteHole" parent="." instance=ExtResource("6_mkl1k")]
-unique_name_in_owner = true
+[node name="WhiteHole" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("6_mkl1k")]
 position = Vector2(929, 1123)
+_parent = NodePath("..")
+initial_gravity = 12
 
-[node name="ExtraDarkBlackHole" parent="." instance=ExtResource("7_qrpof")]
-unique_name_in_owner = true
+[node name="ExtraDarkBlackHole" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("7_qrpof")]
 position = Vector2(1483, 2201)
 scale = Vector2(6, 6)
+_parent = NodePath("..")
