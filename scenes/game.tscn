@@ -9,6 +9,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
+debug_enabled = true
 
 [node name="Level2" parent="." instance=ExtResource("4_qf4ff")]
 unique_name_in_owner = true
@@ -85,5 +86,28 @@ position = Vector2(8319, -9346)
 
 [node name="Planet17" parent="." instance=ExtResource("6_l7uvl")]
 position = Vector2(3099, -9366)
+[node name="VBoxContainer" type="VBoxContainer" parent="GameCamera"]
+offset_left = -960.0
+offset_top = -539.0
+offset_right = -916.0
+offset_bottom = -488.0
+
+[node name="DebugInfo" type="RichTextLabel" parent="GameCamera/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FPS: "
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameCamera/VBoxContainer"]
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="GameCamera/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Enable V-Sync"
+
+[node name="VsyncButton" type="CheckButton" parent="GameCamera/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 
 [connection signal="level_completed" from="Level0" to="." method="_on_level_0_level_completed"]
+[connection signal="toggled" from="GameCamera/VBoxContainer/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]

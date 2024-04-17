@@ -40,7 +40,7 @@ func rotateHole(delta):
 	%OuterCircle.rotation = target_angle
 	target_angle = %MoreOuterCircle.rotation + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .2 / 180
 	%MoreOuterCircle.rotation = target_angle
-	
+
 func checkGravityUpdate(delta):
 	if increaseGravity:
 		_currentGravity = _currentGravity + delta * _gravityIncreaseModifier
@@ -48,7 +48,7 @@ func checkGravityUpdate(delta):
 	elif decreaseGravity:
 		_currentGravity = _currentGravity - delta * _gravityIncreaseModifier
 		%HSlider.value = _currentGravity
-	
+
 func _process(_delta):
 	if Input.is_action_pressed("left_click") and is_mouse_hovering:
 		increaseGravity = true
@@ -69,7 +69,7 @@ func _physics_process(delta):
 		var direction_from_ore_to_self = ore.global_position.direction_to(global_position)
 		var distance_to_ore = ore.global_position.distance_to(global_position)
 		ore.update(direction_from_ore_to_self, distance_to_ore, gravityModifier * gravityBase, delta)
-	
+
 	rotateHole(delta)
 	checkGravityUpdate(delta)
 
