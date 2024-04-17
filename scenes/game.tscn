@@ -13,6 +13,7 @@ unique_name_in_owner = true
 position = Vector2(252, -258)
 rotation = 0.990205
 scale = Vector2(0.69, 0.69)
+debug_enabled = false
 
 [node name="Level0" parent="." instance=ExtResource("2_wjco7")]
 unique_name_in_owner = true
