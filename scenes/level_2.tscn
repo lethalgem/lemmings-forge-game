@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_k1v52"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_888p2"]
-[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_dk8kg"]
+[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/forge.tscn" id="3_dk8kg"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_stmsv"]
 
-[node name="Level2" type="Node2D"]
+[node name="Level2" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_k1v52")
 debug_enabled = true
+planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_888p2")]
 unique_name_in_owner = true
@@ -25,14 +26,17 @@ offset_right = 70.0
 offset_bottom = -83.0
 text = "Ore Delivered: 0/10"
 
-[node name="BlackHole1" parent="." instance=ExtResource("4_stmsv")]
-unique_name_in_owner = true
+[node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_stmsv")]
 position = Vector2(377, 225)
+initial_gravity = 12
+_parent = NodePath("..")
 
-[node name="BlackHole2" parent="." instance=ExtResource("4_stmsv")]
-unique_name_in_owner = true
+[node name="BlackHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_stmsv")]
 position = Vector2(838, 640)
+initial_gravity = 12
+_parent = NodePath("..")
 
-[node name="BlackHole3" parent="." instance=ExtResource("4_stmsv")]
-unique_name_in_owner = true
+[node name="BlackHole3" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_stmsv")]
 position = Vector2(956, 140)
+initial_gravity = 12
+_parent = NodePath("..")

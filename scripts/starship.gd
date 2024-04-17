@@ -2,23 +2,43 @@ class_name Starship
 extends Node2D
 
 @onready var ore = preload("res://scenes/ore.tscn")
-var _level: Level
 
+var _level: Level
 var ores_in_gravity_well = []
+var is_mouse_hovering = false
+var increaseAngle = false
+var decreaseAngle = false
+
+func _process(_delta):
+	if Input.is_action_pressed("left_click") and is_mouse_hovering:
+		increaseAngle = true
+	else:
+		increaseAngle = false
+
+	if Input.is_action_pressed("right_click") and is_mouse_hovering:
+		decreaseAngle = true
+	else:
+		decreaseAngle = false
+
+func _physics_process(_delta):
+	if increaseAngle:
+		_currentRotation += 1
+		setLaunchVectorFromRotation()
+	elif decreaseAngle:
+		_currentRotation -= 1
+		setLaunchVectorFromRotation()
 
 func setLevel(level):
 	print("setting level")
 	_level = level
 
-
 var _currentRotation = 0
-#var _launchVector = Vector2(2, -1)
 var _launchVector = Vector2(1, 0)
 func setInitalRotation(initialRotation):
 	_currentRotation = initialRotation
 	%VSlider.value = _currentRotation
 	setLaunchVectorFromRotation()
-	
+
 func setLaunchVectorFromRotation():
 	var radians = deg_to_rad(_currentRotation)
 	_launchVector.x = cos(radians)
@@ -27,17 +47,10 @@ func setLaunchVectorFromRotation():
 
 func rotationChanged(newValue: float):
 	_currentRotation = -newValue
-	#rotation = _currentRotation
 	setLaunchVectorFromRotation()
 
 func _on_body_entered(body):
 	if body is Ore:
-		#print("ore entered gravity well")
-
-		#var index = ores_in_gravity_well.find(body)
-		#if index >= 0:
-			#ores_in_gravity_well.remove_at(index)
-			#_level.deleteOre(body)
 		if body.createdPlanet != self:
 			_level.deleteOre(body)
 			sendCrate()
@@ -45,12 +58,18 @@ func _on_body_entered(body):
 
 func sendCrate():
 	var ore_instance = ore.instantiate()
-	#add_child(ore_instance)
-	#ore_instance.global_position = Vector2(-50 + randf_range(-5,5),200 + randf_range(-5,5)) # get_global_mouse_position()
 	ore_instance.global_position = global_position
 	ore_instance.forceDirection(_launchVector)
 	ore_instance.setCreatePlanet(self, _level.id)
 	_level.crateAdded(ore_instance)
 
 	await get_tree().create_timer(.1).timeout
-	#startCrates()
+
+
+
+func _on_area_mouse_entered():
+	is_mouse_hovering = true
+
+
+func _on_area_mouse_exited():
+	is_mouse_hovering = false

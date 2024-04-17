@@ -13,7 +13,7 @@ var camera_enabled = true
 func _ready():
 	enter_level_0()
 
-func _process(delta):
+func _process(_delta):
 	# camera panning controls
 	var new_camera_position = camera.global_position
 	if Input.is_action_pressed("pan_left") and camera_enabled:

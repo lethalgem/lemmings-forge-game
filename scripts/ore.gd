@@ -56,6 +56,6 @@ func update(direction:Vector2, distance:float, gravity:float, delta:float):
 	current_velocity = min(originalVelocity * 1.05, current_velocity)
 	current_velocity = max(originalVelocity * .95, current_velocity)
 	current_velocity = max(minSpeed, current_velocity)
-	
+
 
 	current_direction = newVector.normalized()

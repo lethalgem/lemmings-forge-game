@@ -47,4 +47,6 @@ min_value = -90.0
 max_value = 90.0
 
 [connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
+[connection signal="mouse_entered" from="Area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Area" to="." method="_on_area_mouse_exited"]
 [connection signal="value_changed" from="VSlider" to="." method="rotationChanged"]
