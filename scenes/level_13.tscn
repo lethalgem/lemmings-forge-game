@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://jtwkjg80jsij"]
+
+[ext_resource type="Script" path="res://scripts/level_13.gd" id="1_7cmf0"]
+[ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_7mbwk"]
+[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_mdm6f"]
+
+[node name="Level13" type="Node2D"]
+script = ExtResource("1_7cmf0")
+debug_enabled = true
+id = 5
+
+[node name="Planet" parent="." instance=ExtResource("2_7mbwk")]
+position = Vector2(243, 239)
+
+[node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_mdm6f")]
+position = Vector2(10842, 10066)
+level = NodePath("..")

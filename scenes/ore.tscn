@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://o0d3d0s21ldq" path="res://assets/ore_sprite.png" id="1_wsyv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_inxgt"]
-size = Vector2(144, 142)
+size = Vector2(72, 68)
 
 [node name="Ore" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -12,14 +12,15 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_4ayun")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.482269, 0.482269)
 texture = ExtResource("1_wsyv7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_inxgt")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(3.8147e-06, 1.00001)
-scale = Vector2(7.8, 7.5)
+position = Vector2(-4.57764e-05, 1.00001)
+scale = Vector2(3.6, 3.46154)
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

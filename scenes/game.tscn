@@ -1,15 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdi0jax0gnkmo"]
+[gd_scene load_steps=8 format=3 uid="uid://bdi0jax0gnkmo"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_61p2q"]
 [ext_resource type="PackedScene" uid="uid://dv05xskla0hqt" path="res://scenes/level_0.tscn" id="2_wjco7"]
 [ext_resource type="PackedScene" uid="uid://bswfqhoswxu0q" path="res://scenes/level_1.tscn" id="3_a3tgt"]
 [ext_resource type="PackedScene" uid="uid://c5c2nfrn08efw" path="res://scenes/level_2.tscn" id="4_qf4ff"]
-[ext_resource type="Texture2D" uid="uid://bendaqlv6xxky" path="res://planning/GameMap.png" id="5_i2kbb"]
+[ext_resource type="Texture2D" uid="uid://bwl5hksnmy0vp" path="res://planning/GameMap.png" id="5_i2kbb"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="6_l7uvl"]
+[ext_resource type="Texture2D" uid="uid://bf5bv01nnfrx8" path="res://assets/starfield.png" id="7_e00g7"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
 debug_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -9034.0
+offset_top = -18935.0
+offset_right = 12394.0
+offset_bottom = 1941.0
+texture = ExtResource("7_e00g7")
+stretch_mode = 1
 
 [node name="Level2" parent="." instance=ExtResource("4_qf4ff")]
 unique_name_in_owner = true
@@ -30,6 +40,29 @@ scale = Vector2(0.69, 0.69)
 
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameCamera"]
+offset_left = -960.0
+offset_top = -539.0
+offset_right = -916.0
+offset_bottom = -488.0
+
+[node name="DebugInfo" type="RichTextLabel" parent="GameCamera/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FPS: "
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameCamera/VBoxContainer"]
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="GameCamera/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Enable V-Sync"
+
+[node name="VsyncButton" type="CheckButton" parent="GameCamera/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 
 [node name="GameMap" type="Sprite2D" parent="."]
 position = Vector2(1174, -8989)
@@ -67,10 +100,10 @@ position = Vector2(5333, -5424)
 position = Vector2(696, -7886)
 
 [node name="Planet11" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(-6708, -16813)
+position = Vector2(-6768, -16855)
 
 [node name="Planet12" parent="." instance=ExtResource("6_l7uvl")]
-position = Vector2(-5409, -16360)
+position = Vector2(-5427, -16318)
 
 [node name="Planet13" parent="." instance=ExtResource("6_l7uvl")]
 position = Vector2(-7111, -13793)
@@ -86,28 +119,6 @@ position = Vector2(8319, -9346)
 
 [node name="Planet17" parent="." instance=ExtResource("6_l7uvl")]
 position = Vector2(3099, -9366)
-[node name="VBoxContainer" type="VBoxContainer" parent="GameCamera"]
-offset_left = -960.0
-offset_top = -539.0
-offset_right = -916.0
-offset_bottom = -488.0
-
-[node name="DebugInfo" type="RichTextLabel" parent="GameCamera/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "FPS: "
-fit_content = true
-scroll_active = false
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameCamera/VBoxContainer"]
-layout_mode = 2
-
-[node name="VsyncLabel" type="Label" parent="GameCamera/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Enable V-Sync"
-
-[node name="VsyncButton" type="CheckButton" parent="GameCamera/VBoxContainer/HBoxContainer"]
-layout_mode = 2
 
 [connection signal="level_completed" from="Level0" to="." method="_on_level_0_level_completed"]
 [connection signal="toggled" from="GameCamera/VBoxContainer/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]

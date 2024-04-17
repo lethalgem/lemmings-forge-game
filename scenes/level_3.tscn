@@ -1,32 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbyyahu6gq45m"]
+[gd_scene load_steps=6 format=3 uid="uid://cbyyahu6gq45m"]
 
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_2rr6c"]
-[ext_resource type="Texture2D" uid="uid://bf5bv01nnfrx8" path="res://assets/starfield.png" id="2_23ol3"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_videb"]
-[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/forge.tscn" id="3_qpix1"]
+[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_qpix1"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_5bq7b"]
-[ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="5_ooacw"]
+[ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="5_3flmo"]
 
-[node name="Level3" type="Node2D" node_paths=PackedStringArray("planet")]
+[node name="Level3" type="Node2D"]
 script = ExtResource("1_2rr6c")
-debug_enabled = true
-id = 3
-planet = NodePath("Planet")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -1558.0
-offset_top = -1211.0
-offset_right = 4414.0
-offset_bottom = 3033.0
-texture = ExtResource("2_23ol3")
-stretch_mode = 1
 
 [node name="Planet" parent="." instance=ExtResource("2_videb")]
 unique_name_in_owner = true
-position = Vector2(131, 548)
+position = Vector2(1031, 926)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_qpix1")]
-position = Vector2(2075, 547)
+position = Vector2(1061, -1163)
 level = NodePath("..")
 
 [node name="OreCountLabel" type="Label" parent="Forge"]
@@ -38,31 +26,9 @@ offset_bottom = -83.0
 text = "Ore Delivered: 0/10"
 
 [node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_5bq7b")]
-position = Vector2(602, 319)
+position = Vector2(1502, -527)
 initial_gravity = 15
 _parent = NodePath("..")
 
-[node name="BlackHole4" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_5bq7b")]
-position = Vector2(1914, 329)
-initial_gravity = 5
-_parent = NodePath("..")
-
-[node name="BlackHole5" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_5bq7b")]
-position = Vector2(1754, 738)
-scale = Vector2(2, 2)
-initial_gravity = 16
-_parent = NodePath("..")
-
-[node name="BlackHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_5bq7b")]
-position = Vector2(607, 526)
-initial_gravity = 5
-_parent = NodePath("..")
-
-[node name="BlackHole3" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_5bq7b")]
-position = Vector2(614, 924)
-initial_gravity = 20
-_parent = NodePath("..")
-
-[node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_ooacw")]
-position = Vector2(1341, 413)
-_level = NodePath("..")
+[node name="WhiteHole1" parent="." instance=ExtResource("5_3flmo")]
+position = Vector2(1056, 168)
