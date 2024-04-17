@@ -1,32 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdi0jax0gnkmo"]
+[gd_scene load_steps=7 format=3 uid="uid://bdi0jax0gnkmo"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_61p2q"]
 [ext_resource type="PackedScene" uid="uid://dv05xskla0hqt" path="res://scenes/level_0.tscn" id="2_wjco7"]
 [ext_resource type="PackedScene" uid="uid://bswfqhoswxu0q" path="res://scenes/level_1.tscn" id="3_a3tgt"]
 [ext_resource type="PackedScene" uid="uid://c5c2nfrn08efw" path="res://scenes/level_2.tscn" id="4_qf4ff"]
+[ext_resource type="Texture2D" uid="uid://bendaqlv6xxky" path="res://planning/GameMap.png" id="5_i2kbb"]
+[ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="6_l7uvl"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
 
 [node name="Level2" parent="." instance=ExtResource("4_qf4ff")]
 unique_name_in_owner = true
-position = Vector2(252, -258)
+position = Vector2(4140, 4357)
 rotation = 0.990205
 scale = Vector2(0.69, 0.69)
-debug_enabled = false
 
 [node name="Level0" parent="." instance=ExtResource("2_wjco7")]
 unique_name_in_owner = true
-position = Vector2(-492, -342)
+position = Vector2(3396, 4273)
 scale = Vector2(0.69, 0.69)
 
 [node name="Level1" parent="." instance=ExtResource("3_a3tgt")]
 unique_name_in_owner = true
-position = Vector2(960, 2)
+position = Vector2(4848, 4617)
 rotation = -3.14159
 scale = Vector2(0.69, 0.69)
 
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
+
+[node name="GameMap" type="Sprite2D" parent="."]
+position = Vector2(1174, -8989)
+scale = Vector2(10.1512, 10.1512)
+texture = ExtResource("5_i2kbb")
+
+[node name="Planet1" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(-502, 4)
+
+[node name="Planet2" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(358, 8)
+
+[node name="Planet3" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(1700, -680)
+
+[node name="Planet4" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(1736, -2768)
+
+[node name="Planet5" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(3575, -1687)
+
+[node name="Planet6" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(5896, -3782)
+
+[node name="Planet7" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(8753, -4623)
+
+[node name="Planet8" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(7237, -4615)
+
+[node name="Planet9" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(5333, -5424)
+
+[node name="Planet10" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(696, -7886)
+
+[node name="Planet11" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(-6708, -16813)
+
+[node name="Planet12" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(-5409, -16360)
+
+[node name="Planet13" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(-7111, -13793)
+
+[node name="Planet14" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(-1678, -12324)
+
+[node name="Planet15" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(8925, -2495)
+
+[node name="Planet16" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(8319, -9346)
+
+[node name="Planet17" parent="." instance=ExtResource("6_l7uvl")]
+position = Vector2(3099, -9366)
 
 [connection signal="level_completed" from="Level0" to="." method="_on_level_0_level_completed"]
