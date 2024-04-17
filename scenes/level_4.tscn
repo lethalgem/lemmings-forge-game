@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level_4.gd" id="1_kywaf"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_2un51"]
-[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_ehpcw"]
+[ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/forge.tscn" id="3_ehpcw"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_4m1sv"]
 [ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="5_1uurh"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="6_mkl1k"]

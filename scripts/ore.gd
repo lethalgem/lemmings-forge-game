@@ -1,11 +1,9 @@
 class_name Ore
 extends CharacterBody2D
 
-#@onready var current_direction = Vector2(1,0)
 var current_direction = Vector2(1,0)
 var _level_id: int
 
-#@onready var _speedModifier = 4
 @onready var _speedModifier = 1
 @onready var current_velocity = 300 * _speedModifier
 const minSpeed = 250
@@ -59,3 +57,11 @@ func update(direction:Vector2, distance:float, gravity:float, delta:float):
 
 
 	current_direction = newVector.normalized()
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered():
+	visible = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	visible = false
