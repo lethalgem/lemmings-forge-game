@@ -11,16 +11,17 @@ script = ExtResource("1_itekg")
 
 [node name="GravityLabel" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -55.0
 offset_top = 135.0
 offset_right = 58.0
 offset_bottom = 158.0
 
-[node name="BlackHole" type="Area2D" parent="."]
+[node name="InnerBlackHole" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-1, 0)
 
-[node name="MoreOuterCircle" type="Sprite2D" parent="BlackHole"]
+[node name="MoreOuterCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
 modulate = Color(0.266667, 0.266667, 0.266667, 1)
 position = Vector2(0.951223, 1)
@@ -28,7 +29,7 @@ scale = Vector2(1.63159, 1.4539)
 texture = ExtResource("2_ft5es")
 offset = Vector2(0.352102, -1.60422)
 
-[node name="OuterCircle" type="Sprite2D" parent="BlackHole"]
+[node name="OuterCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
 modulate = Color(0.145098, 0.145098, 0.145098, 1)
 position = Vector2(1, 0.0346821)
@@ -36,7 +37,7 @@ scale = Vector2(1.24823, 1.31206)
 texture = ExtResource("2_ft5es")
 offset = Vector2(0.102289, -0.407516)
 
-[node name="InnerCircle" type="Sprite2D" parent="BlackHole"]
+[node name="InnerCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 position = Vector2(1, -0.0354614)
@@ -44,7 +45,7 @@ scale = Vector2(1.02083, 0.964539)
 texture = ExtResource("2_ft5es")
 offset = Vector2(0, -1)
 
-[node name="HoleCollision" type="CollisionShape2D" parent="BlackHole"]
+[node name="HoleCollision" type="CollisionShape2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
 position = Vector2(1, 1)
 scale = Vector2(7.85, 7.85)
@@ -60,6 +61,7 @@ shape = SubResource("CircleShape2D_ysjjs")
 
 [node name="HSlider" type="HSlider" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -84.0
 offset_top = 108.0
 offset_right = 96.0
@@ -70,9 +72,9 @@ step = 0.1
 value = 5.05
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="BlackHole" to="." method="_on_body_entered"]
-[connection signal="mouse_entered" from="BlackHole" to="." method="_on_black_hole_mouse_entered"]
-[connection signal="mouse_exited" from="BlackHole" to="." method="_on_black_hole_mouse_exited"]
+[connection signal="body_entered" from="InnerBlackHole" to="." method="_on_body_entered"]
+[connection signal="mouse_entered" from="InnerBlackHole" to="." method="_on_black_hole_mouse_entered"]
+[connection signal="mouse_exited" from="InnerBlackHole" to="." method="_on_black_hole_mouse_exited"]
 [connection signal="body_entered" from="OuterArea" to="." method="_on_outer_collision_entered"]
 [connection signal="body_exited" from="OuterArea" to="." method="_on_outer_collision_exited"]
 [connection signal="value_changed" from="HSlider" to="." method="gravityChanged"]
