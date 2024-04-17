@@ -57,11 +57,3 @@ func update(direction:Vector2, distance:float, gravity:float, delta:float):
 
 
 	current_direction = newVector.normalized()
-
-
-func _on_visible_on_screen_notifier_2d_screen_entered():
-	visible = true
-
-
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	visible = false
