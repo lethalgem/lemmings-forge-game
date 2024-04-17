@@ -1,36 +1,8 @@
 class_name WhiteHole
 extends BlackHole
 
-#@onready var ore = preload("res://scenes/ore.tscn")
-#@onready var cast_to_ore = %DirectionRayCast
-#var ores_in_gravity_well = []
-
-#@onready var _parent = null
-#func setParent(parent):
-	#_parent = parent
-#
-#func addCrate(ore_instance):
-	#ores_in_gravity_well.append(ore_instance)
-	
-#var _currentGravity = -1
-#func setInitalGravity(gravity):
-	#_currentGravity = gravity
-	#%HSlider.value = gravity
-	#%GravityLabel.text = str(_currentGravity)
-#
-#func gravityChanged(newValue: float):
-	#_currentGravity = newValue
-	#%GravityLabel.text = str(_currentGravity)
-	
-	
-
-#const SPEED = 300.0
-#const ROTATION_SPEED = 10
-#var target_angle : float
-#
 func _physics_process(delta):
 	var gravityModifier:float = float(%HSlider.value)
-	
 	var gravityBase:float = 400000 * 1.2
 
 	for ore in ores_in_gravity_well:
@@ -39,27 +11,20 @@ func _physics_process(delta):
 		ore.update(-direction_from_ore_to_self, distance_to_ore, gravityModifier * gravityBase, delta)
 		
 	rotateHole(delta)
-		
-	#target_angle = %InnerCircle.rotation + (_currentGravity ) * 100 * PI * delta / 180
-	#%InnerCircle.rotation = target_angle
-	#target_angle = %OuterCircle.rotation + (_currentGravity ) * 100 * PI * delta * .4 / 180
-	#%OuterCircle.rotation = target_angle
-	#target_angle = %MoreOuterCircle.rotation + (_currentGravity ) * 100 * PI * delta * .2 / 180
-	#%MoreOuterCircle.rotation = target_angle
+	checkGravityUpdate(delta)
 
-
-func _on_body_entered(body):
-	if body is Ore:
-		var index = ores_in_gravity_well.find(body)
-		if index >= 0:
-			ores_in_gravity_well.remove_at(index)
-			_parent.deleteOre(body)
-
-func _on_outer_collision_entered(body):
-	ores_in_gravity_well.append(body)
-	
-func _on_outer_collision_exited(body):
-	if body is Ore:
-		var index = ores_in_gravity_well.find(body)
-		if index >= 0:
-			ores_in_gravity_well.remove_at(index)
+#func _on_body_entered(body):
+	#if body is Ore:
+		#var index = ores_in_gravity_well.find(body)
+		#if index >= 0:
+			#ores_in_gravity_well.remove_at(index)
+			#_parent.deleteOre(body)
+#
+#func _on_outer_collision_entered(body):
+	#ores_in_gravity_well.append(body)
+#
+#func _on_outer_collision_exited(body):
+	#if body is Ore:
+		#var index = ores_in_gravity_well.find(body)
+		#if index >= 0:
+			#ores_in_gravity_well.remove_at(index)

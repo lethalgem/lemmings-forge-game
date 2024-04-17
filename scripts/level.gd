@@ -34,7 +34,7 @@ func crateAdded(ore_instance):
 func ore_absorbed():
 	if ores_delivered < ore_goal:
 		ores_delivered += 1
-		update_ore_count_label()
+		print_ore_count()
 		check_if_level_completed()
 
 func check_if_level_completed():
@@ -42,5 +42,5 @@ func check_if_level_completed():
 		print("level " + str(id) + " completed")
 		emit_signal("level_completed")
 
-func update_ore_count_label():
-	ore_count_label.text = "Ore Delivered: " + str(ores_delivered) + "/" + str(ore_goal)
+func print_ore_count():
+	print("Ore Delivered: " + str(ores_delivered) + "/" + str(ore_goal))

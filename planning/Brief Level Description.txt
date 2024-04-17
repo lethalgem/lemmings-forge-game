@@ -1,0 +1,21 @@
+L1 - BH
+L2 - 2 BH
+L3 - BH, WH
+L4 - 2 BH, 2 WH
+L5 - Trickier level
+
+L6 - GB
+L7 - GB and ship 
+L8 - 2-3 BH, 1 WH, 2 ships
+L9 - Trickier level
+
+L10 - BH and XBH
+L11 - 2-3WHs and XBH
+L12 - Lengthier level with BH, WH, ship, XBH, GB
+L13 - Long range mission
+
+L14 - BH, WmH
+L15 - 2 WH, 2 WmH
+L16 - BH, WH, GB, 3 WmH
+L17 - Ships anf WmHs
+L18 - 2 WmHs around 1 LARGE XBH

@@ -7,7 +7,6 @@
 
 [node name="Level0" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_j34p6")
-debug_enabled = true
 planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_jcugo")]
@@ -25,6 +24,6 @@ offset_right = 70.0
 offset_bottom = -83.0
 text = "Ore Delivered: 0/10"
 
-[node name="BlackHole" parent="." instance=ExtResource("4_5vav4")]
-unique_name_in_owner = true
+[node name="BlackHole" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_5vav4")]
 position = Vector2(591, 308)
+_parent = NodePath("..")
