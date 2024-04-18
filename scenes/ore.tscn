@@ -1,8 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://cblc8d61rklt4"]
+[gd_scene load_steps=28 format=3 uid="uid://cblc8d61rklt4"]
 
 [ext_resource type="Script" path="res://scripts/ore.gd" id="1_4ayun"]
 [ext_resource type="Texture2D" uid="uid://o0d3d0s21ldq" path="res://assets/ore_sprite.png" id="1_wsyv7"]
 [ext_resource type="Texture2D" uid="uid://cjfh1kyeb0fwc" path="res://assets/ores/Ore_11.png" id="3_2kibm"]
+[ext_resource type="Texture2D" uid="uid://bkt5qtbh5x1s6" path="res://assets/ores/Ore_1.png" id="3_vfh48"]
+[ext_resource type="Texture2D" uid="uid://c14r1wydbcmum" path="res://assets/ores/Ore_2.png" id="4_05bd5"]
+[ext_resource type="Texture2D" uid="uid://dy7drh3budph1" path="res://assets/ores/Ore_3.png" id="5_hxtlh"]
+[ext_resource type="Texture2D" uid="uid://cu0clea5xnunv" path="res://assets/ores/Ore_4.png" id="6_cj0m5"]
+[ext_resource type="Texture2D" uid="uid://kvbkkan7j6og" path="res://assets/ores/Ore_5.png" id="7_tlq70"]
+[ext_resource type="Texture2D" uid="uid://257ccjo6mfli" path="res://assets/ores/Ore_6.png" id="8_q0nmi"]
+[ext_resource type="Texture2D" uid="uid://bsfs84xsnu058" path="res://assets/ores/Ore_7.png" id="9_cr8se"]
+[ext_resource type="Texture2D" uid="uid://bom2ll6ge228j" path="res://assets/ores/Ore_8.png" id="10_mqsv0"]
+[ext_resource type="Texture2D" uid="uid://dw7yoi2rb08jo" path="res://assets/ores/Ore_9.png" id="11_whyb8"]
+[ext_resource type="Texture2D" uid="uid://c8g0xjugxd2vr" path="res://assets/ores/Ore_10.png" id="12_7h4ld"]
+[ext_resource type="Texture2D" uid="uid://c8ctfocpykqni" path="res://assets/ores/Ore_12.png" id="14_537yl"]
+[ext_resource type="Texture2D" uid="uid://bnlgbsk0in6dh" path="res://assets/ores/Ore_13.png" id="15_r1gqg"]
+[ext_resource type="Texture2D" uid="uid://bkhphia1fxg56" path="res://assets/ores/Ore_14.png" id="16_nwutv"]
+[ext_resource type="Texture2D" uid="uid://wc1od04hr3g3" path="res://assets/ores/Ore_15.png" id="17_m7hbs"]
+[ext_resource type="Texture2D" uid="uid://dfow2pc1ubymu" path="res://assets/ores/Ore_16.png" id="18_2iig2"]
+[ext_resource type="Texture2D" uid="uid://bqeykfdwoy70e" path="res://assets/ores/Ore_17.png" id="19_831gn"]
+[ext_resource type="Texture2D" uid="uid://ch711hdv6de6j" path="res://assets/ores/Ore_18.png" id="20_ycin3"]
+[ext_resource type="Texture2D" uid="uid://be4dcnacj654b" path="res://assets/ores/Ore_19.png" id="21_1lyx4"]
+[ext_resource type="Texture2D" uid="uid://c07u5tkykctxh" path="res://assets/ores/Ore_20.png" id="22_owll4"]
+[ext_resource type="Texture2D" uid="uid://bry2u7unbeg0t" path="res://assets/ores/Ore_21.png" id="23_qgd7i"]
+[ext_resource type="Texture2D" uid="uid://b0appasd7mu6f" path="res://assets/ores/Ore_22.png" id="24_2wyyf"]
+[ext_resource type="Texture2D" uid="uid://dsup8o6qj21jw" path="res://assets/ores/Ore_23.png" id="25_2ncwh"]
+[ext_resource type="Texture2D" uid="uid://c0gr0rkeqao3n" path="res://assets/ores/Ore_24.png" id="26_naew8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_inxgt"]
 size = Vector2(72, 68)
@@ -24,9 +47,149 @@ shape = SubResource("RectangleShape2D_inxgt")
 position = Vector2(-4.57764e-05, 1.00001)
 scale = Vector2(3.6, 3.46154)
 
+[node name="Ore1" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_vfh48")
+
+[node name="Ore2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_05bd5")
+
+[node name="Ore3" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_hxtlh")
+
+[node name="Ore4" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_cj0m5")
+
+[node name="Ore5" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_tlq70")
+
+[node name="Ore6" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_q0nmi")
+
+[node name="Ore7" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_cr8se")
+
+[node name="Ore8" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_mqsv0")
+
+[node name="Ore9" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_whyb8")
+
+[node name="Ore10" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_7h4ld")
+
 [node name="Ore11" type="Sprite2D" parent="."]
-scale = Vector2(0.40625, 0.40625)
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_2kibm")
+
+[node name="Ore12" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("14_537yl")
+
+[node name="Ore13" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("15_r1gqg")
+
+[node name="Ore14" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_nwutv")
+
+[node name="Ore15" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("17_m7hbs")
+
+[node name="Ore16" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("18_2iig2")
+
+[node name="Ore17" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("19_831gn")
+
+[node name="Ore18" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("20_ycin3")
+
+[node name="Ore19" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("21_1lyx4")
+
+[node name="Ore20" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("22_owll4")
+
+[node name="Ore21" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("23_qgd7i")
+
+[node name="Ore22" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("24_2wyyf")
+
+[node name="Ore23" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("25_2ncwh")
+
+[node name="Ore24" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("26_naew8")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

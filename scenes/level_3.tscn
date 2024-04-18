@@ -9,6 +9,7 @@
 
 [node name="Level3" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_2rr6c")
+id = 3
 planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_videb")]

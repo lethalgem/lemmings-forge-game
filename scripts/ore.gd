@@ -4,6 +4,8 @@ extends CharacterBody2D
 var current_direction = Vector2(1,0)
 var _level_id: int
 
+var oreId = 0
+
 @onready var _speedModifier = 1
 @onready var current_velocity = 300 * _speedModifier
 const minSpeed = 250
@@ -11,6 +13,43 @@ const minSpeed = 250
 var createdPlanet = null
 func setCreatePlanet(planet, level_id):
 	_level_id = level_id
+	if _level_id == 1:
+		%Ore1.visible = true
+	if _level_id == 2:
+		%Ore2.visible = true
+	if _level_id == 3:
+		%Ore3.visible = true
+	if _level_id == 4:
+		%Ore4.visible = true
+	if _level_id == 5:
+		%Ore5.visible = true
+	if _level_id == 6:
+		%Ore6.visible = true
+	if _level_id == 7:
+		%Ore7.visible = true
+	if _level_id == 8:
+		%Ore8.visible = true
+	if _level_id == 9:
+		%Ore9.visible = true
+	if _level_id == 10:
+		%Ore10.visible = true
+	if _level_id == 11:
+		%Ore11.visible = true
+	if _level_id == 12:
+		%Ore12.visible = true
+	if _level_id == 13:
+		%Ore13.visible = true
+	if _level_id == 14:
+		%Ore14.visible = true
+	if _level_id == 15:
+		%Ore15.visible = true
+	if _level_id == 16:
+		%Ore16.visible = true
+	if _level_id == 17:
+		%Ore17.visible = true
+	if _level_id == 18:
+		%Ore18.visible = true
+	
 	createdPlanet = planet
 
 @onready var _beenDetected = false
