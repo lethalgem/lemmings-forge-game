@@ -9,6 +9,7 @@ extends Node2D
 
 @onready var camera = %GameCamera
 @onready var debug_info = %DebugInfo
+@onready var game_text = %GameText
 @onready var level_1 = %Level1
 @onready var level_2 = %Level2
 @onready var level_3 = %Level3
@@ -66,7 +67,7 @@ func _process(_delta):
 		new_camera_zoom = new_camera_zoom.clamp(Vector2(0.1, 0.1), Vector2(5, 5))
 		create_tween().tween_property(camera, "zoom", new_camera_zoom, 0.05).set_ease(Tween.EASE_IN_OUT)
 		create_tween().tween_property(camera, "scale", Vector2(1 / new_camera_zoom.x, 1 / new_camera_zoom.y), 0.05).set_ease(Tween.EASE_IN_OUT)
-		#scale = Vector2(1 / zoom.x, 1 / zoom.y)
+
 
 func _physics_process(_delta):
 	if debug_enabled:
@@ -75,6 +76,10 @@ func _physics_process(_delta):
 # ------ level transitions ------
 
 func enter_level_1():
+	game_text.queue_text("Howdy Boss! It's a big day in crazyville. Our miners have struck gold! Well not literally, more like iron. But it's as good as gold!", "What are you talking about?")
+	game_text.queue_text("Boss! Now isn't the time to be playing around It's the first piece to the puzzle for the antimatter recipe.", "Oh right! So what do we do?")
+	game_text.queue_text("Uh, you're the one in charge... let's start by getting the iron off planet x and to the refinery on x.", "Now that I can do!")
+	await game_text.finished_displaying_text
 	level_1.start()
 
 func _on_level_1_level_completed():
@@ -93,6 +98,11 @@ func enter_level_3():
 
 # ------ ----------------- ------
 
+func move_camera_to(new_position, new_zoom):
+	create_tween().tween_property(camera, "position", new_position, 0.05).set_ease(Tween.EASE_IN_OUT)
+	new_zoom = new_zoom.clamp(Vector2(0.1, 0.1), Vector2(5, 5))
+	create_tween().tween_property(camera, "zoom", new_zoom, 0.05).set_ease(Tween.EASE_IN_OUT)
+	create_tween().tween_property(camera, "scale", Vector2(1 / new_zoom.x, 1 / new_zoom.y), 0.05).set_ease(Tween.EASE_IN_OUT)
 
 func _on_vsync_button_toggled(toggled_on):
 	if toggled_on:

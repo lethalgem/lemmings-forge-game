@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bdi0jax0gnkmo"]
+[gd_scene load_steps=24 format=3 uid="uid://bdi0jax0gnkmo"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_61p2q"]
+[ext_resource type="Theme" uid="uid://dix67j78pfl5i" path="res://themes/game.tres" id="3_6lea7"]
 [ext_resource type="PackedScene" uid="uid://bswfqhoswxu0q" path="res://scenes/level_1.tscn" id="3_a3tgt"]
 [ext_resource type="PackedScene" uid="uid://c5c2nfrn08efw" path="res://scenes/level_2.tscn" id="4_qf4ff"]
 [ext_resource type="Texture2D" uid="uid://bwl5hksnmy0vp" path="res://planning/GameMap.png" id="5_i2kbb"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://5taa0kctdcaf" path="res://scenes/level_16.tscn" id="19_rhck7"]
 [ext_resource type="PackedScene" uid="uid://donw4f88in6vm" path="res://scenes/level_17.tscn" id="20_2tss5"]
 [ext_resource type="PackedScene" uid="uid://dqdepnf7cwdjg" path="res://scenes/level_18.tscn" id="21_ebsa2"]
+[ext_resource type="Script" path="res://scripts/game_text.gd" id="23_vikan"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
@@ -34,32 +36,6 @@ offset_right = 12394.0
 offset_bottom = 1941.0
 texture = ExtResource("7_e00g7")
 stretch_mode = 1
-
-[node name="GameCamera" type="Camera2D" parent="."]
-unique_name_in_owner = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameCamera"]
-offset_left = -960.0
-offset_top = -539.0
-offset_right = -916.0
-offset_bottom = -488.0
-
-[node name="DebugInfo" type="RichTextLabel" parent="GameCamera/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "FPS: "
-fit_content = true
-scroll_active = false
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameCamera/VBoxContainer"]
-layout_mode = 2
-
-[node name="VsyncLabel" type="Label" parent="GameCamera/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Enable V-Sync"
-
-[node name="VsyncButton" type="CheckButton" parent="GameCamera/VBoxContainer/HBoxContainer"]
-layout_mode = 2
 
 [node name="GameMap" type="Sprite2D" parent="."]
 position = Vector2(1174, -8989)
@@ -155,6 +131,95 @@ unique_name_in_owner = true
 position = Vector2(-186, -8618)
 id = 18
 
-[connection signal="toggled" from="GameCamera/VBoxContainer/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]
+[node name="GameCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-74, 54)
+scale = Vector2(0.833, 0.833)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameCamera"]
+offset_left = -960.0
+offset_top = -539.0
+offset_right = -916.0
+offset_bottom = -488.0
+
+[node name="DebugInfo" type="RichTextLabel" parent="GameCamera/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FPS: "
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameCamera/VBoxContainer"]
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="GameCamera/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Enable V-Sync"
+
+[node name="VsyncButton" type="CheckButton" parent="GameCamera/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextBox" type="Control" parent="GameCamera"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -790.0
+offset_top = 248.0
+offset_right = -750.0
+offset_bottom = 288.0
+
+[node name="ColorRect" type="ColorRect" parent="GameCamera/TextBox"]
+offset_left = -70.9999
+offset_top = -8.99997
+offset_right = 1651.0
+offset_bottom = 209.0
+color = Color(0, 0, 0, 0.956863)
+
+[node name="GameText" type="RichTextLabel" parent="GameCamera/TextBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.9159
+offset_top = -19.5006
+offset_right = 1560.08
+offset_bottom = 180.499
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_6lea7")
+theme_override_font_sizes/normal_font_size = 36
+text = "Howdy, I'm placeholder text so you can see just how much can be typed in this box. Ideally I should be filled with only 2 lines of text, but I'll grow up to 4 lines tall if needed"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("23_vikan")
+
+[node name="ContinueButton" type="Button" parent="GameCamera/TextBox"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1431.87
+offset_top = 114.953
+offset_right = 1598.87
+offset_bottom = 172.953
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_6lea7")
+text = "Continue"
+
 [connection signal="level_completed" from="Level1" to="." method="_on_level_1_level_completed"]
 [connection signal="level_completed" from="Level2" to="." method="_on_level_2_level_completed"]
+[connection signal="toggled" from="GameCamera/VBoxContainer/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]
+[connection signal="button_up" from="GameCamera/TextBox/ContinueButton" to="GameCamera/TextBox/GameText" method="_on_continue_button_button_up"]
