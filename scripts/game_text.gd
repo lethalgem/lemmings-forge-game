@@ -10,6 +10,7 @@ signal finished_displaying_text
 var text_to_display = []
 var button_text = []
 var is_drawing_text = false
+var tween
 
 func _ready():
 	visible_ratio = 0
@@ -23,14 +24,18 @@ func queue_text(display_text: String, button_title: String):
 
 func draw_next_text():
 	if is_drawing_text:
+		print("i work?")
 		visible_ratio = 1
+		tween.kill()
+		is_drawing_text = false
 	elif text_to_display.size() > 0 and not is_drawing_text:
 		is_drawing_text = true
 		visible_ratio = 0
 		text = text_to_display.pop_front()
 		print(text)
 		continue_button.text = button_text.pop_front()
-		var tween = create_tween().tween_property(self, "visible_ratio", 1, text_speed_secs)
+		tween = create_tween()
+		tween.tween_property(self, "visible_ratio", 1, text_speed_secs)
 		tween.connect("finished", on_drawing_finished)
 	else:
 		text_box.visible = false
