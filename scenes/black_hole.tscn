@@ -53,7 +53,7 @@ shape = SubResource("CircleShape2D_ysjjs")
 
 [node name="OuterArea" type="Area2D" parent="."]
 position = Vector2(-2, 0)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea"]
 position = Vector2(0.999977, 3.8147e-06)

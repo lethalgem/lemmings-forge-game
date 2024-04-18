@@ -29,7 +29,6 @@ script = ExtResource("1_61p2q")
 debug_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 offset_left = -9034.0
 offset_top = -18935.0
 offset_right = 12394.0
@@ -38,6 +37,7 @@ texture = ExtResource("7_e00g7")
 stretch_mode = 1
 
 [node name="GameMap" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1174, -8989)
 scale = Vector2(10.1512, 10.1512)
 texture = ExtResource("5_i2kbb")
@@ -171,6 +171,7 @@ offset_right = -750.0
 offset_bottom = 288.0
 
 [node name="ColorRect" type="ColorRect" parent="GameCamera/TextBox"]
+layout_mode = 0
 offset_left = -70.9999
 offset_top = -8.99997
 offset_right = 1651.0
