@@ -3,7 +3,7 @@ extends BlackHole
 
 func getCurrentGravity():
 	return -1 * _currentGravity * gravityBase;
-	
+
 func _physics_process(delta):
 	#var gravityModifier:float = float(%HSlider.value)
 	#var gravityBase:float = 400000 * 1.2
