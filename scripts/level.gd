@@ -29,6 +29,7 @@ func deleteOre(body):
 func crateAdded(ore_instance):
 	var currentGlobalPosition = ore_instance.global_position
 	add_child(ore_instance)
+	move_child(ore_instance, 0)
 	ore_instance.global_position = currentGlobalPosition
 
 func ore_absorbed():
