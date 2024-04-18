@@ -53,8 +53,17 @@ shape = SubResource("CircleShape2D_ysjjs")
 
 [node name="OuterArea" type="Area2D" parent="."]
 position = Vector2(-2, 0)
+scale = Vector2(2, 2)
 
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea"]
+position = Vector2(0.999977, 3.8147e-06)
+scale = Vector2(61.6225, 61.6225)
+shape = SubResource("CircleShape2D_ysjjs")
+
+[node name="OuterArea2" type="Area2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="OuterCollision" type="CollisionShape2D" parent="OuterArea2"]
 position = Vector2(0.999977, 3.8147e-06)
 scale = Vector2(61.6225, 61.6225)
 shape = SubResource("CircleShape2D_ysjjs")
@@ -77,4 +86,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="mouse_exited" from="InnerBlackHole" to="." method="_on_black_hole_mouse_exited"]
 [connection signal="body_entered" from="OuterArea" to="." method="_on_outer_collision_entered"]
 [connection signal="body_exited" from="OuterArea" to="." method="_on_outer_collision_exited"]
+[connection signal="body_entered" from="OuterArea2" to="." method="_on_outer_collision_entered"]
+[connection signal="body_exited" from="OuterArea2" to="." method="_on_outer_collision_exited"]
 [connection signal="value_changed" from="HSlider" to="." method="gravityChanged"]

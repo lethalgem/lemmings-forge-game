@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bswfqhoswxu0q"]
+[gd_scene load_steps=7 format=3 uid="uid://bswfqhoswxu0q"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_scyny"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="1_t0oup"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="2_cid4t"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="3_aukuy"]
+[ext_resource type="Texture2D" uid="uid://cw8fqq56dcql2" path="res://assets/planets/Terran.png" id="5_i2eoc"]
+[ext_resource type="Texture2D" uid="uid://bqtpweao43dw5" path="res://assets/planets/Solid/Terrestrial/Terrestrial_05-256x256.png" id="6_t36sa"]
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_scyny")
@@ -26,3 +28,14 @@ _parent = NodePath("..")
 
 [node name="Planet1" parent="." instance=ExtResource("1_t0oup")]
 position = Vector2(545, 548)
+
+[node name="Terran" type="Sprite2D" parent="Planet1"]
+visible = false
+position = Vector2(0, 2)
+scale = Vector2(3.05208, 3.05208)
+texture = ExtResource("5_i2eoc")
+
+[node name="Terrestrial05-256x256" type="Sprite2D" parent="."]
+position = Vector2(545, 549)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("6_t36sa")

@@ -67,6 +67,8 @@ func _on_body_entered(body):
 
 
 func startCrates():
+	%LaunchPad.visible = true
+	
 	var ore_instance = ore.instantiate()
 	ore_instance.global_position = global_position
 	ore_instance.forceDirection(_launchVector)

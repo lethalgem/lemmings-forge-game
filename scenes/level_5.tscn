@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://biy4nlylsvpb6"]
+[gd_scene load_steps=7 format=3 uid="uid://biy4nlylsvpb6"]
 
 [ext_resource type="Script" path="res://scripts/level_5.gd" id="1_k1028"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="1_td1m8"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="2_my68g"]
+[ext_resource type="Texture2D" uid="uid://c52rs7ghdg5jv" path="res://assets/planets/Solid/Glacial/Glacial_01-256x256.png" id="3_y1dyn"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_td5kd"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="5_akci7"]
 
@@ -14,6 +15,11 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("1_td1m8")]
 position = Vector2(124, 940)
+
+[node name="Glacial01-256x256" type="Sprite2D" parent="Planet"]
+position = Vector2(0, -0.999939)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_y1dyn")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("5_akci7")]
 position = Vector2(4288, -68)

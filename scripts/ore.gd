@@ -40,7 +40,8 @@ func receivedThroughWormHole():
 
 func update(direction:Vector2, distance:float, gravity:float, delta:float):
 
-	if distance > 700 or _inGravityBubble:
+	#if distance > 700 or _inGravityBubble:
+	if distance > 500 or _inGravityBubble:
 		return
 
 	var impactVector = pow(_speedModifier, 2.0/3) * direction * gravity * delta / (pow(distance, 1.5))

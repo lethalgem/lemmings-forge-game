@@ -9,10 +9,12 @@ radius = 7.89911
 [node name="Planet" type="Node2D"]
 script = ExtResource("1_v2g7l")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="LaunchPad" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
 offset_left = 36.0
 offset_top = -31.0
-offset_right = 76.0
+offset_right = 87.0
 offset_bottom = 30.0
 color = Color(0.898039, 0.898039, 0.898039, 1)
 

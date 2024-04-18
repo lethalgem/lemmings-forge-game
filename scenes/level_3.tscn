@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbyyahu6gq45m"]
+[gd_scene load_steps=7 format=3 uid="uid://cbyyahu6gq45m"]
 
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_2rr6c"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_videb"]
+[ext_resource type="Texture2D" uid="uid://b4hqgg78yed2d" path="res://assets/planets/Solid/Rocky/Rocky_04-256x256.png" id="3_o2nuk"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_qpix1"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_5bq7b"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="5_3flmo"]
@@ -14,6 +15,11 @@ planet = NodePath("Planet")
 unique_name_in_owner = true
 position = Vector2(1031, 926)
 rotation = -1.5708
+
+[node name="Rocky04-256x256" type="Sprite2D" parent="."]
+position = Vector2(1032, 927)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_o2nuk")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_qpix1")]
 position = Vector2(1061, -1163)
