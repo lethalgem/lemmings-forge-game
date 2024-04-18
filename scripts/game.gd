@@ -35,7 +35,7 @@ var current_camera_zoom_speed = default_camera_zoom_speed
 
 func _ready():
 	enter_level_1()
-	#level_4.start()
+	#level_3.start()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):
@@ -89,14 +89,108 @@ func _on_level_1_level_completed():
 
 func enter_level_2():
 	level_2.start()
-
 func _on_level_2_level_completed():
 	print("level 2 completed")
 	enter_level_3()
 
 func enter_level_3():
 	level_3.start()
+func _on_level_3_level_completed():
+	print("level 3 completed")
+	enter_level_4()
+	
+func enter_level_4():
+	level_4.start()
+func _on_level_4_level_completed():
+	print("level 4 completed")
+	enter_level_5()
+	
+func enter_level_5():
+	level_5.start()
+func _on_level_5_level_completed():
+	print("level 5 completed")
+	enter_level_6()
+	
+func enter_level_6():
+	level_6.start()
+func _on_level_6_level_completed():
+	print("level 6 completed")
+	enter_level_7()
+	
+func enter_level_7():
+	level_7.start()
+func _on_level_7_level_completed():
+	print("level 7 completed")
+	enter_level_8()
+	
+func enter_level_8():
+	level_8.start()
+func _on_level_8_level_completed():
+	print("level 8 completed")
+	enter_level_9()
+	
+func enter_level_9():
+	level_9.start()
+func _on_level_9_level_completed():
+	print("level 9 completed")
+	enter_level_10()
 
+func enter_level_10():
+	level_10.start()
+func _on_level_10_level_completed():
+	print("level 10 completed")
+	enter_level_11()
+	
+func enter_level_11():
+	level_11.start()
+func _on_level_11_level_completed():
+	print("level 11 completed")
+	enter_level_12()
+	
+func enter_level_12():
+	level_12.start()
+func _on_level_12_level_completed():
+	print("level 12 completed")
+	enter_level_13()
+		
+func enter_level_13():
+	level_13.start()
+func _on_level_13_level_completed():
+	print("level 13 completed")
+	enter_level_14()
+		
+func enter_level_14():
+	level_14.start()
+func _on_level_14_level_completed():
+	print("level 14 completed")
+	enter_level_15()
+		
+func enter_level_15():
+	level_15.start()
+func _on_level_15_level_completed():
+	print("level 15 completed")
+	enter_level_16()
+	
+func enter_level_16():
+	level_16.start()
+func _on_level_16_level_completed():
+	print("level 16 completed")
+	enter_level_17()
+	
+func enter_level_17():
+	level_17.start()
+func _on_level_17_level_completed():
+	print("level 17 completed")
+	enter_level_18()
+	
+func enter_level_18():
+	level_18.start()
+func _on_level_18_level_completed():
+	print("level 18 completed")
+	print("WIN")
+	print("WIN")
+	print("WIN")
+	print("WIN")
 # ------ ----------------- ------
 
 func move_camera_to(new_position, new_zoom):
@@ -110,4 +204,5 @@ func _on_vsync_button_toggled(toggled_on):
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+
 

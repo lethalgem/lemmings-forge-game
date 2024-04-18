@@ -38,3 +38,10 @@ _parent = NodePath("..")
 [node name="WhiteHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("6_mkl1k")]
 position = Vector2(911, 295)
 _parent = NodePath("..")
+
+[node name="BlackHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_4m1sv")]
+position = Vector2(1482, 1578)
+initial_gravity = 20.0
+minimum_gravity = 17.0
+maximum_gravity = 35.0
+_parent = NodePath("..")
