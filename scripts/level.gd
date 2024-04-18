@@ -24,11 +24,12 @@ func start():
 	planet.startCrates()
 
 func deleteOre(body):
-	remove_child(body)
+	body.queue_free()
 
 func crateAdded(ore_instance):
 	var currentGlobalPosition = ore_instance.global_position
 	add_child(ore_instance)
+	move_child(ore_instance, 0)
 	ore_instance.global_position = currentGlobalPosition
 
 func ore_absorbed():

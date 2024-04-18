@@ -70,7 +70,7 @@ func _process(delta):
 		var direction_from_ore_to_blackHole = self.global_position.direction_to(_gravitySources[blackHole][0])
 		var distance_to_ore = self.global_position.distance_to(_gravitySources[blackHole][0])
 		update(direction_from_ore_to_blackHole, distance_to_ore, blackHole.getCurrentGravity(), delta) #_gravitySources[blackHole][1], delta)
-	
+
 	var new_position = global_position + (current_direction * current_velocity * delta)
 	#create_tween().tween_property(self, "global_position", new_position, delta)
 	global_position = new_position
@@ -86,8 +86,8 @@ func enteredWormHole():
 	sentThroughWormHole = true
 func receivedThroughWormHole():
 	sentThroughWormHole = false
-	
-	
+
+
 var _gravitySources = {}
 func addGravitySource(blackHole:BlackHole):
 	_gravitySources[blackHole] = [blackHole.getPosition(), blackHole.getCurrentGravity()]
