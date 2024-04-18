@@ -36,11 +36,11 @@ const ROTATION_SPEED = 10
 var target_angle : float
 
 func rotateHole(delta):
-	target_angle = %InnerCircle.rotation + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta / 180
+	target_angle = %InnerCircle.rotation + ( 2 * PI / 180 ) + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta / 180
 	%InnerCircle.rotation = target_angle
-	target_angle = %OuterCircle.rotation + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .4 / 180
+	target_angle = %OuterCircle.rotation + ( 2 * PI / 180 ) + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .4 / 180
 	%OuterCircle.rotation = target_angle
-	target_angle = %MoreOuterCircle.rotation + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .2 / 180
+	target_angle = %MoreOuterCircle.rotation + ( 2 * PI / 180 ) + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .2 / 180
 	%MoreOuterCircle.rotation = target_angle
 	
 	%InnerBlackHole.scale.x = _currentGravity / 25 + .5
@@ -92,7 +92,10 @@ func _on_body_entered(body):
 		var index = ores_in_gravity_well.find(body)
 		if index >= 0:
 			ores_in_gravity_well.remove_at(index)
-			_parent.deleteOre(body)
+			if _parent != null:
+				_parent.deleteOre(body)
+			else:
+				print('NULL PARENT WHEN TRYING TO REMOVE!!!!!!!!!!!!')
 
 func _on_outer_collision_entered(body):
 	ores_in_gravity_well.append(body)

@@ -51,6 +51,7 @@ shape = SubResource("CircleShape2D_blx7q")
 
 [node name="HSlider" type="HSlider" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -84.0
 offset_top = 108.0
 offset_right = 96.0

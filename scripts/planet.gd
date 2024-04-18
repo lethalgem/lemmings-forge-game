@@ -2,6 +2,8 @@ class_name Planet
 extends Node2D
 
 @onready var ore = preload("res://scenes/ore.tscn")
+@export var minimum_added_rotation:float = -45
+@export var maximum_added_rotation:float = 45
 
 var _level: Level
 var ores_in_gravity_well = []
@@ -10,25 +12,33 @@ var increaseAngle = false
 var decreaseAngle = false
 var _currentRotation = 0
 var _launchVector = Vector2(1, 0)
-const _rotationIncreaseModifier = 2
+const _rotationIncreaseModifier = 1
+var _initial_rotation = 0
+
+func _ready():
+	_initial_rotation = rad_to_deg(rotation)
+	_currentRotation = _initial_rotation
+	setLaunchVectorFromRotation()
 
 func _process(_delta):
 	if Input.is_action_pressed("left_click") and is_mouse_hovering:
-		increaseAngle = true
-	else:
-		increaseAngle = false
-
-	if Input.is_action_pressed("right_click") and is_mouse_hovering:
 		decreaseAngle = true
 	else:
 		decreaseAngle = false
 
+	if Input.is_action_pressed("right_click") and is_mouse_hovering:
+		increaseAngle = true
+	else:
+		increaseAngle = false
+
 func _physics_process(_delta):
 	if increaseAngle:
 		_currentRotation += _rotationIncreaseModifier
+		_currentRotation = min(_currentRotation, _initial_rotation + maximum_added_rotation)
 		setLaunchVectorFromRotation()
 	elif decreaseAngle:
 		_currentRotation -= _rotationIncreaseModifier
+		_currentRotation = max(_currentRotation, _initial_rotation + minimum_added_rotation)
 		setLaunchVectorFromRotation()
 
 func setLevel(level):

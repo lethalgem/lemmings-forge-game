@@ -34,6 +34,7 @@ var current_camera_zoom_speed = default_camera_zoom_speed
 
 func _ready():
 	enter_level_1()
+	#level_4.start()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):
