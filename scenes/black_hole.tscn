@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5exmk65lrs0v"]
+[gd_scene load_steps=5 format=3 uid="uid://b5exmk65lrs0v"]
 
 [ext_resource type="Script" path="res://scripts/black_hole.gd" id="1_itekg"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_ft5es"]
+[ext_resource type="Texture2D" uid="uid://c4s5a7ueg7fa3" path="res://assets/BlackHole.png" id="3_2c44t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
 radius = 7.89911
@@ -19,52 +20,54 @@ offset_bottom = 158.0
 
 [node name="InnerBlackHole" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-1, 0)
 
 [node name="MoreOuterCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.266667, 0.266667, 0.266667, 1)
-position = Vector2(0.951223, 1)
+position = Vector2(4.76837e-07, -4.76837e-07)
 scale = Vector2(1.63159, 1.4539)
 texture = ExtResource("2_ft5es")
 offset = Vector2(0.352102, -1.60422)
 
 [node name="OuterCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.145098, 0.145098, 0.145098, 1)
-position = Vector2(1, 0.0346821)
+position = Vector2(4.76837e-07, 0)
 scale = Vector2(1.24823, 1.31206)
 texture = ExtResource("2_ft5es")
 offset = Vector2(0.102289, -0.407516)
 
 [node name="InnerCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(1, -0.0354614)
+position = Vector2(9.53674e-07, -4.76837e-07)
 scale = Vector2(1.02083, 0.964539)
 texture = ExtResource("2_ft5es")
 offset = Vector2(0, -1)
 
+[node name="BlackHole" type="Sprite2D" parent="InnerBlackHole"]
+scale = Vector2(0.291667, 0.291667)
+texture = ExtResource("3_2c44t")
+
 [node name="HoleCollision" type="CollisionShape2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
-position = Vector2(1, 1)
 scale = Vector2(7.85, 7.85)
 shape = SubResource("CircleShape2D_ysjjs")
 
 [node name="OuterArea" type="Area2D" parent="."]
-position = Vector2(-2, 0)
 scale = Vector2(3, 3)
 
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea"]
-position = Vector2(0.999977, 3.8147e-06)
 scale = Vector2(61.6225, 61.6225)
 shape = SubResource("CircleShape2D_ysjjs")
 
 [node name="OuterArea2" type="Area2D" parent="."]
-position = Vector2(-2, 0)
 
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea2"]
-position = Vector2(0.999977, 3.8147e-06)
+position = Vector2(-2.28882e-05, 9.53674e-07)
 scale = Vector2(61.6225, 61.6225)
 shape = SubResource("CircleShape2D_ysjjs")
 

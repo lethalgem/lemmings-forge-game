@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cblc8d61rklt4"]
+[gd_scene load_steps=5 format=3 uid="uid://cblc8d61rklt4"]
 
 [ext_resource type="Script" path="res://scripts/ore.gd" id="1_4ayun"]
 [ext_resource type="Texture2D" uid="uid://o0d3d0s21ldq" path="res://assets/ore_sprite.png" id="1_wsyv7"]
+[ext_resource type="Texture2D" uid="uid://cjfh1kyeb0fwc" path="res://assets/ores/Ore_11.png" id="3_2kibm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_inxgt"]
 size = Vector2(72, 68)
@@ -12,6 +13,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_4ayun")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.482269, 0.482269)
 texture = ExtResource("1_wsyv7")
 
@@ -21,6 +23,10 @@ shape = SubResource("RectangleShape2D_inxgt")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-4.57764e-05, 1.00001)
 scale = Vector2(3.6, 3.46154)
+
+[node name="Ore11" type="Sprite2D" parent="."]
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("3_2kibm")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

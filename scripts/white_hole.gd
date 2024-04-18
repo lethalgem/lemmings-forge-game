@@ -1,14 +1,17 @@
 class_name WhiteHole
 extends BlackHole
 
+func getCurrentGravity():
+	return -1 * _currentGravity * gravityBase;
+	
 func _physics_process(delta):
-	var gravityModifier:float = float(%HSlider.value)
-	var gravityBase:float = 400000 * 1.2
+	#var gravityModifier:float = float(%HSlider.value)
+	#var gravityBase:float = 400000 * 1.2
 
-	for ore in ores_in_gravity_well:
-		var direction_from_ore_to_self = ore.global_position.direction_to(global_position)
-		var distance_to_ore = ore.global_position.distance_to(global_position)
-		ore.update(-direction_from_ore_to_self, distance_to_ore, gravityModifier * gravityBase, delta)
+	#for ore in ores_in_gravity_well:
+		#var direction_from_ore_to_self = ore.global_position.direction_to(global_position)
+		#var distance_to_ore = ore.global_position.distance_to(global_position)
+		#ore.update(-direction_from_ore_to_self, distance_to_ore, gravityModifier * gravityBase, delta)
 
 	rotateHole(delta)
 	checkGravityUpdate(delta)

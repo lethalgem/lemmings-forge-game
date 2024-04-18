@@ -15,12 +15,20 @@ var decreaseGravity = false
 var is_mouse_hovering = false
 var ores_in_gravity_well = []
 
+
+var id = -1
+
 func _ready():
 	set_process_input(true)
 	setInitalGravity(initial_gravity)
 
 func addCrate(ore_instance):
 	ores_in_gravity_well.append(ore_instance)
+	
+func getCurrentGravity():
+	return _currentGravity * gravityBase;
+func getPosition():
+	return global_position;
 
 func setInitalGravity(gravity):
 	_currentGravity = gravity
@@ -38,10 +46,13 @@ var target_angle : float
 func rotateHole(delta):
 	target_angle = %InnerCircle.rotation + ( 2 * PI / 180 ) + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta / 180
 	%InnerCircle.rotation = target_angle
+	%InnerBlackHole.rotation = target_angle / 8
 	target_angle = %OuterCircle.rotation + ( 2 * PI / 180 ) + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .4 / 180
 	%OuterCircle.rotation = target_angle
 	target_angle = %MoreOuterCircle.rotation + ( 2 * PI / 180 ) + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .2 / 180
 	%MoreOuterCircle.rotation = target_angle
+	
+	
 
 	%InnerBlackHole.scale.x = _currentGravity / 25 + .5
 	%InnerBlackHole.scale.y = _currentGravity / 25 + .5
@@ -67,15 +78,16 @@ func _process(_delta):
 	else:
 		decreaseGravity = false
 
+var gravityModifier:float = _currentGravity
+var gravityBase:float = 400000
 func _physics_process(delta):
 	var gravityModifier:float = _currentGravity
+	
 
-	var gravityBase:float = 400000
-
-	for ore in ores_in_gravity_well:
-		var direction_from_ore_to_self = ore.global_position.direction_to(global_position)
-		var distance_to_ore = ore.global_position.distance_to(global_position)
-		ore.update(direction_from_ore_to_self, distance_to_ore, gravityModifier * gravityBase, delta)
+	#for ore in ores_in_gravity_well:
+		#var direction_from_ore_to_self = ore.global_position.direction_to(global_position)
+		#var distance_to_ore = ore.global_position.distance_to(global_position)
+		#ore.update(direction_from_ore_to_self, distance_to_ore, gravityModifier * gravityBase, delta)
 
 	rotateHole(delta)
 	checkGravityUpdate(delta)
@@ -92,6 +104,9 @@ func _on_body_entered(body):
 		var index = ores_in_gravity_well.find(body)
 		if index >= 0:
 			ores_in_gravity_well.remove_at(index)
+			
+			body.removeGravitySource(self)
+			
 			if _parent != null:
 				_parent.deleteOre(body)
 			else:
@@ -99,12 +114,17 @@ func _on_body_entered(body):
 
 func _on_outer_collision_entered(body):
 	ores_in_gravity_well.append(body)
+	body.addGravitySource(self)
+	
 
 func _on_outer_collision_exited(body):
 	if body is Ore:
+		body.removeGravitySource(self)
+		
 		var index = ores_in_gravity_well.find(body)
 		if index >= 0:
 			ores_in_gravity_well.remove_at(index)
+			
 
 func _on_black_hole_mouse_entered():
 	is_mouse_hovering = true
