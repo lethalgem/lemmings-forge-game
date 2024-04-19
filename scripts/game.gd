@@ -35,10 +35,13 @@ signal done_moving_camera
 var camera_controls_enabled = true
 var current_camera_move_speed = default_camera_move_speed
 var current_camera_zoom_speed = default_camera_zoom_speed
+var previous_camera_position: Vector2 = Vector2(0, 0);
+var _moveCamera: bool = false;
 
 func _ready():
 	#enter_level_1()
-	level_8.start()
+	enter_level_8()
+	#enter_menu()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):
@@ -65,8 +68,12 @@ func _process(_delta):
 	var new_camera_zoom = camera.zoom
 	if Input.is_action_pressed("zoom_in") and camera_controls_enabled:
 		new_camera_zoom += Vector2(current_camera_zoom_speed, current_camera_zoom_speed)
+	if Input.is_action_just_released("zoom_in") and camera_controls_enabled:
+		new_camera_zoom += Vector2(fast_camera_zoom_speed, fast_camera_zoom_speed)
 	if Input.is_action_pressed("zoom_out") and camera_controls_enabled:
 		new_camera_zoom += Vector2(-current_camera_zoom_speed, -current_camera_zoom_speed)
+	if Input.is_action_just_released("zoom_out") and camera_controls_enabled:
+		new_camera_zoom += Vector2(-fast_camera_zoom_speed, -fast_camera_zoom_speed)
 	if camera.zoom != new_camera_zoom:
 		new_camera_zoom = new_camera_zoom.clamp(Vector2(0.1, 0.1), Vector2(5, 5))
 		create_tween().tween_property(camera, "zoom", new_camera_zoom, 0.05).set_ease(Tween.EASE_IN_OUT)
@@ -77,9 +84,41 @@ func _physics_process(_delta):
 	if debug_enabled:
 		debug_info.text = "FPS:" + str(Engine.get_frames_per_second())
 
+# mouse camera controls
+func _unhandled_input(event: InputEvent):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		get_viewport().set_input_as_handled()
+		if event.is_pressed():
+			previous_camera_position = event.position
+			_moveCamera = true
+		else:
+			_moveCamera = false
+	elif event is InputEventMouseMotion and _moveCamera and camera_controls_enabled:
+		get_viewport().set_input_as_handled()
+		camera.position += (previous_camera_position - event.position) * Vector2(1 / camera.zoom.x, 1 / camera.zoom.y)
+		previous_camera_position = event.position
+
+func enter_menu():
+	move_camera_to(Vector2(-1492, 54), Vector2(1.2, 1.2))
+
+func _on_start_button_button_up():
+	%MainMenu.visible = false
+	enter_level_1()
+
+func _on_controls_button_button_up():
+	enter_controls()
+
+func enter_controls():
+	move_camera_to(Vector2(-1492, 914), Vector2(1.2, 1.2))
+
+func _on_return_to_menu_button_button_up():
+	enter_menu()
+
 # ------ level transitions ------
 
 func enter_level_1():
+	move_camera_to(Vector2(-74, 54), Vector2(1.2, 1.2))
+	await done_moving_camera
 	game_text.queue_text("Howdy Boss! It's a big day in crazyville. Our miners have struck gold! Well not literally, more like iron. But it's as good as gold!", "What are you talking about?")
 	game_text.queue_text("Boss! Now isn't the time to be playing around It's the first piece to the puzzle for the antimatter recipe.", "Oh right! So what do we do?")
 	game_text.queue_text("Uh, you're the one in charge... let's start by getting the iron off planet x and to the refinery on x.", "Now that I can do!")
@@ -112,97 +151,241 @@ func _on_level_2_level_completed():
 	enter_level_3()
 
 func enter_level_3():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(1698, -1261), Vector2(0.3, 0.3))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(1693, -1736), Vector2(0.45, 0.45))
+	await done_moving_camera
 	level_3.start()
+	camera_controls_enabled = true
+
 func _on_level_3_level_completed():
 	print("level 3 completed")
 	enter_level_4()
 
 func enter_level_4():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(2738, -1980), Vector2(0.55, 0.55))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(2707, -2220), Vector2(0.8, 0.8))
+	await done_moving_camera
 	level_4.start()
+	camera_controls_enabled = true
+
 func _on_level_4_level_completed():
 	print("level 4 completed")
 	enter_level_5()
 
 func enter_level_5():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(3871, -2920), Vector2(0.4, 0.4))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(3871, -3282), Vector2(0.4, 0.4))
+	await done_moving_camera
 	level_5.start()
+	camera_controls_enabled = true
+
 func _on_level_5_level_completed():
 	print("level 5 completed")
 	enter_level_6()
 
 func enter_level_6():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(7973, -4523), Vector2(1, 1))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(7973, -4617), Vector2(1, 1))
+	await done_moving_camera
 	level_6.start()
+	camera_controls_enabled = true
+
 func _on_level_6_level_completed():
 	print("level 6 completed")
 	enter_level_7()
 
 func enter_level_7():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(6261, -4801), Vector2(0.7, 0.7))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(6261, -5022), Vector2(0.8, 0.8))
+	await done_moving_camera
 	level_7.start()
+	camera_controls_enabled = true
+
 func _on_level_7_level_completed():
 	print("level 7 completed")
 	enter_level_8()
 
 func enter_level_8():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(5613, -4238), Vector2(0.4, 0.4))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(5613, -4570), Vector2(0.5, 0.5))
+	await done_moving_camera
 	level_8.start()
+	camera_controls_enabled = true
+
 func _on_level_8_level_completed():
 	print("level 8 completed")
 	enter_level_9()
 
 func enter_level_9():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(3083, -4894), Vector2(0.15, 0.15))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(3230, -5878), Vector2(0.22, 0.22))
+	await done_moving_camera
 	level_9.start()
+	camera_controls_enabled = true
+
 func _on_level_9_level_completed():
 	print("level 9 completed")
 	enter_level_10()
 
 func enter_level_10():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(-6043, -16406), Vector2(1, 1))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(-6043, -16562), Vector2(1, 1))
+	await done_moving_camera
 	level_10.start()
+	camera_controls_enabled = true
+
 func _on_level_10_level_completed():
 	print("level 10 completed")
 	enter_level_11()
 
 func enter_level_11():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(-6094, -14502), Vector2(0.27, 0.27))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(-6252, -15045), Vector2(0.35, 0.35))
+	await done_moving_camera
 	level_11.start()
+	camera_controls_enabled = true
+
 func _on_level_11_level_completed():
 	print("level 11 completed")
 	enter_level_12()
 
 func enter_level_12():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(-4396, -12567), Vector2(0.3, 0.3))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(-4396, -13053), Vector2(0.3, 0.3))
+	await done_moving_camera
 	level_12.start()
+	camera_controls_enabled = true
+
 func _on_level_12_level_completed():
 	print("level 12 completed")
 	enter_level_13()
 
 func enter_level_13():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(5764, -5518), Vector2(0.07, 0.07))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(4497, -7373), Vector2(0.1, 0.1))
+	await done_moving_camera
 	level_13.start()
+	camera_controls_enabled = true
+
 func _on_level_13_level_completed():
 	print("level 13 completed")
 	enter_level_14()
 
 func enter_level_14():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(6229, -1496), Vector2(0.3, 0.3))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(6229, -2079), Vector2(0.3, 0.3))
+	await done_moving_camera
 	level_14.start()
+	camera_controls_enabled = true
+
 func _on_level_14_level_completed():
 	print("level 14 completed")
 	enter_level_15()
 
 func enter_level_15():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(7349, -5295), Vector2(0.12, 0.12))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(7349, -6543), Vector2(0.17, 0.17))
+	await done_moving_camera
 	level_15.start()
+	camera_controls_enabled = true
+
 func _on_level_15_level_completed():
 	print("level 15 completed")
 	enter_level_16()
 
 func enter_level_16():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(-1147, -11375), Vector2(0.1, 0.1))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(-1163, -12815), Vector2(0.14, 0.14))
+	await done_moving_camera
 	level_16.start()
+	camera_controls_enabled = true
+
 func _on_level_16_level_completed():
 	print("level 16 completed")
 	enter_level_17()
 
 func enter_level_17():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(4533, -8255), Vector2(0.235, 0.235))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(4533, -9455), Vector2(0.235, 0.235))
+	await done_moving_camera
 	level_17.start()
+	camera_controls_enabled = true
+
 func _on_level_17_level_completed():
 	print("level 17 completed")
 	enter_level_18()
 
 func enter_level_18():
+	camera_controls_enabled = false
+	move_camera_to(Vector2(1853, -8303), Vector2(0.44, 0.44))
+	await done_moving_camera
+	game_text.queue_text("I'm placeholder", "test")
+	await game_text.finished_displaying_text
+	move_camera_to(Vector2(469, -7751), Vector2(0.265, 0.265))
+	await done_moving_camera
 	level_18.start()
+	camera_controls_enabled = true
+
 func _on_level_18_level_completed():
 	print("level 18 completed")
 	print("WIN")
@@ -214,7 +397,7 @@ func _on_level_18_level_completed():
 func move_camera_to(new_position: Vector2, new_zoom: Vector2, seconds_to_complete = 0.5):
 	camera_controls_enabled = false
 	create_tween().tween_property(camera, "global_position", new_position, seconds_to_complete).set_ease(Tween.EASE_IN_OUT)
-	new_zoom = new_zoom.clamp(Vector2(0.1, 0.1), Vector2(5, 5))
+	new_zoom = new_zoom.clamp(Vector2(0.03, 0.03), Vector2(5, 5))
 	create_tween().tween_property(camera, "zoom", new_zoom, seconds_to_complete).set_ease(Tween.EASE_IN_OUT)
 	var tween = create_tween().tween_property(camera, "scale", Vector2(1 / new_zoom.x, 1 / new_zoom.y), seconds_to_complete).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
@@ -226,5 +409,3 @@ func _on_vsync_button_toggled(toggled_on):
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-
-

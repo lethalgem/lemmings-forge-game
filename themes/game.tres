@@ -1,4 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://dix67j78pfl5i"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dix67j78pfl5i"]
+
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="1_tbj2c"]
 
 [resource]
+default_font = ExtResource("1_tbj2c")
 default_font_size = 36
