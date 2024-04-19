@@ -67,6 +67,7 @@ max_value = 90.0
 [node name="ChangeAnglePlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_bs81o")
+volume_db = 10.0
 
 [connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="Area" to="." method="_on_area_mouse_entered"]

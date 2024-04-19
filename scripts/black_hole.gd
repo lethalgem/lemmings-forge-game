@@ -39,6 +39,7 @@ var decreaseGravity: bool = false:
 			reverse_highlight.visible = true
 			if not is_playing_sound:
 				is_playing_sound = true
+				change_gravity_player.play()
 		elif not value and is_mouse_hovering and not increaseGravity:
 			forward_highlight.visible = true
 			reverse_highlight.visible = true
