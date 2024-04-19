@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdi0jax0gnkmo"]
+[gd_scene load_steps=31 format=3 uid="uid://bdi0jax0gnkmo"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_61p2q"]
 [ext_resource type="Theme" uid="uid://dix67j78pfl5i" path="res://themes/game.tres" id="3_6lea7"]
@@ -28,6 +28,8 @@
 [ext_resource type="Script" path="res://scripts/scorecard.gd" id="24_kaha7"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="25_w2tsg"]
 [ext_resource type="AudioStream" uid="uid://dyo0d0xqu35q4" path="res://assets/sounds/space_ambience.mp3" id="26_3bu7j"]
+[ext_resource type="AudioStream" uid="uid://cco5tf61n2gkp" path="res://assets/sounds/start_game.mp3" id="26_db8pc"]
+[ext_resource type="AudioStream" uid="uid://dubn3pujvjyin" path="res://assets/sounds/click.mp3" id="28_qt52s"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
@@ -123,7 +125,7 @@ position = Vector2(-186, -8618)
 
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-74, 54)
+position = Vector2(-1492, 54)
 scale = Vector2(0.833, 0.833)
 zoom = Vector2(1.2, 1.2)
 limit_left = -20000
@@ -576,6 +578,11 @@ offset_bottom = 351.0
 theme = ExtResource("3_6lea7")
 text = "Start Game"
 
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/StartButton"]
+unique_name_in_owner = true
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
 [node name="WinScreen" type="Control" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -630,6 +637,11 @@ text = "Return to menu"
 stream = ExtResource("26_3bu7j")
 volume_db = -10.0
 autoplay = true
+
+[node name="ButtonClickPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("28_qt52s")
+volume_db = -10.0
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_adh60")

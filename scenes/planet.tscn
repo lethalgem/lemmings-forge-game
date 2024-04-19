@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwd1ajpap6kfd"]
+[gd_scene load_steps=6 format=3 uid="uid://bwd1ajpap6kfd"]
 
 [ext_resource type="Script" path="res://scripts/planet.gd" id="1_v2g7l"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_e7x25"]
 [ext_resource type="Texture2D" uid="uid://dbidkaacmqg53" path="res://assets/planet_highlight_blank.png" id="2_w6s2o"]
+[ext_resource type="AudioStream" uid="uid://clhgrgy3wgrbe" path="res://assets/sounds/rotate_planet.mp3" id="4_bs81o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
 radius = 7.89911
@@ -62,6 +63,10 @@ offset_right = -93.0
 offset_bottom = 66.0
 min_value = -90.0
 max_value = 90.0
+
+[node name="ChangeAnglePlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_bs81o")
 
 [connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="Area" to="." method="_on_area_mouse_entered"]

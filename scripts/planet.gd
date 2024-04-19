@@ -4,9 +4,11 @@ extends Node2D
 @onready var ore = preload("res://scenes/ore.tscn")
 @onready var forward_highlight = %ForwardHighlight
 @onready var reverse_highlight = %ReverseHighlight
+@onready var change_angle_player: AudioStreamPlayer2D = %ChangeAnglePlayer
 
 @export var minimum_added_rotation:float = -45
 @export var maximum_added_rotation:float = 45
+
 
 var _level: Level
 var ores_in_gravity_well = []
@@ -14,14 +16,21 @@ var _currentRotation = 0
 var _launchVector = Vector2(1, 0)
 const _rotationIncreaseModifier = 1
 var _initial_rotation = 0
+var is_playing_sound = false
 var increaseAngle: bool = false:
 	set(value):
 		if value:
 			forward_highlight.visible = true
 			reverse_highlight.visible = false
+			if not is_playing_sound:
+				is_playing_sound = true
+				change_angle_player.play()
 		elif not value and is_mouse_hovering and not decreaseAngle:
 			forward_highlight.visible = true
 			reverse_highlight.visible = true
+			if is_playing_sound:
+				is_playing_sound = false
+				change_angle_player.stop()
 		increaseAngle = value
 	get:
 		return increaseAngle
@@ -30,9 +39,15 @@ var decreaseAngle: bool = false:
 		if value:
 			forward_highlight.visible = false
 			reverse_highlight.visible = true
+			if not is_playing_sound:
+				is_playing_sound = true
+				change_angle_player.play()
 		elif not value and is_mouse_hovering and not increaseAngle:
 			forward_highlight.visible = true
 			reverse_highlight.visible = true
+			if is_playing_sound:
+				is_playing_sound = false
+				change_angle_player.stop()
 		decreaseAngle = value
 	get:
 		return decreaseAngle

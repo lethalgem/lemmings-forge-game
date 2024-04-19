@@ -15,6 +15,8 @@ signal done_moving_camera
 @onready var main_menu = %MainMenu
 @onready var scorecard: Scorecard = %Scorecard
 @onready var win_screen = %WinScreen
+@onready var click_player: AudioStreamPlayer = %ButtonClickPlayer
+@onready var start_click_player: AudioStreamPlayer = %StartButtonClickPlayer
 @onready var level_1 = %Level1
 @onready var level_2 = %Level2
 @onready var level_3 = %Level3
@@ -41,7 +43,7 @@ var previous_camera_position: Vector2 = Vector2(0, 0);
 var _moveCamera: bool = false;
 
 func _ready():
-	enter_level_3()
+	enter_level_8()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):
@@ -103,22 +105,26 @@ func enter_menu():
 
 func _on_start_button_button_up():
 	main_menu.visible = false
+	start_click_player.play()
 	enter_level_1()
 
 func _on_controls_button_button_up():
+	click_player.play()
 	enter_controls()
 
 func enter_controls():
 	move_camera_to(Vector2(-1492, 914), Vector2(1.2, 1.2))
 
 func _on_return_to_menu_button_button_up():
+	click_player.play()
 	enter_menu()
 
 # ------ level transitions ------
 
 func enter_level_1():
-	move_camera_to(Vector2(-74, 54), Vector2(1.2, 1.2))
+	move_camera_to(Vector2(-74, 54), Vector2(1.2, 1.2), 1.5)
 	await done_moving_camera
+	await get_tree().create_timer(1.5).timeout
 	game_text.queue_text("Howdy Boss! It's a big day in crazyville. Our miners have struck gold! Well not literally, more like iron. But it's as good as gold!", "What are you talking about?")
 	game_text.queue_text("Boss! Now isn't the time to be playing around It's the first piece to the puzzle for the antimatter recipe.", "Oh right! So what do we do?")
 	game_text.queue_text("Uh, you're the one in charge... let's start by getting the iron off planet x and to the refinery on x.", "Now that I can do!")
@@ -131,6 +137,7 @@ func _on_level_1_level_completed(time):
 	print("level 1 completed")
 	print(time)
 	scorecard.update_scorecard(1, time)
+	enter_level_2()
 
 func enter_level_2():
 	camera_controls_enabled = false
@@ -431,14 +438,16 @@ func _on_level_18_level_completed(time):
 
 # ------ ----------------- ------
 
-func move_camera_to(new_position: Vector2, new_zoom: Vector2, seconds_to_complete = 0.5):
+func move_camera_to(new_position: Vector2, new_zoom: Vector2, seconds_to_complete = 1):
 	camera_controls_enabled = false
+	scorecard.visible = false
 	create_tween().tween_property(camera, "global_position", new_position, seconds_to_complete).set_ease(Tween.EASE_IN_OUT)
 	new_zoom = new_zoom.clamp(Vector2(0.03, 0.03), Vector2(5, 5))
 	create_tween().tween_property(camera, "zoom", new_zoom, seconds_to_complete).set_ease(Tween.EASE_IN_OUT)
 	var tween = create_tween().tween_property(camera, "scale", Vector2(1 / new_zoom.x, 1 / new_zoom.y), seconds_to_complete).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
 	await get_tree().create_timer(.3).timeout
+	scorecard.visible = true
 	emit_signal("done_moving_camera")
 
 func _on_vsync_button_toggled(toggled_on):

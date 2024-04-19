@@ -6,6 +6,7 @@ signal finished_displaying_text
 
 @onready var continue_button = %ContinueButton
 @onready var text_box = %TextBox
+@onready var click_player: AudioStreamPlayer = %ButtonClickPlayer
 
 var text_to_display = []
 var button_text = []
@@ -47,4 +48,5 @@ func on_drawing_finished():
 
 
 func _on_continue_button_button_up():
+	click_player.play()
 	draw_next_text()

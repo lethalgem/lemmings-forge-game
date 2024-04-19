@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvklsx0dou66p"]
+[gd_scene load_steps=16 format=3 uid="uid://bvklsx0dou66p"]
 
 [ext_resource type="Script" path="res://scripts/starship.gd" id="1_15l1s"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_a5ufl"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://lxbv5vhqsmqo" path="res://assets/spaceships/Spaceship_8.png" id="7_rallq"]
 [ext_resource type="Texture2D" uid="uid://7w6c3xh6axmn" path="res://assets/spaceships/Spaceship_9.png" id="8_2nwd8"]
 [ext_resource type="Texture2D" uid="uid://dxdt7t7exmxsg" path="res://assets/spaceships/Spaceship_10.png" id="9_hxgro"]
+[ext_resource type="AudioStream" uid="uid://pgo13a10poyn" path="res://assets/sounds/rotate_spaceship_trimmed.mp3" id="14_7e0e6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bro4d"]
 radius = 4.4586
@@ -153,6 +154,11 @@ offset_right = -93.0
 offset_bottom = 66.0
 min_value = -90.0
 max_value = 90.0
+
+[node name="ChangeAnglePlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("14_7e0e6")
+volume_db = 15.0
 
 [connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="Area" to="." method="_on_area_mouse_entered"]
