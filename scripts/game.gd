@@ -34,6 +34,8 @@ signal done_moving_camera
 var camera_controls_enabled = false
 var current_camera_move_speed = default_camera_move_speed
 var current_camera_zoom_speed = default_camera_zoom_speed
+var previous_camera_position: Vector2 = Vector2(0, 0);
+var _moveCamera: bool = false;
 
 func _ready():
 	enter_level_1()
@@ -63,8 +65,12 @@ func _process(_delta):
 	var new_camera_zoom = camera.zoom
 	if Input.is_action_pressed("zoom_in") and camera_controls_enabled:
 		new_camera_zoom += Vector2(current_camera_zoom_speed, current_camera_zoom_speed)
+	if Input.is_action_just_released("zoom_in") and camera_controls_enabled:
+		new_camera_zoom += Vector2(fast_camera_zoom_speed, fast_camera_zoom_speed)
 	if Input.is_action_pressed("zoom_out") and camera_controls_enabled:
 		new_camera_zoom += Vector2(-current_camera_zoom_speed, -current_camera_zoom_speed)
+	if Input.is_action_just_released("zoom_out") and camera_controls_enabled:
+		new_camera_zoom += Vector2(-fast_camera_zoom_speed, -fast_camera_zoom_speed)
 	if camera.zoom != new_camera_zoom:
 		new_camera_zoom = new_camera_zoom.clamp(Vector2(0.1, 0.1), Vector2(5, 5))
 		create_tween().tween_property(camera, "zoom", new_camera_zoom, 0.05).set_ease(Tween.EASE_IN_OUT)
@@ -74,6 +80,20 @@ func _process(_delta):
 func _physics_process(_delta):
 	if debug_enabled:
 		debug_info.text = "FPS:" + str(Engine.get_frames_per_second())
+
+# mouse camera controls
+func _unhandled_input(event: InputEvent):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		get_viewport().set_input_as_handled()
+		if event.is_pressed():
+			previous_camera_position = event.position
+			_moveCamera = true
+		else:
+			_moveCamera = false
+	elif event is InputEventMouseMotion and _moveCamera and camera_controls_enabled:
+		get_viewport().set_input_as_handled()
+		camera.position += (previous_camera_position - event.position) * Vector2(1 / camera.zoom.x, 1 / camera.zoom.y)
+		previous_camera_position = event.position
 
 # ------ level transitions ------
 
