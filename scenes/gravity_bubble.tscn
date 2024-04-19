@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxfxcynteimyc"]
+[gd_scene load_steps=5 format=3 uid="uid://bxfxcynteimyc"]
 
 [ext_resource type="Script" path="res://scripts/gravity_bubble.gd" id="1_udqu7"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_pl40x"]
+[ext_resource type="Texture2D" uid="uid://8p74pkicnq12" path="res://assets/bubble.png" id="3_sw8ho"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
 radius = 42.56
@@ -11,12 +12,18 @@ script = ExtResource("1_udqu7")
 
 [node name="Area" type="Area2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(0, 0.611765, 0.733333, 0.333333)
+modulate = Color(1, 1, 1, 0.156863)
 position = Vector2(-1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Area"]
+visible = false
 scale = Vector2(4.6383, 4.6383)
 texture = ExtResource("2_pl40x")
+
+[node name="Bubble" type="Sprite2D" parent="Area"]
+position = Vector2(1, 0)
+scale = Vector2(1.32934, 1.32934)
+texture = ExtResource("3_sw8ho")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
 position = Vector2(1, 1)

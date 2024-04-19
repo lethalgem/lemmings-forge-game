@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://6owtqjmqtdxk"]
+[gd_scene load_steps=5 format=3 uid="uid://6owtqjmqtdxk"]
 
 [ext_resource type="Script" path="res://scripts/level_14.gd" id="1_5hqyt"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_7nqfr"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_jj7mb"]
+[ext_resource type="Texture2D" uid="uid://bufxwj7121db2" path="res://assets/planets/Solid/Oasis/Oasis_02-256x256.png" id="4_ds45l"]
 
 [node name="Level14" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_5hqyt")
@@ -15,3 +16,7 @@ position = Vector2(5469, -13)
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_jj7mb")]
 position = Vector2(121, 796)
 level = NodePath("..")
+
+[node name="Oasis02-256x256" type="Sprite2D" parent="."]
+position = Vector2(5469, -13)
+texture = ExtResource("4_ds45l")

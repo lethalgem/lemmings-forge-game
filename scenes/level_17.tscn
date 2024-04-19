@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://donw4f88in6vm"]
+[gd_scene load_steps=5 format=3 uid="uid://donw4f88in6vm"]
 
 [ext_resource type="Script" path="res://scripts/level_17.gd" id="1_q0s6p"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_1e8ai"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_yfhth"]
+[ext_resource type="Texture2D" uid="uid://c8eya17dw42ht" path="res://assets/planets/Solid/Lush/Lush_02-256x256.png" id="4_qprvi"]
 
 [node name="Level17" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_q0s6p")
@@ -15,3 +16,8 @@ position = Vector2(8399, -557)
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_yfhth")]
 position = Vector2(777, 903)
 level = NodePath("..")
+
+[node name="Lush02-256x256" type="Sprite2D" parent="."]
+position = Vector2(8399, -557)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("4_qprvi")

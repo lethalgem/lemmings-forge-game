@@ -8,3 +8,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body is Ore:
 		body.exitedGravityBubble()
+
+func _process(delta):
+	rotation += 12 * delta * PI / 180
+

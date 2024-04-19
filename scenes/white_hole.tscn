@@ -49,6 +49,7 @@ shape = SubResource("CircleShape2D_ysjjs")
 scale = Vector2(3, 3)
 
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea"]
+visible = false
 scale = Vector2(61.6225, 61.6225)
 shape = SubResource("CircleShape2D_blx7q")
 

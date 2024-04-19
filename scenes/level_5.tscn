@@ -25,26 +25,28 @@ texture = ExtResource("3_y1dyn")
 position = Vector2(4288, -68)
 level = NodePath("..")
 
-[node name="WhiteHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("2_my68g")]
-position = Vector2(8088, -610)
-_parent = NodePath("..")
+[node name="BlackHole" parent="." instance=ExtResource("4_td5kd")]
+position = Vector2(-20, 16)
+initial_gravity = 50.0
+minimum_gravity = 40.0
+maximum_gravity = 60.0
 
-[node name="WhiteHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("2_my68g")]
-position = Vector2(9164, -1584)
-_parent = NodePath("..")
+[node name="BlackHole4" parent="." instance=ExtResource("4_td5kd")]
+position = Vector2(1204, -367)
 
-[node name="WhiteHole3" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("2_my68g")]
-position = Vector2(10536, -1372)
-_parent = NodePath("..")
+[node name="BlackHole5" parent="." instance=ExtResource("4_td5kd")]
+position = Vector2(2119, -488)
 
-[node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_td5kd")]
-position = Vector2(8660, 948)
-_parent = NodePath("..")
+[node name="BlackHole6" parent="." instance=ExtResource("4_td5kd")]
+position = Vector2(2506, 813)
+initial_gravity = 50.0
+minimum_gravity = 40.0
+maximum_gravity = 60.0
 
-[node name="BlackHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_td5kd")]
-position = Vector2(10154, 1094)
-_parent = NodePath("..")
+[node name="WhiteHole" parent="." instance=ExtResource("2_my68g")]
+position = Vector2(4034, 829)
 
-[node name="BlackHole3" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_td5kd")]
-position = Vector2(11105, 426)
-_parent = NodePath("..")
+[node name="WhiteHole4" parent="." instance=ExtResource("2_my68g")]
+position = Vector2(3355, -339)
+initial_gravity = 5.0
+maximum_gravity = 10.0

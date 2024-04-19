@@ -1,17 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjfqg0ukji3b4"]
+[gd_scene load_steps=9 format=3 uid="uid://bjfqg0ukji3b4"]
 
 [ext_resource type="Script" path="res://scripts/level_7.gd" id="1_qekmk"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_t0m7t"]
+[ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="2_t3i5v"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="3_8yu37"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_laheb"]
+[ext_resource type="PackedScene" uid="uid://bxfxcynteimyc" path="res://scenes/gravity_bubble.tscn" id="3_umhr0"]
+[ext_resource type="Texture2D" uid="uid://db03l32hrbbql" path="res://assets/planets/Solid/Aquamarine/Aquamarine_05-256x256.png" id="4_nq75t"]
+[ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="5_mnw86"]
 
 [node name="Level7" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_qekmk")
 id = 7
 planet = NodePath("Planet")
 
+[node name="WhiteHole" parent="." instance=ExtResource("2_t3i5v")]
+position = Vector2(1016, 744)
+initial_gravity = 60.0
+minimum_gravity = 5.0
+maximum_gravity = 75.0
+
+[node name="BlackHole" parent="." instance=ExtResource("3_8yu37")]
+position = Vector2(1436, 400)
+
+[node name="BlackHole2" parent="." instance=ExtResource("3_8yu37")]
+position = Vector2(496, -428)
+initial_gravity = 20.0
+minimum_gravity = 15.0
+maximum_gravity = 25.0
+
+[node name="GravityBubble" parent="." instance=ExtResource("3_umhr0")]
+position = Vector2(1124, 324)
+
 [node name="Planet" parent="." instance=ExtResource("2_t0m7t")]
 position = Vector2(2050, 928)
+rotation = -2.77682
+scale = Vector2(1.05, 1.05)
+minimum_added_rotation = -80.0
+maximum_added_rotation = 80.0
+
+[node name="Aquamarine05-256x256" type="Sprite2D" parent="Planet"]
+position = Vector2(-0.000244141, 0)
+rotation = 2.77682
+scale = Vector2(0.619048, 0.619048)
+texture = ExtResource("4_nq75t")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_laheb")]
 position = Vector2(142, 124)
+scale = Vector2(5.74, 5.74)
 level = NodePath("..")
+
+[node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_mnw86")]
+position = Vector2(2056, 15.9999)
+rotation = -3.59538
+spaceshipId = 2
+_level = NodePath("..")

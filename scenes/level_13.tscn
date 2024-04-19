@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jtwkjg80jsij"]
+[gd_scene load_steps=5 format=3 uid="uid://jtwkjg80jsij"]
 
 [ext_resource type="Script" path="res://scripts/level_13.gd" id="1_7cmf0"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_7mbwk"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_mdm6f"]
+[ext_resource type="Texture2D" uid="uid://dk12n5qb4xm2" path="res://assets/planets/Solid/Snowy/Snowy_02-256x256.png" id="4_u1jkt"]
 
 [node name="Level13" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_7cmf0")
@@ -15,3 +16,8 @@ position = Vector2(243, 239)
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_mdm6f")]
 position = Vector2(10842, 10066)
 level = NodePath("..")
+
+[node name="Snowy02-256x256" type="Sprite2D" parent="."]
+position = Vector2(243, 239)
+scale = Vector2(4, 4)
+texture = ExtResource("4_u1jkt")

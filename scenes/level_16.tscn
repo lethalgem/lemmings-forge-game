@@ -10,6 +10,7 @@ id = 16
 planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_8gkcv")]
+visible = false
 position = Vector2(558, 343)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_m8nqf")]

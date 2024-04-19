@@ -1,6 +1,9 @@
 class_name WhiteHole
 extends BlackHole
 
+func _ready():
+	super()
+
 func getCurrentGravity():
 	return -1 * _currentGravity * gravityBase;
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcjhgunti06bg"]
+[gd_scene load_steps=5 format=3 uid="uid://dcjhgunti06bg"]
 
 [ext_resource type="Script" path="res://scripts/level_12.gd" id="1_vhryi"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_12hk2"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_u2muk"]
+[ext_resource type="Texture2D" uid="uid://ckuthy3shnd6u" path="res://assets/planets/Gaseous/Blue Giant/BlueGiant_04-256x256.png" id="4_puvi4"]
 
 [node name="Level12" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_vhryi")
@@ -15,3 +16,8 @@ position = Vector2(159, 107)
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_u2muk")]
 position = Vector2(5593, 1575)
 level = NodePath("..")
+
+[node name="BlueGiant04-256x256" type="Sprite2D" parent="."]
+position = Vector2(159, 107)
+scale = Vector2(2, 2)
+texture = ExtResource("4_puvi4")

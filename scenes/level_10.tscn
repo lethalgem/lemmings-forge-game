@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://fq6hu1up4vdw"]
+[gd_scene load_steps=5 format=3 uid="uid://fq6hu1up4vdw"]
 
 [ext_resource type="Script" path="res://scripts/level_10.gd" id="1_kx6vk"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_k8yh8"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_ihy8v"]
+[ext_resource type="Texture2D" uid="uid://dg8k0w7i4pwb1" path="res://assets/planets/Solid/Muddy/Muddy_01-256x256.png" id="4_o4xla"]
 
 [node name="Level10" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_kx6vk")
@@ -15,3 +16,8 @@ position = Vector2(286, 286)
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ihy8v")]
 position = Vector2(1630, 820)
 level = NodePath("..")
+
+[node name="Muddy01-256x256" type="Sprite2D" parent="."]
+position = Vector2(286, 286)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("4_o4xla")

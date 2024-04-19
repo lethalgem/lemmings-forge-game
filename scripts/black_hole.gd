@@ -20,7 +20,16 @@ var id = -1
 
 func _ready():
 	set_process_input(true)
-	setInitalGravity(initial_gravity)
+	
+	_currentGravity = initial_gravity
+	
+	#setInitalGravity(initial_gravity)
+	
+	print('***********************')
+	print(_currentGravity)
+	
+	%InnerBlackHole.scale.x = _currentGravity / 25 + .5
+	%InnerBlackHole.scale.y = _currentGravity / 25 + .5
 
 func addCrate(ore_instance):
 	ores_in_gravity_well.append(ore_instance)
@@ -30,14 +39,14 @@ func getCurrentGravity():
 func getPosition():
 	return global_position;
 
-func setInitalGravity(gravity):
-	_currentGravity = gravity
-	%HSlider.value = gravity
-	#%GravityLabel.text = str(_currentGravity)
+#func setInitalGravity(gravity):
+	#_currentGravity = gravity
+	#%HSlider.value = gravity
+	##%GravityLabel.text = str(_currentGravity)
 
-func gravityChanged(newValue: float):
-	_currentGravity = newValue
-	#%GravityLabel.text = str(_currentGravity)
+#func gravityChanged(newValue: float):
+	#_currentGravity = newValue
+	##%GravityLabel.text = str(_currentGravity)
 
 const SPEED = 300.0
 const ROTATION_SPEED = 10
@@ -52,8 +61,6 @@ func rotateHole(delta):
 	target_angle = %MoreOuterCircle.rotation + ( 2 * PI / 180 ) + _rotationIncreaseModifier * _currentGravity * 100 * PI * delta * .2 / 180
 	%MoreOuterCircle.rotation = target_angle
 
-
-
 	%InnerBlackHole.scale.x = _currentGravity / 25 + .5
 	%InnerBlackHole.scale.y = _currentGravity / 25 + .5
 
@@ -61,11 +68,11 @@ func checkGravityUpdate(delta):
 	if increaseGravity:
 		_currentGravity = _currentGravity + delta * _gravityIncreaseModifier
 		_currentGravity = min(_currentGravity, maximum_gravity)
-		%HSlider.value = _currentGravity
+		#%HSlider.value = _currentGravity
 	elif decreaseGravity:
 		_currentGravity = _currentGravity - delta * _gravityIncreaseModifier
 		_currentGravity = max(_currentGravity, minimum_gravity)
-		%HSlider.value = _currentGravity
+		#%HSlider.value = _currentGravity
 
 func _process(_delta):
 	if Input.is_action_pressed("left_click") and is_mouse_hovering:

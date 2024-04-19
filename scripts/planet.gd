@@ -79,11 +79,9 @@ func startCrates():
 	startCrates()
 
 
-
 func _on_area_mouse_entered():
 	print("hovering")
 	is_mouse_hovering = true
-
 
 func _on_area_mouse_exited():
 	is_mouse_hovering = false
