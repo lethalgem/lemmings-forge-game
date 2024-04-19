@@ -2,15 +2,46 @@ class_name Starship
 extends Node2D
 
 @export var spaceshipId = 1
-
 @export var _level: Level
 
 @onready var ore = preload("res://scenes/ore.tscn")
+@onready var forward_highlight = %ForwardHighlight
+@onready var reverse_highlight = %ReverseHighlight
 
 var ores_in_gravity_well = []
-var is_mouse_hovering = false
-var increaseAngle = false
-var decreaseAngle = false
+var increaseAngle: bool = false:
+	set(value):
+		if value:
+			forward_highlight.visible = true
+			reverse_highlight.visible = false
+		elif not value and is_mouse_hovering and not decreaseAngle:
+			forward_highlight.visible = true
+			reverse_highlight.visible = true
+		increaseAngle = value
+	get:
+		return increaseAngle
+var decreaseAngle: bool = false:
+	set(value):
+		if value:
+			forward_highlight.visible = false
+			reverse_highlight.visible = true
+		elif not value and is_mouse_hovering and not increaseAngle:
+			forward_highlight.visible = true
+			reverse_highlight.visible = true
+		decreaseAngle = value
+	get:
+		return decreaseAngle
+var is_mouse_hovering: bool = false:
+	set(value):
+		if value and not increaseAngle and not decreaseAngle:
+			forward_highlight.visible = true
+			reverse_highlight.visible = true
+		else:
+			forward_highlight.visible = false
+			reverse_highlight.visible = false
+		is_mouse_hovering = value
+	get:
+		return is_mouse_hovering
 
 func _ready():
 	%Spaceship1.visible = false

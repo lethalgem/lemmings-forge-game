@@ -1,12 +1,12 @@
+class_name WormHole
 extends Node2D
 
-class_name  WormHole
+@export var pair: WormHole
 
 @onready var ore = preload("res://scenes/ore.tscn")
 @onready var cast_to_ore = %DirectionRayCast
-var ores_in_gravity_well = []
 
-@export var pair: WormHole
+var ores_in_gravity_well = []
 
 func _on_body_entered(body):
 	if body is Ore:
@@ -16,9 +16,3 @@ func _on_body_entered(body):
 			else:
 				body.enteredWormHole()
 				body.global_position = pair.global_position
-		#body.enteredGravityBubble()
-			
-#func _on_body_exited(body):
-	#if body is Ore:
-		#body.exitedGravityBubble()
-		#
