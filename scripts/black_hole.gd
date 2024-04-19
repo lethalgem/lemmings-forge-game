@@ -20,19 +20,19 @@ var id = -1
 
 func _ready():
 	set_process_input(true)
-	
+
 	_currentGravity = initial_gravity
-	
+
 	#setInitalGravity(initial_gravity)
-	
+
 	#print('***********************')
 	#print(_currentGravity)
-	
+
 	%InnerBlackHole.scale.x = _currentGravity / 25 + .5
 	%InnerBlackHole.scale.y = _currentGravity / 25 + .5
 	%OuterArea2.scale.x = _currentGravity / 25 + .5
 	%OuterArea2.scale.y = _currentGravity / 25 + .5
-	
+
 
 func addCrate(ore_instance):
 	ores_in_gravity_well.append(ore_instance)

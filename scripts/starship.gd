@@ -34,7 +34,7 @@ func _ready():
 		%Spaceship9.visible = true
 	if spaceshipId == 10:
 		%Spaceship10.visible = true
-		
+
 	_currentRotation = rad_to_deg(rotation)
 	setLaunchVectorFromRotation()
 
@@ -56,7 +56,7 @@ func _physics_process(_delta):
 	elif decreaseAngle:
 		_currentRotation -= 1
 		setLaunchVectorFromRotation()
-		
+
 
 var _currentRotation = 0
 var _launchVector = Vector2(1, 0)

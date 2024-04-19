@@ -36,15 +36,6 @@ position = Vector2(1174, -8989)
 scale = Vector2(10.1512, 10.1512)
 texture = ExtResource("5_i2kbb")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-offset_left = -9044.0
-offset_top = 1554.0
-offset_right = 12384.0
-offset_bottom = 22430.0
-texture = ExtResource("7_e00g7")
-stretch_mode = 1
-
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -37941.0
 offset_top = -47097.0
@@ -132,11 +123,11 @@ position = Vector2(-186, -8618)
 unique_name_in_owner = true
 position = Vector2(-1492, 54)
 scale = Vector2(0.833, 0.833)
-zoom = Vector2(1.2, 1.2)
-limit_left = -8000
-limit_top = -18300
-limit_right = 11490
-limit_bottom = 1455
+zoom = Vector2(0.07, 0.07)
+limit_left = -20000
+limit_top = -20000
+limit_right = 20000
+limit_bottom = 10000
 limit_smoothed = true
 position_smoothing_enabled = true
 editor_draw_limits = true

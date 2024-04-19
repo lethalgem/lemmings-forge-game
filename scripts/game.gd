@@ -12,6 +12,7 @@ signal done_moving_camera
 @onready var camera = %GameCamera
 @onready var debug_info = %DebugInfo
 @onready var game_text = %GameText
+@onready var main_menu = %MainMenu
 @onready var level_1 = %Level1
 @onready var level_2 = %Level2
 @onready var level_3 = %Level3
@@ -39,8 +40,7 @@ var previous_camera_position: Vector2 = Vector2(0, 0);
 var _moveCamera: bool = false;
 
 func _ready():
-	#enter_level_14()
-	enter_level_1()
+	enter_level_11()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):
@@ -101,7 +101,7 @@ func enter_menu():
 	move_camera_to(Vector2(-1492, 54), Vector2(1.2, 1.2))
 
 func _on_start_button_button_up():
-	%MainMenu.visible = false
+	main_menu.visible = false
 	enter_level_1()
 
 func _on_controls_button_button_up():

@@ -49,7 +49,7 @@ func setCreatePlanet(planet, level_id):
 		%Ore17.visible = true
 	if _level_id == 18:
 		%Ore18.visible = true
-	
+
 	createdPlanet = planet
 
 @onready var _beenDetected = false
@@ -72,7 +72,7 @@ func _physics_process(delta):
 	var new_position = global_position + (current_direction * current_velocity * delta)
 	global_position = new_position
 
-	if global_position.x < -8000 or global_position.x > 11490 or global_position.y < -18300 or global_position.y > 1455:
+	if global_position.x < -20000 or global_position.x > 20000 or global_position.y < -20000 or global_position.y > 10000:
 		createdPlanet._level.deleteOre(self)
 
 @onready var _inGravityBubble = false
