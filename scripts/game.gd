@@ -14,6 +14,7 @@ signal done_moving_camera
 @onready var game_text = %GameText
 @onready var main_menu = %MainMenu
 @onready var scorecard: Scorecard = %Scorecard
+@onready var win_screen = %WinScreen
 @onready var level_1 = %Level1
 @onready var level_2 = %Level2
 @onready var level_3 = %Level3
@@ -423,6 +424,7 @@ func _on_level_18_level_completed(time):
 	print(time)
 	print("WIN")
 	scorecard.update_scorecard(18, time)
+	win_screen.visible = true
 	move_camera_to(Vector2(-1511, -5396), Vector2(1.2, 1.2))
 	await done_moving_camera
 	scorecard._on_win()
