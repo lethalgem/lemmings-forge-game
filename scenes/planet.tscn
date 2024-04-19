@@ -1,13 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwd1ajpap6kfd"]
+[gd_scene load_steps=5 format=3 uid="uid://bwd1ajpap6kfd"]
 
 [ext_resource type="Script" path="res://scripts/planet.gd" id="1_v2g7l"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_e7x25"]
+[ext_resource type="Texture2D" uid="uid://dbidkaacmqg53" path="res://assets/planet_highlight_blank.png" id="2_w6s2o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
 radius = 7.89911
 
 [node name="Planet" type="Node2D"]
 script = ExtResource("1_v2g7l")
+
+[node name="ForwardHighlight" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.835294, 0, 0.262745, 1)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_w6s2o")
+
+[node name="ReverseHighlight" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.235294, 0.34902, 1, 1)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_w6s2o")
 
 [node name="LaunchPad" type="ColorRect" parent="."]
 unique_name_in_owner = true

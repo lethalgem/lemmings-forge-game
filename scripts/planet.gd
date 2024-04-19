@@ -2,18 +2,53 @@ class_name Planet
 extends Node2D
 
 @onready var ore = preload("res://scenes/ore.tscn")
+@onready var forward_highlight = %ForwardHighlight
+@onready var reverse_highlight = %ReverseHighlight
+
 @export var minimum_added_rotation:float = -45
 @export var maximum_added_rotation:float = 45
 
 var _level: Level
 var ores_in_gravity_well = []
-var is_mouse_hovering = false
-var increaseAngle = false
-var decreaseAngle = false
 var _currentRotation = 0
 var _launchVector = Vector2(1, 0)
 const _rotationIncreaseModifier = 1
 var _initial_rotation = 0
+var increaseAngle: bool = false:
+	set(value):
+		if value:
+			forward_highlight.visible = true
+			reverse_highlight.visible = false
+		elif not value and is_mouse_hovering and not decreaseAngle:
+			forward_highlight.visible = true
+			reverse_highlight.visible = true
+		increaseAngle = value
+	get:
+		return increaseAngle
+var decreaseAngle: bool = false:
+	set(value):
+		if value:
+			forward_highlight.visible = false
+			reverse_highlight.visible = true
+		elif not value and is_mouse_hovering and not increaseAngle:
+			forward_highlight.visible = true
+			reverse_highlight.visible = true
+		decreaseAngle = value
+	get:
+		return decreaseAngle
+var is_mouse_hovering: bool = false:
+	set(value):
+		print(value, decreaseAngle, increaseAngle)
+		if value and not increaseAngle and not decreaseAngle:
+			print("changing")
+			forward_highlight.visible = true
+			reverse_highlight.visible = true
+		else:
+			forward_highlight.visible = false
+			reverse_highlight.visible = false
+		is_mouse_hovering = value
+	get:
+		return is_mouse_hovering
 
 func _ready():
 	_initial_rotation = rad_to_deg(rotation)
@@ -76,7 +111,6 @@ func startCrates():
 	%LaunchPad.visible = true
 
 	var ore_instance = ore.instantiate()
-	#ore_instance.global_position = global_position
 	ore_instance.global_position = Vector2((%LaunchPad.global_position.x + %LaunchPad2.global_position.x) / 2, (%LaunchPad.global_position.y + %LaunchPad2.global_position.y) / 2 )
 
 	ore_instance.forceDirection(_launchVector)
