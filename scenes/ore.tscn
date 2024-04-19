@@ -36,7 +36,6 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_4ayun")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.482269, 0.482269)
 texture = ExtResource("1_wsyv7")
 
@@ -96,7 +95,6 @@ texture = ExtResource("10_mqsv0")
 
 [node name="Ore9" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-visible = false
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("11_whyb8")
 

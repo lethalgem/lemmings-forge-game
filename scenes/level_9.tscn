@@ -16,7 +16,7 @@ id = 9
 planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_r75s1")]
-position = Vector2(5390, 4362)
+position = Vector2(5382, 4328)
 rotation = -2.40157
 scale = Vector2(2.13, 2.13)
 

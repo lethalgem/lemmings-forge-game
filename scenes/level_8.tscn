@@ -40,6 +40,6 @@ spaceshipId = 4
 _level = NodePath("..")
 
 [node name="BlackHole" parent="." instance=ExtResource("6_xbl4j")]
-position = Vector2(1246, 1553)
+position = Vector2(1075, 1398)
 minimum_gravity = 5.0
 maximum_gravity = 25.0
