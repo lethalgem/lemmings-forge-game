@@ -38,7 +38,7 @@ var previous_camera_position: Vector2 = Vector2(0, 0);
 var _moveCamera: bool = false;
 
 func _ready():
-	enter_level_1()
+	enter_menu()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):
@@ -95,9 +95,27 @@ func _unhandled_input(event: InputEvent):
 		camera.position += (previous_camera_position - event.position) * Vector2(1 / camera.zoom.x, 1 / camera.zoom.y)
 		previous_camera_position = event.position
 
+func enter_menu():
+	move_camera_to(Vector2(-1492, 54), Vector2(1.2, 1.2))
+
+func _on_start_button_button_up():
+	%MainMenu.visible = false
+	enter_level_1()
+
+func _on_controls_button_button_up():
+	enter_controls()
+
+func enter_controls():
+	move_camera_to(Vector2(-1492, 914), Vector2(1.2, 1.2))
+
+func _on_return_to_menu_button_button_up():
+	enter_menu()
+
 # ------ level transitions ------
 
 func enter_level_1():
+	move_camera_to(Vector2(-74, 54), Vector2(1.2, 1.2))
+	await done_moving_camera
 	game_text.queue_text("Howdy Boss! It's a big day in crazyville. Our miners have struck gold! Well not literally, more like iron. But it's as good as gold!", "What are you talking about?")
 	game_text.queue_text("Boss! Now isn't the time to be playing around It's the first piece to the puzzle for the antimatter recipe.", "Oh right! So what do we do?")
 	game_text.queue_text("Uh, you're the one in charge... let's start by getting the iron off planet x and to the refinery on x.", "Now that I can do!")
@@ -388,5 +406,3 @@ func _on_vsync_button_toggled(toggled_on):
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-
-
