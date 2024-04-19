@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://8jcj6gfy8xtn"]
+[gd_scene load_steps=8 format=3 uid="uid://8jcj6gfy8xtn"]
 
 [ext_resource type="Script" path="res://scripts/level_11.gd" id="1_bsfjf"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_ppr3g"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_jepui"]
 [ext_resource type="Texture2D" uid="uid://bocbj3cbhgsvs" path="res://assets/planets/Solid/Icy/Icy_03-256x256.png" id="4_8fuk0"]
+[ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="5_165as"]
+[ext_resource type="PackedScene" uid="uid://xa5nfh785sq4" path="res://scenes/extra_dark_black_hole.tscn" id="6_e80wa"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="7_61nk5"]
 
 [node name="Level11" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_bsfjf")
@@ -12,13 +15,33 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_ppr3g")]
 position = Vector2(2354, -1634)
-scale = Vector2(0.3, 0.3)
+rotation = 1.98968
+scale = Vector2(0.335, 0.335)
+
+[node name="Icy03-256x256" type="Sprite2D" parent="Planet"]
+rotation = -1.98968
+scale = Vector2(0.597015, 0.597015)
+texture = ExtResource("4_8fuk0")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_jepui")]
 position = Vector2(669, 888)
 level = NodePath("..")
 
-[node name="Icy03-256x256" type="Sprite2D" parent="."]
-position = Vector2(2355, -1633)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_8fuk0")
+[node name="WhiteHole" parent="." instance=ExtResource("5_165as")]
+position = Vector2(2408, -1080)
+minimum_gravity = 5.0
+maximum_gravity = 25.0
+
+[node name="ExtraDarkBlackHole" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("6_e80wa")]
+position = Vector2(2050, 478)
+rotation = 1.98968
+scale = Vector2(0.3, 0.3)
+initial_gravity = 95.0
+minimum_gravity = 100.0
+maximum_gravity = 105.0
+_parent = NodePath("..")
+
+[node name="BlackHole" parent="." instance=ExtResource("7_61nk5")]
+position = Vector2(738, -306)
+minimum_gravity = 5.0
+maximum_gravity = 15.0

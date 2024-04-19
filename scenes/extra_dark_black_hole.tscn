@@ -1,63 +1,79 @@
-[gd_scene load_steps=4 format=3 uid="uid://xa5nfh785sq4"]
+[gd_scene load_steps=6 format=3 uid="uid://xa5nfh785sq4"]
 
 [ext_resource type="Script" path="res://scripts/extra_dark_black_hole.gd" id="1_ck10r"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_hw0wg"]
+[ext_resource type="Texture2D" uid="uid://53yolqg2dw3i" path="res://assets/ExtraBlackHole.png" id="3_bjbit"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
+radius = 7.89911
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_elokm"]
 radius = 7.89911
 
 [node name="ExtraDarkBlackHole" type="Node2D"]
 script = ExtResource("1_ck10r")
 
-[node name="GravityLabel" type="Label" parent="."]
-unique_name_in_owner = true
-offset_left = -55.0
-offset_top = 135.0
-offset_right = 58.0
-offset_bottom = 158.0
-
-[node name="BlackHole" type="Area2D" parent="."]
+[node name="InnerBlackHole" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-1, 0)
 
-[node name="MoreOuterCircle" type="Sprite2D" parent="BlackHole"]
+[node name="MoreOuterCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.0470588, 0.0470588, 0.0470588, 1)
 position = Vector2(0.951223, 1)
 scale = Vector2(1.63159, 1.4539)
 texture = ExtResource("2_hw0wg")
 offset = Vector2(0.352102, -1.60422)
 
-[node name="OuterCircle" type="Sprite2D" parent="BlackHole"]
+[node name="OuterCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.0235294, 0.0235294, 0.0235294, 1)
 position = Vector2(1, 0.0346821)
 scale = Vector2(1.24823, 1.31206)
 texture = ExtResource("2_hw0wg")
 offset = Vector2(0.102289, -0.407516)
 
-[node name="InnerCircle" type="Sprite2D" parent="BlackHole"]
+[node name="InnerCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(1, -0.0354614)
 scale = Vector2(1.02083, 0.964539)
 texture = ExtResource("2_hw0wg")
 offset = Vector2(0, -1)
 
-[node name="HoleCollision" type="CollisionShape2D" parent="BlackHole"]
+[node name="ExtraBlackHole" type="Sprite2D" parent="InnerBlackHole"]
+position = Vector2(0.999998, 4.76837e-07)
+scale = Vector2(0.292, 0.292)
+texture = ExtResource("3_bjbit")
+
+[node name="HoleCollision" type="CollisionShape2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
 position = Vector2(1, 1)
 scale = Vector2(7.85, 7.85)
 shape = SubResource("CircleShape2D_ysjjs")
 
 [node name="OuterArea" type="Area2D" parent="."]
-position = Vector2(-2, 0)
+visible = false
+position = Vector2(-8, -4)
 
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea"]
 position = Vector2(0.999977, 3.8147e-06)
 scale = Vector2(61.6225, 61.6225)
 shape = SubResource("CircleShape2D_ysjjs")
 
-[connection signal="body_entered" from="BlackHole" to="." method="_on_body_entered"]
-[connection signal="body_entered" from="OuterArea" to="." method="_on_outer_collision_entered"]
-[connection signal="body_exited" from="OuterArea" to="." method="_on_outer_collision_exited"]
+[node name="OuterArea2" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="OuterCollision" type="CollisionShape2D" parent="OuterArea2"]
+position = Vector2(-2.28882e-05, 9.53674e-07)
+scale = Vector2(61.6225, 61.6225)
+shape = SubResource("CircleShape2D_elokm")
+
+[connection signal="body_entered" from="InnerBlackHole" to="." method="_on_body_entered"]
+[connection signal="mouse_entered" from="InnerBlackHole" to="." method="_on_black_hole_mouse_entered"]
+[connection signal="mouse_exited" from="InnerBlackHole" to="." method="_on_black_hole_mouse_exited"]
+[connection signal="body_entered" from="OuterArea2" to="." method="_on_outer_collision_entered"]
+[connection signal="body_exited" from="OuterArea2" to="." method="_on_outer_collision_exited"]

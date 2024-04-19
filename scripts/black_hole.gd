@@ -25,11 +25,14 @@ func _ready():
 	
 	#setInitalGravity(initial_gravity)
 	
-	print('***********************')
-	print(_currentGravity)
+	#print('***********************')
+	#print(_currentGravity)
 	
 	%InnerBlackHole.scale.x = _currentGravity / 25 + .5
 	%InnerBlackHole.scale.y = _currentGravity / 25 + .5
+	%OuterArea2.scale.x = _currentGravity / 25 + .5
+	%OuterArea2.scale.y = _currentGravity / 25 + .5
+	
 
 func addCrate(ore_instance):
 	ores_in_gravity_well.append(ore_instance)
@@ -63,6 +66,8 @@ func rotateHole(delta):
 
 	%InnerBlackHole.scale.x = _currentGravity / 25 + .5
 	%InnerBlackHole.scale.y = _currentGravity / 25 + .5
+	%OuterArea2.scale.x = _currentGravity / 25 + .5
+	%OuterArea2.scale.y = _currentGravity / 25 + .5
 
 func checkGravityUpdate(delta):
 	if increaseGravity:

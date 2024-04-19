@@ -30,9 +30,8 @@ position = Vector2(189, 255)
 scale = Vector2(9.645, 9.645)
 level = NodePath("..")
 
-[node name="SunBlue02-256x256" type="Sprite2D" parent="."]
-position = Vector2(189, 255)
-scale = Vector2(5, 5)
+[node name="SunBlue02-256x256" type="Sprite2D" parent="Forge"]
+scale = Vector2(0.518403, 0.518403)
 texture = ExtResource("5_navvr")
 
 [node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("6_spgcq")]
@@ -41,26 +40,38 @@ spaceshipId = 5
 _level = NodePath("..")
 
 [node name="Starship2" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("6_spgcq")]
-position = Vector2(111, 1425)
+position = Vector2(982, 1979)
 spaceshipId = 6
 _level = NodePath("..")
 
 [node name="Starship3" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("6_spgcq")]
-position = Vector2(-154, 2448)
+position = Vector2(1362, 1498)
 spaceshipId = 7
 _level = NodePath("..")
 
 [node name="BlackHole" parent="." instance=ExtResource("7_p720u")]
 position = Vector2(2560, 2272)
+initial_gravity = 20.0
+minimum_gravity = 10.0
+maximum_gravity = 50.0
 
 [node name="BlackHole2" parent="." instance=ExtResource("7_p720u")]
-position = Vector2(114, 990)
+position = Vector2(932, 1152)
+initial_gravity = 15.0
+minimum_gravity = 10.0
+maximum_gravity = 30.0
+
+[node name="BlackHole3" parent="." instance=ExtResource("7_p720u")]
+position = Vector2(1398, 510)
+initial_gravity = 95.0
+minimum_gravity = 75.0
+maximum_gravity = 150.0
 
 [node name="WhiteHole" parent="." instance=ExtResource("8_5sos7")]
-position = Vector2(470, 2146)
+position = Vector2(1986, 1196)
 
 [node name="GravityBubble" parent="." instance=ExtResource("8_lwkhv")]
 position = Vector2(2560, 2272)
 
 [node name="GravityBubble2" parent="." instance=ExtResource("8_lwkhv")]
-position = Vector2(470, 2146)
+position = Vector2(1986, 1196)

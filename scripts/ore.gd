@@ -10,7 +10,7 @@ var oreId = 0
 @onready var current_velocity = 300 * _speedModifier
 const minSpeed = 250
 
-var createdPlanet: Planet  = null
+var createdPlanet = null
 func setCreatePlanet(planet, level_id):
 	_level_id = level_id
 	if _level_id == 1:
@@ -99,6 +99,7 @@ func removeGravitySource(blackHole:BlackHole):
 func update(direction:Vector2, distance:float, gravity:float, delta:float):
 
 	if distance > 500 or _inGravityBubble:
+	#if _inGravityBubble:
 		return
 
 	var impactVector = pow(_speedModifier, 2.0/3) * direction * gravity * delta / (pow(distance, 1.5))

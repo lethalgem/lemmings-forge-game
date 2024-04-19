@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://6owtqjmqtdxk"]
+[gd_scene load_steps=7 format=3 uid="uid://6owtqjmqtdxk"]
 
 [ext_resource type="Script" path="res://scripts/level_14.gd" id="1_5hqyt"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_7nqfr"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_jj7mb"]
 [ext_resource type="Texture2D" uid="uid://bufxwj7121db2" path="res://assets/planets/Solid/Oasis/Oasis_02-256x256.png" id="4_ds45l"]
+[ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="5_4njuh"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="6_fc21k"]
 
 [node name="Level14" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_5hqyt")
@@ -12,6 +14,8 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_7nqfr")]
 position = Vector2(5469, -13)
+rotation = -3.35103
+scale = Vector2(1.62, 1.62)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_jj7mb")]
 position = Vector2(121, 796)
@@ -20,3 +24,17 @@ level = NodePath("..")
 [node name="Oasis02-256x256" type="Sprite2D" parent="."]
 position = Vector2(5469, -13)
 texture = ExtResource("4_ds45l")
+
+[node name="WormHole" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_4njuh")]
+position = Vector2(4588, 412)
+pair = NodePath("../WormHole2")
+
+[node name="WormHole2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_4njuh")]
+position = Vector2(914, 346)
+pair = NodePath("../WormHole")
+
+[node name="BlackHole" parent="." instance=ExtResource("6_fc21k")]
+position = Vector2(1278, 986)
+
+[node name="BlackHole2" parent="." instance=ExtResource("6_fc21k")]
+position = Vector2(4372, -170)

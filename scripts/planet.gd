@@ -61,11 +61,14 @@ func rotationChanged(newValue: float):
 	setLaunchVectorFromRotation()
 
 func _on_body_entered(body):
-	if _level.id == 15:
+	if _level.id == 15 or _level.id == 16:
 		return
 		
 	if body is Ore:
 		if body.createdPlanet != self:
+			print("----------------------")
+			print(body.createdPlanet._level.id)
+			print(self._level.id)
 			_level.deleteOre(body)
 
 
@@ -73,7 +76,8 @@ func startCrates():
 	%LaunchPad.visible = true
 
 	var ore_instance = ore.instantiate()
-	ore_instance.global_position = global_position
+	#ore_instance.global_position = global_position
+	ore_instance.global_position = Vector2((%LaunchPad.global_position.x + %LaunchPad2.global_position.x) / 2, (%LaunchPad.global_position.y + %LaunchPad2.global_position.y) / 2 ) 
 	
 	ore_instance.forceDirection(_launchVector)
 	ore_instance.setCreatePlanet(self, _level.id)

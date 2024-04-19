@@ -10,7 +10,11 @@ func _on_area_2d_body_entered(body):
 		print(level.id)
 		level.ore_absorbed()
 		body.queue_free()
-	else:
-		print('*****************************************************')
-		print(body._level_id)
-		print(level.id)
+	#else:
+		#print('*****************************************************')
+		#print(body._level_id)
+		#print(level.id)
+
+
+func _process(delta):
+	rotation -= 36 * delta * PI / 180

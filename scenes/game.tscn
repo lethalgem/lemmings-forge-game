@@ -37,6 +37,7 @@ scale = Vector2(10.1512, 10.1512)
 texture = ExtResource("5_i2kbb")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
 offset_left = -9044.0
 offset_top = 1554.0
 offset_right = 12384.0

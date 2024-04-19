@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://fq6hu1up4vdw"]
+[gd_scene load_steps=7 format=3 uid="uid://fq6hu1up4vdw"]
 
 [ext_resource type="Script" path="res://scripts/level_10.gd" id="1_kx6vk"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_k8yh8"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_ihy8v"]
 [ext_resource type="Texture2D" uid="uid://dg8k0w7i4pwb1" path="res://assets/planets/Solid/Muddy/Muddy_01-256x256.png" id="4_o4xla"]
+[ext_resource type="PackedScene" uid="uid://xa5nfh785sq4" path="res://scenes/extra_dark_black_hole.tscn" id="5_q7ayy"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="6_hyre6"]
 
 [node name="Level10" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_kx6vk")
@@ -12,6 +14,8 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_k8yh8")]
 position = Vector2(286, 286)
+minimum_added_rotation = -90.0
+maximum_added_rotation = 90.0
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ihy8v")]
 position = Vector2(1630, 820)
@@ -21,3 +25,15 @@ level = NodePath("..")
 position = Vector2(286, 286)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("4_o4xla")
+
+[node name="ExtraDarkBlackHole" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("5_q7ayy")]
+position = Vector2(562, 1150)
+initial_gravity = 35.0
+minimum_gravity = 35.0
+maximum_gravity = 35.0
+_parent = NodePath("..")
+
+[node name="BlackHole" parent="." instance=ExtResource("6_hyre6")]
+position = Vector2(1080, 348)
+minimum_gravity = 5.0
+maximum_gravity = 65.0
