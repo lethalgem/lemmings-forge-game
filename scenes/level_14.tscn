@@ -12,14 +12,16 @@ script = ExtResource("1_5hqyt")
 id = 14
 planet = NodePath("Planet")
 
+[node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_jj7mb")]
+unique_name_in_owner = true
+position = Vector2(121, 796)
+scale = Vector2(2, 2)
+level = NodePath("..")
+
 [node name="Planet" parent="." instance=ExtResource("2_7nqfr")]
 position = Vector2(5469, -13)
 rotation = -3.35103
 scale = Vector2(1.62, 1.62)
-
-[node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_jj7mb")]
-position = Vector2(121, 796)
-level = NodePath("..")
 
 [node name="Oasis02-256x256" type="Sprite2D" parent="."]
 position = Vector2(5469, -13)

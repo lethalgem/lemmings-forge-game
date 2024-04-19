@@ -18,7 +18,9 @@ minimum_added_rotation = -90.0
 maximum_added_rotation = 90.0
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ihy8v")]
+unique_name_in_owner = true
 position = Vector2(1630, 820)
+scale = Vector2(0.5, 0.5)
 level = NodePath("..")
 
 [node name="Muddy01-256x256" type="Sprite2D" parent="."]

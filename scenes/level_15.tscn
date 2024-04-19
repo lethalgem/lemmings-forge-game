@@ -14,5 +14,6 @@ visible = false
 position = Vector2(124, 940)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ojegt")]
+unique_name_in_owner = true
 position = Vector2(2545, -4624)
 level = NodePath("..")

@@ -19,7 +19,9 @@ planet = NodePath("Planet")
 position = Vector2(243, 239)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_mdm6f")]
+unique_name_in_owner = true
 position = Vector2(10842, 10066)
+scale = Vector2(3, 3)
 level = NodePath("..")
 
 [node name="Snowy02-256x256" type="Sprite2D" parent="."]

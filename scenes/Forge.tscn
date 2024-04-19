@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0u3fk2iyjxa4"]
+[gd_scene load_steps=5 format=3 uid="uid://c0u3fk2iyjxa4"]
 
 [ext_resource type="Script" path="res://scripts/forge.gd" id="1_m2bf1"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="1_s6uaj"]
+[ext_resource type="Texture2D" uid="uid://dbidkaacmqg53" path="res://assets/planet_highlight_blank.png" id="2_3x2e6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vvx6c"]
 radius = 63.2851
 
 [node name="Forge" type="Node2D"]
 script = ExtResource("1_m2bf1")
+
+[node name="GoalHighlight" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0.541176, 0.270588, 1)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_3x2e6")
 
 [node name="Area2D" type="Area2D" parent="."]
 

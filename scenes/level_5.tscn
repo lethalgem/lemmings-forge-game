@@ -22,7 +22,9 @@ scale = Vector2(0.65, 0.65)
 texture = ExtResource("3_y1dyn")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("5_akci7")]
-position = Vector2(4288, -68)
+unique_name_in_owner = true
+position = Vector2(4288, -117)
+scale = Vector2(2.2, 2.2)
 level = NodePath("..")
 
 [node name="BlackHole" parent="." instance=ExtResource("4_td5kd")]

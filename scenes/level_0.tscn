@@ -13,6 +13,7 @@ planet = NodePath("Planet")
 position = Vector2(118, 319)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_qbjau")]
+unique_name_in_owner = true
 position = Vector2(1045, 312)
 level = NodePath("..")
 

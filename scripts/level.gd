@@ -9,6 +9,7 @@ signal level_completed
 @export var planet: Planet
 
 @onready var ore_count_label: Label = %OreCountLabel
+@onready var forge: Forge = %Forge
 
 var ores_delivered = 0
 
@@ -21,6 +22,7 @@ func _ready():
 		planet.startCrates()
 
 func start():
+	forge.show_goal_highlight(true)
 	planet.startCrates()
 
 func deleteOre(body):
@@ -41,6 +43,7 @@ func ore_absorbed():
 func check_if_level_completed():
 	if ores_delivered == ore_goal:
 		print("level " + str(id) + " completed")
+		forge.show_goal_highlight(false)
 		emit_signal("level_completed")
 
 func print_ore_count():

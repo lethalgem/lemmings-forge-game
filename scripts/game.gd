@@ -32,7 +32,6 @@ signal done_moving_camera
 @onready var level_17 = %Level17
 @onready var level_18 = %Level18
 
-#var camera_controls_enabled = false
 var camera_controls_enabled = true
 var current_camera_move_speed = default_camera_move_speed
 var current_camera_zoom_speed = default_camera_zoom_speed
@@ -40,7 +39,7 @@ var previous_camera_position: Vector2 = Vector2(0, 0);
 var _moveCamera: bool = false;
 
 func _ready():
-	enter_level_7()
+	enter_level_1()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):

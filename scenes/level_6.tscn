@@ -26,6 +26,7 @@ minimum_added_rotation = -80.0
 maximum_added_rotation = 80.0
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_htbi3")]
+unique_name_in_owner = true
 position = Vector2(184, 556)
 level = NodePath("..")
 
