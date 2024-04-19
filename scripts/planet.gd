@@ -99,9 +99,6 @@ func _on_body_entered(body):
 
 	if body is Ore:
 		if body.createdPlanet != self:
-			print("----------------------")
-			print(body.createdPlanet._level.id)
-			print(self._level.id)
 			_level.deleteOre(body)
 
 
@@ -120,7 +117,7 @@ func startCrates():
 
 
 func _on_area_mouse_entered():
-	print("hovering")
+
 	is_mouse_hovering = true
 
 func _on_area_mouse_exited():

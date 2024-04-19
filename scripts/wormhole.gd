@@ -4,7 +4,6 @@ extends Node2D
 @export var pair: WormHole
 
 @onready var ore = preload("res://scenes/ore.tscn")
-@onready var cast_to_ore = %DirectionRayCast
 
 var ores_in_gravity_well = []
 

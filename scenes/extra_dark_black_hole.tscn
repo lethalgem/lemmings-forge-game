@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://xa5nfh785sq4"]
+[gd_scene load_steps=7 format=3 uid="uid://xa5nfh785sq4"]
 
 [ext_resource type="Script" path="res://scripts/extra_dark_black_hole.gd" id="1_ck10r"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_hw0wg"]
 [ext_resource type="Texture2D" uid="uid://53yolqg2dw3i" path="res://assets/ExtraBlackHole.png" id="3_bjbit"]
+[ext_resource type="Texture2D" uid="uid://dbidkaacmqg53" path="res://assets/planet_highlight_blank.png" id="4_p8xwi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
 radius = 7.89911
@@ -71,6 +72,20 @@ unique_name_in_owner = true
 position = Vector2(-2.28882e-05, 9.53674e-07)
 scale = Vector2(61.6225, 61.6225)
 shape = SubResource("CircleShape2D_elokm")
+
+[node name="ForwardHighlight" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.835294, 0, 0.262745, 1)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("4_p8xwi")
+
+[node name="ReverseHighlight" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.235294, 0.34902, 1, 1)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("4_p8xwi")
 
 [connection signal="body_entered" from="InnerBlackHole" to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="InnerBlackHole" to="." method="_on_black_hole_mouse_entered"]

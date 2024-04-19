@@ -17,12 +17,6 @@ unique_name_in_owner = true
 position = Vector2(1407, 552)
 level = NodePath("..")
 
-[node name="OreCountLabel" type="Label" parent="Forge"]
-unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
-
 [node name="BlackHole" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("3_aukuy")]
 position = Vector2(987, 555)
 _parent = NodePath("..")

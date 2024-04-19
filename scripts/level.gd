@@ -8,7 +8,6 @@ signal level_completed
 @export var ore_goal = 10
 @export var planet: Planet
 
-@onready var ore_count_label: Label = %OreCountLabel
 @onready var forge: Forge = %Forge
 
 var ores_delivered = 0
