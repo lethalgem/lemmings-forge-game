@@ -48,6 +48,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ees6m")
 
 [node name="Spaceship4" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, 0)
 rotation = 1.5708
@@ -55,6 +56,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_1318k")
 
 [node name="Spaceship5" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, 0)
 rotation = 1.5708
@@ -62,6 +64,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_ayg31")
 
 [node name="Spaceship6" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, 0)
 rotation = 1.5708
@@ -69,6 +72,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_ip52h")
 
 [node name="Spaceship7" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, 0)
 rotation = 1.5708
@@ -76,6 +80,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_exlqb")
 
 [node name="Spaceship8" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, 0)
 rotation = 1.5708
@@ -83,6 +88,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_rallq")
 
 [node name="Spaceship9" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, 0)
 rotation = 1.5708
@@ -90,6 +96,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_2nwd8")
 
 [node name="Spaceship10" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(1, 0)
 rotation = 1.5708

@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbmhitdhm32qq"]
+[gd_scene load_steps=10 format=3 uid="uid://dbmhitdhm32qq"]
 
 [ext_resource type="Script" path="res://scripts/level_9.gd" id="1_n4xd4"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_r75s1"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_oxugk"]
 [ext_resource type="Texture2D" uid="uid://cd0nvncpvvo3v" path="res://assets/planets/Solid/Magma/Magma_03-256x256.png" id="4_jh2hh"]
 [ext_resource type="Texture2D" uid="uid://chqdqxi5c5fv" path="res://assets/planets/Suns/Blue Sun/Sun_Blue_02-256x256.png" id="5_navvr"]
+[ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="6_spgcq"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="7_p720u"]
+[ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="8_5sos7"]
+[ext_resource type="PackedScene" uid="uid://bxfxcynteimyc" path="res://scenes/gravity_bubble.tscn" id="8_lwkhv"]
 
 [node name="Level9" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_n4xd4")
@@ -13,18 +17,50 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_r75s1")]
 position = Vector2(5390, 4362)
-scale = Vector2(2, 2)
+rotation = -2.40157
+scale = Vector2(2.13, 2.13)
+
+[node name="Magma03-256x256" type="Sprite2D" parent="Planet"]
+rotation = 2.40157
+scale = Vector2(0.610329, 0.610329)
+texture = ExtResource("4_jh2hh")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_oxugk")]
 position = Vector2(189, 255)
+scale = Vector2(9.645, 9.645)
 level = NodePath("..")
-
-[node name="Magma03-256x256" type="Sprite2D" parent="."]
-position = Vector2(5390, 4362)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("4_jh2hh")
 
 [node name="SunBlue02-256x256" type="Sprite2D" parent="."]
 position = Vector2(189, 255)
 scale = Vector2(5, 5)
 texture = ExtResource("5_navvr")
+
+[node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("6_spgcq")]
+position = Vector2(3077, 3143)
+spaceshipId = 5
+_level = NodePath("..")
+
+[node name="Starship2" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("6_spgcq")]
+position = Vector2(111, 1425)
+spaceshipId = 6
+_level = NodePath("..")
+
+[node name="Starship3" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("6_spgcq")]
+position = Vector2(-154, 2448)
+spaceshipId = 7
+_level = NodePath("..")
+
+[node name="BlackHole" parent="." instance=ExtResource("7_p720u")]
+position = Vector2(2560, 2272)
+
+[node name="BlackHole2" parent="." instance=ExtResource("7_p720u")]
+position = Vector2(114, 990)
+
+[node name="WhiteHole" parent="." instance=ExtResource("8_5sos7")]
+position = Vector2(470, 2146)
+
+[node name="GravityBubble" parent="." instance=ExtResource("8_lwkhv")]
+position = Vector2(2560, 2272)
+
+[node name="GravityBubble2" parent="." instance=ExtResource("8_lwkhv")]
+position = Vector2(470, 2146)

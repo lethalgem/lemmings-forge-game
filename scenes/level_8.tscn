@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://wuphg0mig4uc"]
+[gd_scene load_steps=7 format=3 uid="uid://wuphg0mig4uc"]
 
 [ext_resource type="Script" path="res://scripts/level_8.gd" id="1_gm0rw"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_i35qg"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_koj10"]
 [ext_resource type="Texture2D" uid="uid://cu8nq4pcv2ly2" path="res://assets/planets/Gaseous/Green Giant/GreenGiant_02-256x256.png" id="4_7jqpk"]
 [ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="5_6puvb"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="6_xbl4j"]
 
 [node name="Level8" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_gm0rw")
@@ -13,7 +14,8 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_i35qg")]
 position = Vector2(884, 116)
-minimum_added_rotation = -10.0
+scale = Vector2(4.825, 4.825)
+minimum_added_rotation = -30.0
 maximum_added_rotation = 10.0
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_koj10")]
@@ -26,7 +28,18 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_7jqpk")
 
 [node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_6puvb")]
-position = Vector2(1245, 747)
-rotation = 1.67552
+position = Vector2(216, 494)
+rotation = 2.71573
 spaceshipId = 3
 _level = NodePath("..")
+
+[node name="Starship2" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_6puvb")]
+position = Vector2(630, -637)
+rotation = -1.20079
+spaceshipId = 4
+_level = NodePath("..")
+
+[node name="BlackHole" parent="." instance=ExtResource("6_xbl4j")]
+position = Vector2(1246, 1553)
+minimum_gravity = 5.0
+maximum_gravity = 25.0

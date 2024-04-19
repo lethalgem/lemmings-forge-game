@@ -40,7 +40,7 @@ var _moveCamera: bool = false;
 
 func _ready():
 	#enter_level_1()
-	enter_level_8()
+	enter_level_9()
 	#enter_menu()
 
 func _process(_delta):
