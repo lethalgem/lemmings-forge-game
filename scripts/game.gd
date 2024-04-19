@@ -13,6 +13,7 @@ signal done_moving_camera
 @onready var debug_info = %DebugInfo
 @onready var game_text = %GameText
 @onready var main_menu = %MainMenu
+@onready var scorecard: Scorecard = %Scorecard
 @onready var level_1 = %Level1
 @onready var level_2 = %Level2
 @onready var level_3 = %Level3
@@ -125,9 +126,10 @@ func enter_level_1():
 	await done_moving_camera
 	level_1.start()
 
-func _on_level_1_level_completed():
+func _on_level_1_level_completed(time):
 	print("level 1 completed")
-	enter_level_2()
+	print(time)
+	scorecard.update_scorecard(1, time)
 
 func enter_level_2():
 	camera_controls_enabled = false
@@ -144,8 +146,10 @@ func enter_level_2():
 	level_2.start()
 	camera_controls_enabled = true
 
-func _on_level_2_level_completed():
+func _on_level_2_level_completed(time):
 	print("level 2 completed")
+	print(time)
+	scorecard.update_scorecard(2, time)
 	enter_level_3()
 
 func enter_level_3():
@@ -159,8 +163,10 @@ func enter_level_3():
 	level_3.start()
 	camera_controls_enabled = true
 
-func _on_level_3_level_completed():
+func _on_level_3_level_completed(time):
 	print("level 3 completed")
+	print(time)
+	scorecard.update_scorecard(3, time)
 	enter_level_4()
 
 func enter_level_4():
@@ -174,8 +180,10 @@ func enter_level_4():
 	level_4.start()
 	camera_controls_enabled = true
 
-func _on_level_4_level_completed():
+func _on_level_4_level_completed(time):
 	print("level 4 completed")
+	print(time)
+	scorecard.update_scorecard(4, time)
 	enter_level_5()
 
 func enter_level_5():
@@ -189,8 +197,10 @@ func enter_level_5():
 	level_5.start()
 	camera_controls_enabled = true
 
-func _on_level_5_level_completed():
+func _on_level_5_level_completed(time):
 	print("level 5 completed")
+	print(time)
+	scorecard.update_scorecard(5, time)
 	enter_level_6()
 
 func enter_level_6():
@@ -204,8 +214,10 @@ func enter_level_6():
 	level_6.start()
 	camera_controls_enabled = true
 
-func _on_level_6_level_completed():
+func _on_level_6_level_completed(time):
 	print("level 6 completed")
+	print(time)
+	scorecard.update_scorecard(6, time)
 	enter_level_7()
 
 func enter_level_7():
@@ -219,8 +231,10 @@ func enter_level_7():
 	level_7.start()
 	camera_controls_enabled = true
 
-func _on_level_7_level_completed():
+func _on_level_7_level_completed(time):
 	print("level 7 completed")
+	print(time)
+	scorecard.update_scorecard(7, time)
 	enter_level_8()
 
 func enter_level_8():
@@ -234,8 +248,10 @@ func enter_level_8():
 	level_8.start()
 	camera_controls_enabled = true
 
-func _on_level_8_level_completed():
+func _on_level_8_level_completed(time):
 	print("level 8 completed")
+	print(time)
+	scorecard.update_scorecard(8, time)
 	enter_level_9()
 
 func enter_level_9():
@@ -249,8 +265,10 @@ func enter_level_9():
 	level_9.start()
 	camera_controls_enabled = true
 
-func _on_level_9_level_completed():
+func _on_level_9_level_completed(time):
 	print("level 9 completed")
+	print(time)
+	scorecard.update_scorecard(9, time)
 	enter_level_10()
 
 func enter_level_10():
@@ -264,8 +282,10 @@ func enter_level_10():
 	level_10.start()
 	camera_controls_enabled = true
 
-func _on_level_10_level_completed():
+func _on_level_10_level_completed(time):
 	print("level 10 completed")
+	print(time)
+	scorecard.update_scorecard(10, time)
 	enter_level_11()
 
 func enter_level_11():
@@ -279,8 +299,10 @@ func enter_level_11():
 	level_11.start()
 	camera_controls_enabled = true
 
-func _on_level_11_level_completed():
+func _on_level_11_level_completed(time):
 	print("level 11 completed")
+	print(time)
+	scorecard.update_scorecard(11, time)
 	enter_level_12()
 
 func enter_level_12():
@@ -294,8 +316,10 @@ func enter_level_12():
 	level_12.start()
 	camera_controls_enabled = true
 
-func _on_level_12_level_completed():
+func _on_level_12_level_completed(time):
 	print("level 12 completed")
+	print(time)
+	scorecard.update_scorecard(12, time)
 	enter_level_13()
 
 func enter_level_13():
@@ -309,8 +333,10 @@ func enter_level_13():
 	level_13.start()
 	camera_controls_enabled = true
 
-func _on_level_13_level_completed():
+func _on_level_13_level_completed(time):
 	print("level 13 completed")
+	print(time)
+	scorecard.update_scorecard(13, time)
 	enter_level_14()
 
 func enter_level_14():
@@ -324,8 +350,10 @@ func enter_level_14():
 	level_14.start()
 	camera_controls_enabled = true
 
-func _on_level_14_level_completed():
+func _on_level_14_level_completed(time):
 	print("level 14 completed")
+	print(time)
+	scorecard.update_scorecard(14, time)
 	enter_level_15()
 
 func enter_level_15():
@@ -339,8 +367,10 @@ func enter_level_15():
 	level_15.start()
 	camera_controls_enabled = true
 
-func _on_level_15_level_completed():
+func _on_level_15_level_completed(time):
 	print("level 15 completed")
+	print(time)
+	scorecard.update_scorecard(15, time)
 	enter_level_16()
 
 func enter_level_16():
@@ -354,8 +384,10 @@ func enter_level_16():
 	level_16.start()
 	camera_controls_enabled = true
 
-func _on_level_16_level_completed():
+func _on_level_16_level_completed(time):
 	print("level 16 completed")
+	print(time)
+	scorecard.update_scorecard(16, time)
 	enter_level_17()
 
 func enter_level_17():
@@ -369,8 +401,10 @@ func enter_level_17():
 	level_17.start()
 	camera_controls_enabled = true
 
-func _on_level_17_level_completed():
+func _on_level_17_level_completed(time):
 	print("level 17 completed")
+	print(time)
+	scorecard.update_scorecard(17, time)
 	enter_level_18()
 
 func enter_level_18():
@@ -384,12 +418,15 @@ func enter_level_18():
 	level_18.start()
 	camera_controls_enabled = true
 
-func _on_level_18_level_completed():
+func _on_level_18_level_completed(time):
 	print("level 18 completed")
+	print(time)
 	print("WIN")
-	print("WIN")
-	print("WIN")
-	print("WIN")
+	scorecard.update_scorecard(18, time)
+	move_camera_to(Vector2(-1511, -5396), Vector2(1.2, 1.2))
+	await done_moving_camera
+	scorecard._on_win()
+
 # ------ ----------------- ------
 
 func move_camera_to(new_position: Vector2, new_zoom: Vector2, seconds_to_complete = 0.5):

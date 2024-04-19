@@ -8,8 +8,6 @@ func _physics_process(delta):
 	rotateHole(delta)
 	checkGravityUpdate(delta)
 
-
-
 func _on_black_hole_mouse_entered():
 	pass
 
