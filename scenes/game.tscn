@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdi0jax0gnkmo"]
+[gd_scene load_steps=29 format=3 uid="uid://bdi0jax0gnkmo"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_61p2q"]
 [ext_resource type="Theme" uid="uid://dix67j78pfl5i" path="res://themes/game.tres" id="3_6lea7"]
@@ -27,6 +27,7 @@
 [ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="24_fu5y4"]
 [ext_resource type="Script" path="res://scripts/scorecard.gd" id="24_kaha7"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="25_w2tsg"]
+[ext_resource type="AudioStream" uid="uid://dyo0d0xqu35q4" path="res://assets/sounds/space_ambience.mp3" id="26_3bu7j"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
@@ -625,7 +626,12 @@ theme = ExtResource("3_6lea7")
 theme_override_font_sizes/font_size = 36
 text = "Return to menu"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AmbiencePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_3bu7j")
+volume_db = -10.0
+autoplay = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_adh60")
 script = ExtResource("25_w2tsg")
 

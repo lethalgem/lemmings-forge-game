@@ -8,20 +8,28 @@ extends Node2D
 
 @onready var forward_highlight = %ForwardHighlight
 @onready var reverse_highlight = %ReverseHighlight
+@onready var change_gravity_player: AudioStreamPlayer2D = %ChangeGravityPlayer
 
 const _gravityIncreaseModifier = 4
 const _rotationIncreaseModifier = 2
 
 var _currentGravity:float = 10
 var ores_in_gravity_well = []
+var is_playing_sound = false
 var increaseGravity: bool = false:
 	set(value):
 		if value:
 			forward_highlight.visible = true
 			reverse_highlight.visible = false
+			if not is_playing_sound:
+				is_playing_sound = true
+				change_gravity_player.play()
 		elif not value and is_mouse_hovering and not decreaseGravity:
 			forward_highlight.visible = true
 			reverse_highlight.visible = true
+			if is_playing_sound:
+				is_playing_sound = false
+				change_gravity_player.stop
 		increaseGravity = value
 	get:
 		return increaseGravity
@@ -30,9 +38,15 @@ var decreaseGravity: bool = false:
 		if value:
 			forward_highlight.visible = false
 			reverse_highlight.visible = true
+			if not is_playing_sound:
+				is_playing_sound = true
+				change_gravity_player.play()
 		elif not value and is_mouse_hovering and not increaseGravity:
 			forward_highlight.visible = true
 			reverse_highlight.visible = true
+			if is_playing_sound:
+				is_playing_sound = false
+				change_gravity_player.stop
 		decreaseGravity = value
 	get:
 		return decreaseGravity

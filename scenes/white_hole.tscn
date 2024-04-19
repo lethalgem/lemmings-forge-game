@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://guylsgegxwxb"]
+[gd_scene load_steps=8 format=3 uid="uid://guylsgegxwxb"]
 
 [ext_resource type="Script" path="res://scripts/white_hole.gd" id="1_h7gu7"]
 [ext_resource type="Texture2D" uid="uid://cyf177o7sdemr" path="res://assets/black_hole_sprite.png" id="2_a7r8o"]
 [ext_resource type="Texture2D" uid="uid://dbidkaacmqg53" path="res://assets/planet_highlight_blank.png" id="2_cx3f4"]
 [ext_resource type="Texture2D" uid="uid://btiy56hi8xki6" path="res://assets/WhiteHole.png" id="3_4n47c"]
+[ext_resource type="AudioStream" uid="uid://d0njp2axq6jer" path="res://assets/sounds/change_gravity.mp3" id="5_7l6df"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ysjjs"]
 radius = 7.89911
@@ -76,6 +77,12 @@ visible = false
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea2"]
 scale = Vector2(61.6225, 61.6225)
 shape = SubResource("CircleShape2D_blx7q")
+
+[node name="ChangeGravityPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(61.6225, 61.6225)
+stream = ExtResource("5_7l6df")
+volume_db = 6.0
 
 [connection signal="body_entered" from="InnerBlackHole" to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="InnerBlackHole" to="." method="_on_black_hole_mouse_entered"]
