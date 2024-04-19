@@ -39,7 +39,6 @@ var decreaseGravity: bool = false:
 var is_mouse_hovering: bool = false:
 	set(value):
 		if value and not increaseGravity and not decreaseGravity:
-			print("changing")
 			forward_highlight.visible = true
 			reverse_highlight.visible = true
 		else:
@@ -90,10 +89,10 @@ func rotateHole(delta):
 	%OuterArea2.scale.x = _currentGravity / 25 + .5
 	%OuterArea2.scale.y = _currentGravity / 25 + .5
 	if forward_highlight != null and reverse_highlight != null:
-		forward_highlight.scale.x = _currentGravity / 25 + .85
-		forward_highlight.scale.y = _currentGravity / 25 + .85
-		reverse_highlight.scale.x = _currentGravity / 25 + .85
-		reverse_highlight.scale.y = _currentGravity / 25 + .85
+		forward_highlight.scale.x = _currentGravity / 25 + 1
+		forward_highlight.scale.y = _currentGravity / 25 + 1
+		reverse_highlight.scale.x = _currentGravity / 25 + 1
+		reverse_highlight.scale.y = _currentGravity / 25 + 1
 
 func checkGravityUpdate(delta):
 	if increaseGravity:

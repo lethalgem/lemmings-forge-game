@@ -39,7 +39,6 @@ var decreaseAngle: bool = false:
 var is_mouse_hovering: bool = false:
 	set(value):
 		if value and not increaseAngle and not decreaseAngle:
-			print("changing")
 			forward_highlight.visible = true
 			reverse_highlight.visible = true
 		else:
