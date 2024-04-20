@@ -10,7 +10,7 @@ extends Node2D
 @onready var reverse_highlight = %ReverseHighlight
 @onready var change_gravity_player: AudioStreamPlayer2D = %ChangeGravityPlayer
 
-const _gravityIncreaseModifier = 1.4 #4
+const _gravityIncreaseModifier = 3
 const _rotationIncreaseModifier = 2
 
 var _currentGravity:float = 10
@@ -146,7 +146,9 @@ func _on_body_entered(body):
 			if _parent != null:
 				_parent.deleteOre(body)
 			else:
-				print('NULL PARENT WHEN TRYING TO REMOVE!!!!!!!!!!!!')
+				print('NULL PARENT WHEN TRYING TO REMOVE!!!!!!!!!!!!')				
+				print(body.oreId)
+				body.queue_free()
 
 func _on_outer_collision_entered(body):
 	ores_in_gravity_well.append(body)

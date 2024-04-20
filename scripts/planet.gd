@@ -8,7 +8,7 @@ extends Node2D
 
 @export var minimum_added_rotation:float = -45
 @export var maximum_added_rotation:float = 45
-@export var sendCratesIndependently = true # CHANGE THIS false
+@export var sendCratesIndependently = false
 
 
 var _level: Level
@@ -113,9 +113,9 @@ func _on_body_entered(body):
 	if _level.id == 15 or _level.id == 16:
 		return
 
-	if body is Ore:
-		if body.createdPlanet != self:
-			_level.deleteOre(body)
+	#if body is Ore:
+		#if body.createdPlanet != self:
+			#_level.deleteOre(body)
 
 var nextOreId = 0
 func startCrates():

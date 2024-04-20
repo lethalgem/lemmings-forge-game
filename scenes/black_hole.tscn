@@ -13,20 +13,6 @@ radius = 7.89911
 [node name="BlackHole" type="Node2D"]
 script = ExtResource("1_itekg")
 
-[node name="ForwardHighlight" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-modulate = Color(0.835294, 0, 0.262745, 1)
-scale = Vector2(1.7, 1.7)
-texture = ExtResource("2_pfrat")
-
-[node name="ReverseHighlight" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-modulate = Color(0.235294, 0.34902, 1, 1)
-scale = Vector2(1.7, 1.7)
-texture = ExtResource("2_pfrat")
-
 [node name="GravityLabel" type="Label" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -37,6 +23,20 @@ offset_bottom = 158.0
 
 [node name="InnerBlackHole" type="Area2D" parent="."]
 unique_name_in_owner = true
+
+[node name="ForwardHighlight" type="Sprite2D" parent="InnerBlackHole"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.235294, 0.34902, 1, 1)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_pfrat")
+
+[node name="ReverseHighlight" type="Sprite2D" parent="InnerBlackHole"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.835294, 0, 0.262745, 1)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_pfrat")
 
 [node name="MoreOuterCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true

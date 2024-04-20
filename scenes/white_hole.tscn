@@ -16,22 +16,22 @@ radius = 7.89911
 [node name="WhiteHole" type="Node2D"]
 script = ExtResource("1_h7gu7")
 
-[node name="ForwardHighlight" type="Sprite2D" parent="."]
+[node name="InnerBlackHole" type="Area2D" parent="."]
 unique_name_in_owner = true
-visible = false
-modulate = Color(0.835294, 0, 0.262745, 1)
-scale = Vector2(1.7, 1.7)
-texture = ExtResource("2_cx3f4")
 
-[node name="ReverseHighlight" type="Sprite2D" parent="."]
+[node name="ForwardHighlight" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
 visible = false
 modulate = Color(0.235294, 0.34902, 1, 1)
-scale = Vector2(1.7, 1.7)
+scale = Vector2(2.89, 2.89)
 texture = ExtResource("2_cx3f4")
 
-[node name="InnerBlackHole" type="Area2D" parent="."]
+[node name="ReverseHighlight" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true
+visible = false
+modulate = Color(0.835294, 0, 0.262745, 1)
+scale = Vector2(2.89, 2.89)
+texture = ExtResource("2_cx3f4")
 
 [node name="MoreOuterCircle" type="Sprite2D" parent="InnerBlackHole"]
 unique_name_in_owner = true

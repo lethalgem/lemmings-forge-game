@@ -11,22 +11,9 @@ radius = 7.89911
 [node name="Planet" type="Node2D"]
 script = ExtResource("1_v2g7l")
 
-[node name="ForwardHighlight" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-modulate = Color(0.835294, 0, 0.262745, 1)
-scale = Vector2(1.35, 1.35)
-texture = ExtResource("2_w6s2o")
-
-[node name="ReverseHighlight" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-modulate = Color(0.235294, 0.34902, 1, 1)
-scale = Vector2(1.35, 1.35)
-texture = ExtResource("2_w6s2o")
-
 [node name="LaunchPad" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = 36.0
 offset_top = -31.0
 offset_right = 87.0
@@ -44,6 +31,22 @@ color = Color(0.431373, 0.431373, 0.431373, 1)
 [node name="Area" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-1, 0)
+
+[node name="ForwardHighlight" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.835294, 0, 0.262745, 1)
+position = Vector2(1, 0)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_w6s2o")
+
+[node name="ReverseHighlight" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.235294, 0.34902, 1, 1)
+position = Vector2(1, 0)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_w6s2o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area"]
 modulate = Color(0.415686, 0.686275, 0.360784, 1)

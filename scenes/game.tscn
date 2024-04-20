@@ -36,6 +36,7 @@ script = ExtResource("1_61p2q")
 debug_enabled = true
 
 [node name="GameMap" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1174, -8989)
 scale = Vector2(10.1512, 10.1512)
 texture = ExtResource("5_i2kbb")
@@ -58,9 +59,10 @@ unique_name_in_owner = true
 position = Vector2(88, -881)
 nextLevel = NodePath("../Level3")
 
-[node name="Level3" parent="." instance=ExtResource("6_pjsjs")]
+[node name="Level3" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("6_pjsjs")]
 unique_name_in_owner = true
 position = Vector2(670, -1610)
+nextLevel = NodePath("../Level4")
 
 [node name="Level4" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("7_ee6yr")]
 unique_name_in_owner = true
@@ -73,7 +75,7 @@ unique_name_in_owner = true
 position = Vector2(1612, -3700)
 debug_enabled = false
 id = 0
-nextLevel = NodePath(".")
+nextLevel = NodePath("../Level6")
 
 [node name="Level6" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("9_mv82c")]
 unique_name_in_owner = true

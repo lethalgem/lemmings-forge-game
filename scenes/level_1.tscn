@@ -23,6 +23,7 @@ _parent = NodePath("..")
 
 [node name="Planet1" parent="." instance=ExtResource("1_t0oup")]
 position = Vector2(545, 548)
+sendCratesIndependently = true
 
 [node name="Terran" type="Sprite2D" parent="Planet1"]
 visible = false

@@ -59,7 +59,7 @@ func ore_absorbed(ore):
 		check_if_level_completed()
 		levelAlreadyCompleted = true
 	
-	if levelAlreadyCompleted:
+	if levelAlreadyCompleted and nextLevel != null and not nextLevel.planet.sendCratesIndependently:
 		nextLevel.planet.startCrates()
 
 func check_if_level_completed():

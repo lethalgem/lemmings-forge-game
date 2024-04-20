@@ -24,6 +24,7 @@ rotation = 3.14159
 scale = Vector2(0.65, 0.65)
 minimum_added_rotation = -80.0
 maximum_added_rotation = 80.0
+sendCratesIndependently = true
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_htbi3")]
 unique_name_in_owner = true

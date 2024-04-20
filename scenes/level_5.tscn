@@ -28,19 +28,18 @@ scale = Vector2(2.2, 2.2)
 level = NodePath("..")
 
 [node name="BlackHole" parent="." instance=ExtResource("4_td5kd")]
-position = Vector2(-20, 16)
-initial_gravity = 35.0
-minimum_gravity = 25.0
-maximum_gravity = 45.0
+position = Vector2(-72, 72)
+minimum_gravity = 8.0
+maximum_gravity = 12.0
 
 [node name="BlackHole4" parent="." instance=ExtResource("4_td5kd")]
-position = Vector2(1204, -367)
+position = Vector2(1316, -235)
 
 [node name="BlackHole5" parent="." instance=ExtResource("4_td5kd")]
-position = Vector2(2119, -488)
+position = Vector2(3185, -39)
 
 [node name="BlackHole6" parent="." instance=ExtResource("4_td5kd")]
-position = Vector2(2506, 813)
+position = Vector2(2422, 617)
 initial_gravity = 30.0
 minimum_gravity = 20.0
 maximum_gravity = 40.0
@@ -49,6 +48,6 @@ maximum_gravity = 40.0
 position = Vector2(4034, 829)
 
 [node name="WhiteHole4" parent="." instance=ExtResource("2_my68g")]
-position = Vector2(3355, -339)
+position = Vector2(2553, 389)
 initial_gravity = 5.0
 maximum_gravity = 10.0
