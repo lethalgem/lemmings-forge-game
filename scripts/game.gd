@@ -43,8 +43,8 @@ var previous_camera_position: Vector2 = Vector2(0, 0);
 var _moveCamera: bool = false;
 
 func _ready():
-	enter_level_8()
-	#enter_menu()
+	#enter_level_7()
+	enter_menu()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):
@@ -108,6 +108,110 @@ func _on_start_button_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_1()
+	
+func _on_l1_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_1()
+	
+func _on_l2_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_2(true)
+	
+func _on_l3_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_3(true)
+	
+func _on_l4_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_4(true)
+	
+func _on_l5_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_5(true)
+	
+func _on_l6_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_6(true)
+	
+func _on_l7_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_7(true)
+	
+func _on_l8_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_8(true)
+	
+func _on_l9_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_9(true)
+	
+func _on_l10_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_10(true)
+	
+func _on_l11_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_11(true)
+	
+func _on_l12_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_12(true)
+	
+func _on_l13_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_13(true)
+	
+func _on_l14_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_14(true)
+	
+func _on_l15_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_15(true)
+	
+func _on_l16_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_16(true)
+	
+func _on_l17_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_17(true)
+	
+func _on_l18_button_up():
+	main_menu.visible = false
+	start_click_player.play()
+	enter_level_18(true)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 func _on_controls_button_button_up():
 	click_player.play()
@@ -140,7 +244,11 @@ func _on_level_1_level_completed(time):
 	scorecard.update_scorecard(1, time)
 	enter_level_2()
 
-func enter_level_2():
+func enter_level_2(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+	
 	camera_controls_enabled = false
 	move_camera_to(Vector2(357, 0), camera.zoom)
 	await done_moving_camera
@@ -161,7 +269,12 @@ func _on_level_2_level_completed(time):
 	scorecard.update_scorecard(2, time)
 	enter_level_3()
 
-func enter_level_3():
+func enter_level_3(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+	
 	camera_controls_enabled = false
 	move_camera_to(Vector2(1698, -1261), Vector2(0.3, 0.3))
 	await done_moving_camera
@@ -178,7 +291,13 @@ func _on_level_3_level_completed(time):
 	scorecard.update_scorecard(3, time)
 	enter_level_4()
 
-func enter_level_4():
+func enter_level_4(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(2738, -1980), Vector2(0.55, 0.55))
 	await done_moving_camera
@@ -195,7 +314,14 @@ func _on_level_4_level_completed(time):
 	scorecard.update_scorecard(4, time)
 	enter_level_5()
 
-func enter_level_5():
+func enter_level_5(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+	
 	camera_controls_enabled = false
 	move_camera_to(Vector2(3871, -2920), Vector2(0.4, 0.4))
 	await done_moving_camera
@@ -212,7 +338,15 @@ func _on_level_5_level_completed(time):
 	scorecard.update_scorecard(5, time)
 	enter_level_6()
 
-func enter_level_6():
+func enter_level_6(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(7973, -4523), Vector2(1, 1))
 	await done_moving_camera
@@ -224,12 +358,22 @@ func enter_level_6():
 	camera_controls_enabled = true
 
 func _on_level_6_level_completed(time):
+	level_1.planet.sendCratesIndependently = true
 	print("level 6 completed")
 	print(time)
 	scorecard.update_scorecard(6, time)
 	enter_level_7()
 
-func enter_level_7():
+func enter_level_7(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(6261, -4801), Vector2(0.7, 0.7))
 	await done_moving_camera
@@ -246,7 +390,17 @@ func _on_level_7_level_completed(time):
 	scorecard.update_scorecard(7, time)
 	enter_level_8()
 
-func enter_level_8():
+func enter_level_8(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(5613, -4238), Vector2(0.4, 0.4))
 	await done_moving_camera
@@ -263,7 +417,18 @@ func _on_level_8_level_completed(time):
 	scorecard.update_scorecard(8, time)
 	enter_level_9()
 
-func enter_level_9():
+func enter_level_9(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(3083, -4894), Vector2(0.15, 0.15))
 	await done_moving_camera
@@ -280,7 +445,19 @@ func _on_level_9_level_completed(time):
 	scorecard.update_scorecard(9, time)
 	enter_level_10()
 
-func enter_level_10():
+func enter_level_10(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(-6043, -16406), Vector2(1, 1))
 	await done_moving_camera
@@ -297,7 +474,20 @@ func _on_level_10_level_completed(time):
 	scorecard.update_scorecard(10, time)
 	enter_level_11()
 
-func enter_level_11():
+func enter_level_11(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		level_11.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(-6094, -14502), Vector2(0.27, 0.27))
 	await done_moving_camera
@@ -314,7 +504,21 @@ func _on_level_11_level_completed(time):
 	scorecard.update_scorecard(11, time)
 	enter_level_12()
 
-func enter_level_12():
+func enter_level_12(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		level_11.planet.sendCratesIndependently = true
+		level_12.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(-4396, -12567), Vector2(0.3, 0.3))
 	await done_moving_camera
@@ -331,7 +535,22 @@ func _on_level_12_level_completed(time):
 	scorecard.update_scorecard(12, time)
 	enter_level_13()
 
-func enter_level_13():
+func enter_level_13(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		level_11.planet.sendCratesIndependently = true
+		level_12.planet.sendCratesIndependently = true
+		level_13.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(5764, -5518), Vector2(0.07, 0.07))
 	await done_moving_camera
@@ -348,7 +567,23 @@ func _on_level_13_level_completed(time):
 	scorecard.update_scorecard(13, time)
 	enter_level_14()
 
-func enter_level_14():
+func enter_level_14(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		level_11.planet.sendCratesIndependently = true
+		level_12.planet.sendCratesIndependently = true
+		level_13.planet.sendCratesIndependently = true
+		level_14.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(6229, -1496), Vector2(0.3, 0.3))
 	await done_moving_camera
@@ -365,7 +600,24 @@ func _on_level_14_level_completed(time):
 	scorecard.update_scorecard(14, time)
 	enter_level_15()
 
-func enter_level_15():
+func enter_level_15(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		level_11.planet.sendCratesIndependently = true
+		level_12.planet.sendCratesIndependently = true
+		level_13.planet.sendCratesIndependently = true
+		level_14.planet.sendCratesIndependently = true
+		level_15.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(7349, -5295), Vector2(0.12, 0.12))
 	await done_moving_camera
@@ -382,7 +634,25 @@ func _on_level_15_level_completed(time):
 	scorecard.update_scorecard(15, time)
 	enter_level_16()
 
-func enter_level_16():
+func enter_level_16(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		level_11.planet.sendCratesIndependently = true
+		level_12.planet.sendCratesIndependently = true
+		level_13.planet.sendCratesIndependently = true
+		level_14.planet.sendCratesIndependently = true
+		level_15.planet.sendCratesIndependently = true
+		level_16.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(-1147, -11375), Vector2(0.1, 0.1))
 	await done_moving_camera
@@ -399,7 +669,26 @@ func _on_level_16_level_completed(time):
 	scorecard.update_scorecard(16, time)
 	enter_level_17()
 
-func enter_level_17():
+func enter_level_17(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		level_11.planet.sendCratesIndependently = true
+		level_12.planet.sendCratesIndependently = true
+		level_13.planet.sendCratesIndependently = true
+		level_14.planet.sendCratesIndependently = true
+		level_15.planet.sendCratesIndependently = true
+		level_16.planet.sendCratesIndependently = true
+		level_17.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(4533, -8255), Vector2(0.235, 0.235))
 	await done_moving_camera
@@ -416,7 +705,27 @@ func _on_level_17_level_completed(time):
 	scorecard.update_scorecard(17, time)
 	enter_level_18()
 
-func enter_level_18():
+func enter_level_18(fromGameStart = false):
+	if(fromGameStart):
+		level_1.planet.sendCratesIndependently = true
+		level_2.planet.sendCratesIndependently = true
+		level_3.planet.sendCratesIndependently = true
+		level_4.planet.sendCratesIndependently = true
+		level_5.planet.sendCratesIndependently = true
+		level_6.planet.sendCratesIndependently = true
+		level_7.planet.sendCratesIndependently = true
+		level_8.planet.sendCratesIndependently = true
+		level_9.planet.sendCratesIndependently = true
+		level_10.planet.sendCratesIndependently = true
+		level_11.planet.sendCratesIndependently = true
+		level_12.planet.sendCratesIndependently = true
+		level_13.planet.sendCratesIndependently = true
+		level_14.planet.sendCratesIndependently = true
+		level_15.planet.sendCratesIndependently = true
+		level_16.planet.sendCratesIndependently = true
+		level_17.planet.sendCratesIndependently = true
+		level_18.planet.sendCratesIndependently = true
+		
 	camera_controls_enabled = false
 	move_camera_to(Vector2(1853, -8303), Vector2(0.44, 0.44))
 	await done_moving_camera

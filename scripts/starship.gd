@@ -125,14 +125,16 @@ func _on_body_entered(body):
 	if body is Ore:
 		if body.createdPlanet != self:
 			_level.deleteOre(body)
-			sendCrate()
+			sendCrate(body)
 
 
 
 var nextOreId = 0
-func sendCrate():
+func sendCrate(previousOre):
 	var ore_instance = ore.instantiate()
 	ore_instance.global_position = global_position
+	ore_instance._level_id = previousOre._level_id
+	
 	ore_instance.oreId = nextOreId
 	nextOreId += 1
 	
