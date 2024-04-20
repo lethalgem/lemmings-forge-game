@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://5taa0kctdcaf"]
+[gd_scene load_steps=8 format=3 uid="uid://5taa0kctdcaf"]
 
 [ext_resource type="Script" path="res://scripts/level_16.gd" id="1_6hkyw"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_8gkcv"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_m8nqf"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_yjjy5"]
+[ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="5_y5rlh"]
+[ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="6_d6vdt"]
+[ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="7_trsqa"]
 
 [node name="Level16" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_6hkyw")
@@ -10,10 +14,49 @@ id = 16
 planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_8gkcv")]
-visible = false
-position = Vector2(558, 343)
+position = Vector2(820, 343)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_m8nqf")]
 unique_name_in_owner = true
 position = Vector2(9082, 7295)
 level = NodePath("..")
+
+[node name="BlackHole" parent="." instance=ExtResource("4_yjjy5")]
+position = Vector2(2360, 333)
+
+[node name="WormHole" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
+position = Vector2(3136, 631)
+pair = NodePath("../WormHole2")
+
+[node name="WormHole2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
+position = Vector2(6727, 4279)
+pair = NodePath("../WormHole")
+
+[node name="WhiteHole" parent="." instance=ExtResource("6_d6vdt")]
+position = Vector2(7747, 4059)
+
+[node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("7_trsqa")]
+position = Vector2(8387, 5007)
+spaceshipId = 9
+_level = NodePath("..")
+
+[node name="WormHole3" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
+position = Vector2(7268, 5094)
+pair = NodePath("../WormHole5")
+
+[node name="WormHole4" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
+position = Vector2(9152, 4433)
+pair = NodePath("../WormHole6")
+
+[node name="WormHole5" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
+position = Vector2(9334, 6782)
+pair = NodePath("../WormHole3")
+
+[node name="WormHole6" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
+position = Vector2(8801, 6776)
+pair = NodePath("../WormHole4")
+
+[node name="BlackHole2" parent="." instance=ExtResource("4_yjjy5")]
+position = Vector2(8782, 5765)
+initial_gravity = 15.0
+minimum_gravity = 10.0

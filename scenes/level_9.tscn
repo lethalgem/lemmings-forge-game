@@ -64,9 +64,9 @@ maximum_gravity = 30.0
 
 [node name="BlackHole3" parent="." instance=ExtResource("7_p720u")]
 position = Vector2(1398, 510)
-initial_gravity = 95.0
-minimum_gravity = 75.0
-maximum_gravity = 150.0
+initial_gravity = 35.0
+minimum_gravity = 25.0
+maximum_gravity = 45.0
 
 [node name="WhiteHole" parent="." instance=ExtResource("8_5sos7")]
 position = Vector2(1986, 1196)

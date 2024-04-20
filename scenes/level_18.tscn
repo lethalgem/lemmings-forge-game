@@ -1,17 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqdepnf7cwdjg"]
+[gd_scene load_steps=8 format=3 uid="uid://dqdepnf7cwdjg"]
 
 [ext_resource type="Script" path="res://scripts/level_18.gd" id="1_qbwqi"]
+[ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="2_8vp46"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_qh1bg"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_ducr7"]
 [ext_resource type="Texture2D" uid="uid://c4cu237k5g61m" path="res://assets/planets/Solid/Frozen/Frozen_05-256x256.png" id="4_dy4g7"]
+[ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="5_7up0d"]
+[ext_resource type="PackedScene" uid="uid://bxfxcynteimyc" path="res://scenes/gravity_bubble.tscn" id="7_eyny4"]
 
 [node name="Level18" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_qbwqi")
-id = 18
 planet = NodePath("Planet")
+
+[node name="BlackHole" parent="." instance=ExtResource("2_8vp46")]
+position = Vector2(-1338, 1278)
+initial_gravity = 15.0
+minimum_gravity = 20.0
+maximum_gravity = 25.0
 
 [node name="Planet" parent="." instance=ExtResource("2_qh1bg")]
 position = Vector2(3285, -747)
+rotation = 2.61799
+scale = Vector2(1.91, 1.91)
+minimum_added_rotation = -90.0
+maximum_added_rotation = 90.0
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ducr7")]
 unique_name_in_owner = true
@@ -22,3 +34,34 @@ level = NodePath("..")
 position = Vector2(3285, -747)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("4_dy4g7")
+
+[node name="WormHole" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_7up0d")]
+position = Vector2(2699, -1119)
+pair = NodePath("../WormHole2")
+
+[node name="WormHole2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_7up0d")]
+position = Vector2(-1341, 684)
+pair = NodePath("../WormHole3")
+
+[node name="WormHole3" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_7up0d")]
+position = Vector2(-1325, 1881)
+pair = NodePath("../WormHole4")
+
+[node name="WormHole4" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_7up0d")]
+position = Vector2(-750, 1285)
+pair = NodePath("../WormHole5")
+
+[node name="WormHole5" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_7up0d")]
+position = Vector2(-1903, 1252)
+pair = NodePath("../WormHole6")
+
+[node name="WormHole6" parent="." instance=ExtResource("5_7up0d")]
+position = Vector2(-120, 707)
+
+[node name="BlackHole2" parent="." instance=ExtResource("2_8vp46")]
+position = Vector2(-188, 352)
+initial_gravity = 5.0
+maximum_gravity = 15.0
+
+[node name="GravityBubble" parent="." instance=ExtResource("7_eyny4")]
+position = Vector2(-1335, 1274)

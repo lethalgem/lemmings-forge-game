@@ -55,18 +55,18 @@ position = Vector2(1808, 84)
 [node name="ExtraDarkBlackHole" parent="." instance=ExtResource("7_h5ms1")]
 position = Vector2(3501, 1397)
 rotation = 2.15548
-scale = Vector2(3.32, 3.32)
-initial_gravity = 55.0
-minimum_gravity = 54.0
-maximum_gravity = 56.0
+scale = Vector2(2.03, 2.03)
+initial_gravity = 24.0
+minimum_gravity = 25.0
+maximum_gravity = 26.0
 
 [node name="ExtraDarkBlackHole2" parent="." instance=ExtResource("7_h5ms1")]
 position = Vector2(3197, 3766)
 rotation = 2.15548
-scale = Vector2(3.32, 3.32)
-initial_gravity = 65.0
-minimum_gravity = 64.0
-maximum_gravity = 66.0
+scale = Vector2(2.195, 2.195)
+initial_gravity = 25.0
+minimum_gravity = 24.0
+maximum_gravity = 26.0
 
 [node name="WhiteHole" parent="." instance=ExtResource("8_rxodf")]
 position = Vector2(3087, 863)
