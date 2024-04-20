@@ -235,9 +235,11 @@ func enter_level_1():
 	game_text.queue_text("Where's my manners. Welcome to the 100% legal galactic antimatter forge. We make the make the most valuable item in the galaxy.", "How do we do that?")
 	game_text.queue_text("What do you mean? You don't know how to control planets and gravity? Where have you trucked ore before???", "Just tell me what to do")
 	game_text.queue_text("Left click and right click a planet to turn it. Left click and right blackholes to make them stronger or weaker.", "Got it")
-	game_text.queue_text("And if that ain't enough for ya, you can use the left and right arrow keys too.", "Nifty")
 	game_text.queue_text("Now get to WORK! Move some palantium from Arcadia to Chronus!", "On it boss!")
 	
+	#game_text.queue_text("Howdy Boss! It's a big day in crazyville. Our miners have struck gold! Well not literally, more like iron. But it's as good as gold!", "What are you talking about?")
+	#game_text.queue_text("Boss! Now isn't the time to be playing around It's the first piece to the puzzle for the antimatter recipe.", "Oh right! So what do we do?")
+	#game_text.queue_text("Uh, you're the one in charge... let's start by getting the iron off planet x and to the refinery on x.", "Now that I can do!")
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(-74, 0), camera.zoom)
 	await done_moving_camera
@@ -259,15 +261,20 @@ func enter_level_2(fromGameStart = false):
 	move_camera_to(Vector2(357, 0), camera.zoom)
 	await done_moving_camera
 	game_text.queue_text("Maybe you do have what it takes. Don't get comfy, galatic life ain't for maggots.", "Just give me the next job")
+	
+	#game_text.queue_text("Nice job! Now that iron has arrived, we can get it refined and ready for the next phase", "The next phase...?, of course!")
+	#game_text.queue_text("That's right. Soon it'll be time for you know what and you know who will never see it coming!", "Well let's get this show on the road then.")
 	await game_text.finished_displaying_text
 	
 	move_camera_to(Vector2(1057, -200), Vector2(0.8, 0.8))
 	await done_moving_camera
 	game_text.queue_text("Here you go then. Let's see if we can make a trucker out of you yet cowboy.", "As long as I get paid")
-	game_text.queue_text("Oh, you'll get paid kid. Chronus is melting the palantium into amelthor. You tracking the forge yet? ", "Antimatter here we come!")
+	game_text.queue_text("Oh, you'll get paid kid. CHronus is melting the palantium into amelthor. You tracking the forge yet? ", "Antimatter here we come!")
 	game_text.queue_text("Good, now get the amelthor from Chronus to Draco.", "On it!")
-	game_text.queue_text("Oh, and feel free to pan around the map by clicking and dragging or zoom out with a scroll. Now get to work!.", "Oh, that's cool!")
-	game_text.queue_text("Or if you prefer, use WASD to pan around and QE to zoom in and out. Now really, get to work!.", "I will as soon as you let me.")
+	game_text.queue_text("Oh, and feel free to pan around the map by clicking and drapping or zoom out with a scroll. Now get to work!.", "Oh, that's cool!")
+	
+	#game_text.queue_text("There's the next destination. It looks like there are two black holes in the way this time. See if you can get the ingots there... in one piece this time.", "I make no promises.")
+	#game_text.queue_text("(P.S. use WASD to move the camera, and Q or E to change the zoom level)", "Watch me work.")
 	await game_text.finished_displaying_text
 	level_2.start()
 	camera_controls_enabled = true
@@ -287,9 +294,10 @@ func enter_level_3(fromGameStart = false):
 	camera_controls_enabled = false
 	move_camera_to(Vector2(1698, -1261), Vector2(0.3, 0.3))
 	await done_moving_camera
+	#game_text.queue_text("I'm placeholder", "test")
 
 	game_text.queue_text("You're catching on!", "I know I'm a king")
-	game_text.queue_text("Okay, okay, hold your guns taco! The men on Draco are forging the amelthor into iron smelt, one of two thing needed for mexor.", "What is this? Science?")
+	game_text.queue_text("Okay, oaky, hold your guns taco! The men on Draco on forging the amelthor into iron smelt, one of two thing needed for mexor.", "What is this science?")
 	game_text.queue_text("Huh, science! Heck yeah science! Aight, move the iron smelt from Draco to Sirius.", "About time!")
 	game_text.queue_text("Oh, and those white holes? Yeah, that's the opposite of a black hole, it's gravity repulses stuff.", "Let me do my work!")
 	
@@ -753,7 +761,10 @@ func enter_level_17(fromGameStart = false):
 	camera_controls_enabled = false
 	move_camera_to(Vector2(4533, -8255), Vector2(0.235, 0.235))
 	await done_moving_camera
-	game_text.queue_text("I'm placeholder", "test")
+	
+	game_text.queue_text("Alright, Verdante hax processed the extranium. It's now pure Z, a compound of completely unbound particles.", "Amazing, it's a true marvel.")
+	game_text.queue_text("Move it from Verdante to the anti-matter vault. There, it will continue to accelerate the antimatter reactions.", "Yup, 2/3 substances required! Only one more next!")
+	
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(4533, -9455), Vector2(0.235, 0.235))
 	await done_moving_camera
@@ -790,7 +801,13 @@ func enter_level_18(fromGameStart = false):
 	camera_controls_enabled = false
 	move_camera_to(Vector2(1853, -8303), Vector2(0.44, 0.44))
 	await done_moving_camera
-	game_text.queue_text("I'm placeholder", "test")
+	
+	game_text.queue_text("We're finally there, Celestis has refined the platinum/gold duox. It is now adamantium, it can only be destroyed in the antimatter processing.", "This is the last step.")
+	game_text.queue_text("What do you plan to do with your half of the profits? We'll instantly become the wealthiest in the galaxy.", "Too bad, there can be only one!")
+	game_text.queue_text("What, Don Fred, what do you mean!", "Don't act surprised")
+	game_text.queue_text("We worked together on this!!!", "Up until now! (send Don Tito into a black hole!)")
+	game_text.queue_text("NOOOOOOOOOOOO!!!!!!!!!!!!!!!", "(to myself) It's mine, it's all mine!!!")
+	
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(469, -7751), Vector2(0.265, 0.265))
 	await done_moving_camera
