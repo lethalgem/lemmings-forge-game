@@ -36,12 +36,12 @@ script = ExtResource("1_61p2q")
 debug_enabled = true
 
 [node name="GameMap" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1174, -8989)
 scale = Vector2(10.1512, 10.1512)
 texture = ExtResource("5_i2kbb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 offset_left = -37941.0
 offset_top = -47097.0
 offset_right = 41300.0
