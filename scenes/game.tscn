@@ -36,12 +36,12 @@ script = ExtResource("1_61p2q")
 debug_enabled = true
 
 [node name="GameMap" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1174, -8989)
 scale = Vector2(10.1512, 10.1512)
 texture = ExtResource("5_i2kbb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 offset_left = -37941.0
 offset_top = -47097.0
 offset_right = 41300.0
@@ -949,7 +949,7 @@ script = ExtResource("25_w2tsg")
 [connection signal="button_up" from="MainMenu/L12" to="." method="_on_l12_button_up"]
 [connection signal="button_up" from="MainMenu/L13" to="." method="_on_l13_button_up"]
 [connection signal="button_up" from="MainMenu/L14" to="." method="_on_l14_button_up"]
-[connection signal="button_up" from="MainMenu/L15" to="." method="_on_l5_button_up"]
+[connection signal="button_up" from="MainMenu/L15" to="." method="_on_l15_button_up"]
 [connection signal="button_up" from="MainMenu/L16" to="." method="_on_l16_button_up"]
 [connection signal="button_up" from="MainMenu/L17" to="." method="_on_l17_button_up"]
 [connection signal="button_up" from="MainMenu/L18" to="." method="_on_l18_button_up"]
