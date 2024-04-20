@@ -31,7 +31,7 @@ position = Vector2(172, 156)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ehpcw")]
 unique_name_in_owner = true
-position = Vector2(-125, 156)
+position = Vector2(173, 156)
 level = NodePath("..")
 
 [node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_4m1sv")]
