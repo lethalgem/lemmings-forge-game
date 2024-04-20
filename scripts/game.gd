@@ -297,8 +297,9 @@ func enter_level_3(fromGameStart = false):
 	#game_text.queue_text("I'm placeholder", "test")
 
 	game_text.queue_text("You're catching on!", "I know I'm a king")
-	game_text.queue_text("Okay, oaky, hold your guns taco! ", "I know I'm a king")
-	
+	game_text.queue_text("Okay, oaky, hold your guns taco! The men on Draco on forging the amelthor into iron smelt, one of two thing needed for mexor.", "What is this science?")
+	game_text.queue_text("Huh, science! Heck yeah science! Aight, move the iron smelt from Draco to Sirius.", "About time!")
+	game_text.queue_text("Oh, and those white holes? Yeah, that's the opposite of a black hole, it's gravity repulses stuff.", "Let me do my work!")
 	
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(1693, -1736), Vector2(0.45, 0.45))
