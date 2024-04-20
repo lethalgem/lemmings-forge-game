@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://3wxpojhk8dsv"]
+[gd_scene load_steps=8 format=3 uid="uid://3wxpojhk8dsv"]
 
 [ext_resource type="Script" path="res://scripts/level_15.gd" id="1_lrhbj"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_5b2ne"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="4_j7r8m"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="5_g7a7p"]
 [ext_resource type="Texture2D" uid="uid://2lvatexcggbk" path="res://assets/planets/Solid/Lunar/Lunar_04-256x256.png" id="5_tjpyi"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="7_rhamo"]
 
 [node name="Level15" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_lrhbj")
@@ -52,3 +53,14 @@ unique_name_in_owner = true
 position = Vector2(2545, -4624)
 scale = Vector2(1.26, 1.26)
 level = NodePath("..")
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 222.0
+offset_top = 887.0
+offset_right = 533.0
+offset_bottom = 927.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("7_rhamo")
+theme_override_font_sizes/font_size = 36
+text = "Exoterra (Moon)"
+horizontal_alignment = 1

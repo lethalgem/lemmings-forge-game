@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbyyahu6gq45m"]
+[gd_scene load_steps=8 format=3 uid="uid://cbyyahu6gq45m"]
 
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_2rr6c"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_videb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_qpix1"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_5bq7b"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="5_3flmo"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="7_at5ow"]
 
 [node name="Level3" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_2rr6c")
@@ -46,3 +47,14 @@ initial_gravity = 20.0
 minimum_gravity = 15.0
 maximum_gravity = 25.0
 _parent = NodePath("..")
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 949.0
+offset_top = 1081.0
+offset_right = 1260.0
+offset_bottom = 1121.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("7_at5ow")
+theme_override_font_sizes/font_size = 36
+text = "Draco"
+horizontal_alignment = 1

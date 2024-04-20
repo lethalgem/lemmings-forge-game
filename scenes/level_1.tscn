@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bswfqhoswxu0q"]
+[gd_scene load_steps=8 format=3 uid="uid://bswfqhoswxu0q"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_scyny"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="1_t0oup"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="3_aukuy"]
 [ext_resource type="Texture2D" uid="uid://cw8fqq56dcql2" path="res://assets/planets/Terran.png" id="5_i2eoc"]
 [ext_resource type="Texture2D" uid="uid://bqtpweao43dw5" path="res://assets/planets/Solid/Terrestrial/Terrestrial_05-256x256.png" id="6_t36sa"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="7_j8o6w"]
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_scyny")
@@ -35,3 +36,14 @@ texture = ExtResource("5_i2eoc")
 position = Vector2(545, 549)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("6_t36sa")
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 333.0
+offset_top = 482.0
+offset_right = 644.0
+offset_bottom = 522.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("7_j8o6w")
+theme_override_font_sizes/font_size = 36
+text = "Arcadia"
+horizontal_alignment = 1

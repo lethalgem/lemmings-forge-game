@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://donw4f88in6vm"]
+[gd_scene load_steps=8 format=3 uid="uid://donw4f88in6vm"]
 
 [ext_resource type="Script" path="res://scripts/level_17.gd" id="1_q0s6p"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_1e8ai"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c8eya17dw42ht" path="res://assets/planets/Solid/Lush/Lush_02-256x256.png" id="4_qprvi"]
 [ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="5_d230t"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="6_v785a"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="7_i27nx"]
 
 [node name="Level17" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_q0s6p")
@@ -68,3 +69,14 @@ pair = NodePath("../WormHole3")
 [node name="BlackHole" parent="." instance=ExtResource("6_v785a")]
 position = Vector2(1197, -589)
 initial_gravity = 4.0
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 8296.0
+offset_top = -419.0
+offset_right = 8607.0
+offset_bottom = -379.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("7_i27nx")
+theme_override_font_sizes/font_size = 36
+text = "Verdante"
+horizontal_alignment = 1

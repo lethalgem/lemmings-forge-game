@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://8jcj6gfy8xtn"]
+[gd_scene load_steps=9 format=3 uid="uid://8jcj6gfy8xtn"]
 
 [ext_resource type="Script" path="res://scripts/level_11.gd" id="1_bsfjf"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_ppr3g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="5_165as"]
 [ext_resource type="PackedScene" uid="uid://xa5nfh785sq4" path="res://scenes/extra_dark_black_hole.tscn" id="6_e80wa"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="7_61nk5"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="8_ljjef"]
 
 [node name="Level11" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_bsfjf")
@@ -47,3 +48,14 @@ _parent = NodePath("..")
 position = Vector2(738, -306)
 minimum_gravity = 5.0
 maximum_gravity = 15.0
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 2230.0
+offset_top = -1550.0
+offset_right = 2541.0
+offset_bottom = -1510.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("8_ljjef")
+theme_override_font_sizes/font_size = 36
+text = "Nocturne"
+horizontal_alignment = 1

@@ -230,9 +230,16 @@ func enter_level_1():
 	move_camera_to(Vector2(-74, 54), Vector2(1.2, 1.2), 1.5)
 	await done_moving_camera
 	await get_tree().create_timer(1.5).timeout
-	game_text.queue_text("Howdy Boss! It's a big day in crazyville. Our miners have struck gold! Well not literally, more like iron. But it's as good as gold!", "What are you talking about?")
-	game_text.queue_text("Boss! Now isn't the time to be playing around It's the first piece to the puzzle for the antimatter recipe.", "Oh right! So what do we do?")
-	game_text.queue_text("Uh, you're the one in charge... let's start by getting the iron off planet x and to the refinery on x.", "Now that I can do!")
+	
+	game_text.queue_text("So you think you've got what it takes? Looks like Kenny's just sending anyone our way. I hope your hearts made of stone kid.", "Umm, what??")
+	game_text.queue_text("Where's my manners. Welcome to the 100% legal galactic antimatter forge. We make the make the most valuable item in the galaxy.", "How do we do that?")
+	game_text.queue_text("What do you mean? You don't know how to control planets and gravity? Where have you trucked ore before???", "Just tell me what to do")
+	game_text.queue_text("Left click and right click a planet to turn it. Left click and right blackholes to make them stronger or weaker.", "Got it")
+	game_text.queue_text("Now get to WORK! Move some palantium from Arcadia to Chronus!", "On it boss!")
+	
+	#game_text.queue_text("Howdy Boss! It's a big day in crazyville. Our miners have struck gold! Well not literally, more like iron. But it's as good as gold!", "What are you talking about?")
+	#game_text.queue_text("Boss! Now isn't the time to be playing around It's the first piece to the puzzle for the antimatter recipe.", "Oh right! So what do we do?")
+	#game_text.queue_text("Uh, you're the one in charge... let's start by getting the iron off planet x and to the refinery on x.", "Now that I can do!")
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(-74, 0), camera.zoom)
 	await done_moving_camera
@@ -250,15 +257,24 @@ func enter_level_2(fromGameStart = false):
 		level_2.planet.sendCratesIndependently = true
 	
 	camera_controls_enabled = false
+	
 	move_camera_to(Vector2(357, 0), camera.zoom)
 	await done_moving_camera
-	game_text.queue_text("Nice job! Now that iron has arrived, we can get it refined and ready for the next phase", "The next phase...?, of course!")
-	game_text.queue_text("That's right. Soon it'll be time for you know what and you know who will never see it coming!", "Well let's get this show on the road then.")
+	game_text.queue_text("Maybe you do have what it takes. Don't get comfy, galatic life ain't for maggots.", "Just give me the next job")
+	
+	#game_text.queue_text("Nice job! Now that iron has arrived, we can get it refined and ready for the next phase", "The next phase...?, of course!")
+	#game_text.queue_text("That's right. Soon it'll be time for you know what and you know who will never see it coming!", "Well let's get this show on the road then.")
 	await game_text.finished_displaying_text
+	
 	move_camera_to(Vector2(1057, -200), Vector2(0.8, 0.8))
 	await done_moving_camera
-	game_text.queue_text("There's the next destination. It looks like there are two black holes in the way this time. See if you can get the ingots there... in one piece this time.", "I make no promises.")
-	game_text.queue_text("(P.S. use WASD to move the camera, and Q or E to change the zoom level)", "Watch me work.")
+	game_text.queue_text("Here you go then. Let's see if we can make a trucker out of you yet cowboy.", "As long as I get paid")
+	game_text.queue_text("Oh, you'll get paid kid. CHronus is melting the palantium into amelthor. You tracking the forge yet? ", "Antimatter here we come!")
+	game_text.queue_text("Good, now get the amelthor from Chronus to Draco.", "On it!")
+	game_text.queue_text("Oh, and feel free to pan around the map by clicking and drapping or zoom out with a scroll. Now get to work!.", "Oh, that's cool!")
+	
+	#game_text.queue_text("There's the next destination. It looks like there are two black holes in the way this time. See if you can get the ingots there... in one piece this time.", "I make no promises.")
+	#game_text.queue_text("(P.S. use WASD to move the camera, and Q or E to change the zoom level)", "Watch me work.")
 	await game_text.finished_displaying_text
 	level_2.start()
 	camera_controls_enabled = true
@@ -278,7 +294,12 @@ func enter_level_3(fromGameStart = false):
 	camera_controls_enabled = false
 	move_camera_to(Vector2(1698, -1261), Vector2(0.3, 0.3))
 	await done_moving_camera
-	game_text.queue_text("I'm placeholder", "test")
+	#game_text.queue_text("I'm placeholder", "test")
+
+	game_text.queue_text("You're catching on!", "I know I'm a king")
+	game_text.queue_text("Okay, oaky, hold your guns taco! ", "I know I'm a king")
+	
+	
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(1693, -1736), Vector2(0.45, 0.45))
 	await done_moving_camera
