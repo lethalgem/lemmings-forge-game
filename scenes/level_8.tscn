@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://wuphg0mig4uc"]
+[gd_scene load_steps=7 format=3 uid="uid://wuphg0mig4uc"]
 
 [ext_resource type="Script" path="res://scripts/level_8.gd" id="1_gm0rw"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_i35qg"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_koj10"]
 [ext_resource type="Texture2D" uid="uid://cu8nq4pcv2ly2" path="res://assets/planets/Gaseous/Green Giant/GreenGiant_02-256x256.png" id="4_7jqpk"]
 [ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="5_6puvb"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="6_rsp4c"]
 
 [node name="Level8" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_gm0rw")
@@ -40,3 +41,14 @@ position = Vector2(630, -637)
 rotation = -1.20079
 spaceshipId = 4
 _level = NodePath("..")
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 525.0
+offset_right = 1301.0
+offset_bottom = 565.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("6_rsp4c")
+theme_override_font_sizes/font_size = 36
+text = "Vespera"
+horizontal_alignment = 1

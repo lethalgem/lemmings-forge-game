@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtwks0y7hb5fx"]
+[gd_scene load_steps=8 format=3 uid="uid://dtwks0y7hb5fx"]
 
 [ext_resource type="Script" path="res://scripts/level_6.gd" id="1_yoe4y"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="2_gj47t"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_htbi3"]
 [ext_resource type="Texture2D" uid="uid://x5cm42k6un0w" path="res://assets/planets/Gaseous/Orange Giant/OrgangeGiant_04-256x256.png" id="4_1rf3v"]
 [ext_resource type="PackedScene" uid="uid://bxfxcynteimyc" path="res://scenes/gravity_bubble.tscn" id="5_4e5ti"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="7_2r73b"]
 
 [node name="Level6" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_yoe4y")
@@ -38,3 +39,14 @@ texture = ExtResource("4_1rf3v")
 
 [node name="GravityBubble" parent="." instance=ExtResource("5_4e5ti")]
 position = Vector2(638, 524)
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 1589.0
+offset_top = 663.0
+offset_right = 1900.0
+offset_bottom = 703.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("7_2r73b")
+theme_override_font_sizes/font_size = 36
+text = "Elysium"
+horizontal_alignment = 1

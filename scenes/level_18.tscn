@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqdepnf7cwdjg"]
+[gd_scene load_steps=10 format=3 uid="uid://dqdepnf7cwdjg"]
 
 [ext_resource type="Script" path="res://scripts/level_18.gd" id="1_qbwqi"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="2_8vp46"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="5_7up0d"]
 [ext_resource type="PackedScene" uid="uid://bxfxcynteimyc" path="res://scenes/gravity_bubble.tscn" id="7_eyny4"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="8_qfuw2"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="9_34hfv"]
 
 [node name="Level18" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_qbwqi")
@@ -74,3 +75,14 @@ position = Vector2(2632, -9)
 initial_gravity = 7.0
 minimum_gravity = 6.0
 maximum_gravity = 8.0
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 3227.0
+offset_top = -532.0
+offset_right = 3538.0
+offset_bottom = -492.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("9_34hfv")
+theme_override_font_sizes/font_size = 36
+text = "Celestis"
+horizontal_alignment = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2mvefv1k4j4m"]
+[gd_scene load_steps=8 format=3 uid="uid://c2mvefv1k4j4m"]
 
 [ext_resource type="Script" path="res://scripts/level_4.gd" id="1_kywaf"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_2un51"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dk12n5qb4xm2" path="res://assets/planets/Solid/Snowy/Snowy_02-256x256.png" id="3_ei8g1"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="4_4m1sv"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="6_mkl1k"]
+[ext_resource type="FontFile" uid="uid://wxfyh2cvsw0d" path="res://assets/fonts/Bronco.ttf" id="7_1jc8g"]
 
 [node name="Level4" type="Node2D" node_paths=PackedStringArray("planet")]
 position = Vector2(18, -6)
@@ -31,7 +32,7 @@ position = Vector2(172, 156)
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ehpcw")]
 unique_name_in_owner = true
-position = Vector2(173, 156)
+position = Vector2(172, 156)
 level = NodePath("..")
 
 [node name="BlackHole1" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_4m1sv")]
@@ -48,3 +49,14 @@ initial_gravity = 6.0
 minimum_gravity = 3.0
 maximum_gravity = 9.0
 _parent = NodePath("..")
+
+[node name="Planet Name 1" type="Label" parent="."]
+offset_left = 1954.0
+offset_top = 1374.0
+offset_right = 2265.0
+offset_bottom = 1414.0
+rotation = -0.361283
+theme_override_fonts/font = ExtResource("7_1jc8g")
+theme_override_font_sizes/font_size = 36
+text = "Astralis"
+horizontal_alignment = 1
