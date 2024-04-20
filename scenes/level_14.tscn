@@ -22,6 +22,7 @@ level = NodePath("..")
 position = Vector2(5469, -13)
 rotation = -3.35103
 scale = Vector2(1.62, 1.62)
+sendCratesIndependently = true
 
 [node name="Oasis02-256x256" type="Sprite2D" parent="."]
 position = Vector2(5469, -13)

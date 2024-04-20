@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcjhgunti06bg"]
+[gd_scene load_steps=10 format=3 uid="uid://dcjhgunti06bg"]
 
 [ext_resource type="Script" path="res://scripts/level_12.gd" id="1_vhryi"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_12hk2"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ckuthy3shnd6u" path="res://assets/planets/Gaseous/Blue Giant/BlueGiant_04-256x256.png" id="4_puvi4"]
 [ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="5_ch3st"]
 [ext_resource type="PackedScene" uid="uid://bxfxcynteimyc" path="res://scenes/gravity_bubble.tscn" id="6_hrjku"]
-[ext_resource type="Texture2D" uid="uid://dk12n5qb4xm2" path="res://assets/planets/Solid/Snowy/Snowy_02-256x256.png" id="6_t6ky5"]
 [ext_resource type="PackedScene" uid="uid://xa5nfh785sq4" path="res://scenes/extra_dark_black_hole.tscn" id="7_h5ms1"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="8_rxodf"]
 [ext_resource type="PackedScene" uid="uid://b5exmk65lrs0v" path="res://scenes/black_hole.tscn" id="9_sgucj"]
@@ -18,10 +17,9 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_12hk2")]
 position = Vector2(159, 107)
-rotation = 2.15548
+rotation = -0.532325
 scale = Vector2(3.32, 3.32)
-minimum_added_rotation = -240.0
-maximum_added_rotation = 30.0
+maximum_added_rotation = 90.0
 
 [node name="BlueGiant04-256x256" type="Sprite2D" parent="Planet"]
 rotation = -2.15548
@@ -40,14 +38,9 @@ spaceshipId = 6
 _level = NodePath("..")
 
 [node name="Starship2" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_ch3st")]
-position = Vector2(3318, 2584)
+position = Vector2(4240, 2257)
 spaceshipId = 7
 _level = NodePath("..")
-
-[node name="Snowy02-256x256" type="Sprite2D" parent="Starship2"]
-position = Vector2(2275, -1009)
-scale = Vector2(4, 4)
-texture = ExtResource("6_t6ky5")
 
 [node name="GravityBubble" parent="." instance=ExtResource("6_hrjku")]
 position = Vector2(1808, 84)
@@ -71,27 +64,26 @@ maximum_gravity = 26.0
 [node name="WhiteHole" parent="." instance=ExtResource("8_rxodf")]
 position = Vector2(3087, 863)
 rotation = 2.15548
-scale = Vector2(3.32, 3.32)
+initial_gravity = 25.0
+minimum_gravity = 15.0
+maximum_gravity = 40.0
+
+[node name="WhiteHole3" parent="." instance=ExtResource("8_rxodf")]
+position = Vector2(5503, 2775)
+rotation = 2.15548
 initial_gravity = 25.0
 minimum_gravity = 15.0
 maximum_gravity = 40.0
 
 [node name="WhiteHole2" parent="." instance=ExtResource("8_rxodf")]
-position = Vector2(2853, 1481)
+position = Vector2(3527, 1804)
 rotation = 2.15548
-scale = Vector2(3.32, 3.32)
 initial_gravity = 25.0
 minimum_gravity = 15.0
 maximum_gravity = 40.0
 
 [node name="GravityBubble2" parent="." instance=ExtResource("6_hrjku")]
-position = Vector2(3326, 2580)
-
-[node name="BlackHole" parent="." instance=ExtResource("9_sgucj")]
-position = Vector2(5226, 2268)
-initial_gravity = 15.0
-minimum_gravity = 5.0
-maximum_gravity = 55.0
+position = Vector2(4248, 2253)
 
 [node name="BlackHole2" parent="." instance=ExtResource("9_sgucj")]
 position = Vector2(5478, 528)

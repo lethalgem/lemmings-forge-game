@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5taa0kctdcaf"]
+[gd_scene load_steps=9 format=3 uid="uid://5taa0kctdcaf"]
 
 [ext_resource type="Script" path="res://scripts/level_16.gd" id="1_6hkyw"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_8gkcv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="5_y5rlh"]
 [ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="6_d6vdt"]
 [ext_resource type="PackedScene" uid="uid://bvklsx0dou66p" path="res://scenes/starship.tscn" id="7_trsqa"]
+[ext_resource type="Texture2D" uid="uid://b2e3tnq16ogao" path="res://assets/planets/Solid/Airless/Airless_01-256x256.png" id="8_1wh72"]
 
 [node name="Level16" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_6hkyw")
@@ -15,17 +16,27 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_8gkcv")]
 position = Vector2(820, 343)
+scale = Vector2(0.6, 0.6)
+sendCratesIndependently = true
+
+[node name="Airless01-256x256" type="Sprite2D" parent="Planet"]
+scale = Vector2(0.608333, 0.608333)
+texture = ExtResource("8_1wh72")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_m8nqf")]
 unique_name_in_owner = true
 position = Vector2(9082, 7295)
+scale = Vector2(2.29, 2.29)
 level = NodePath("..")
 
 [node name="BlackHole" parent="." instance=ExtResource("4_yjjy5")]
 position = Vector2(2360, 333)
 
+[node name="BlackHole3" parent="." instance=ExtResource("4_yjjy5")]
+position = Vector2(6976, 5010)
+
 [node name="WormHole" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
-position = Vector2(3136, 631)
+position = Vector2(2356, 109)
 pair = NodePath("../WormHole2")
 
 [node name="WormHole2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
@@ -41,7 +52,7 @@ spaceshipId = 9
 _level = NodePath("..")
 
 [node name="WormHole3" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]
-position = Vector2(7268, 5094)
+position = Vector2(6792, 5102)
 pair = NodePath("../WormHole5")
 
 [node name="WormHole4" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_y5rlh")]

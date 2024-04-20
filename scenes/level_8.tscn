@@ -18,16 +18,16 @@ minimum_added_rotation = -30.0
 maximum_added_rotation = 10.0
 sendCratesIndependently = true
 
+[node name="GreenGiant02-256x256" type="Sprite2D" parent="Planet"]
+position = Vector2(0, 0.207254)
+scale = Vector2(0.621762, 0.621762)
+texture = ExtResource("4_7jqpk")
+
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_koj10")]
 unique_name_in_owner = true
 position = Vector2(1456, 1720)
 scale = Vector2(2.2, 2.2)
 level = NodePath("..")
-
-[node name="GreenGiant02-256x256" type="Sprite2D" parent="."]
-position = Vector2(884, 117)
-scale = Vector2(3, 3)
-texture = ExtResource("4_7jqpk")
 
 [node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("5_6puvb")]
 position = Vector2(216, 494)

@@ -17,17 +17,17 @@ planet = NodePath("Planet")
 
 [node name="Planet" parent="." instance=ExtResource("2_7mbwk")]
 position = Vector2(243, 239)
+scale = Vector2(6.59, 6.59)
+
+[node name="Snowy02-256x256" type="Sprite2D" parent="Planet"]
+scale = Vector2(0.60698, 0.60698)
+texture = ExtResource("4_u1jkt")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_mdm6f")]
 unique_name_in_owner = true
 position = Vector2(10842, 10066)
 scale = Vector2(3, 3)
 level = NodePath("..")
-
-[node name="Snowy02-256x256" type="Sprite2D" parent="."]
-position = Vector2(243, 239)
-scale = Vector2(4, 4)
-texture = ExtResource("4_u1jkt")
 
 [node name="BlackHole" parent="." instance=ExtResource("5_op24d")]
 position = Vector2(1907, 1096)
@@ -46,6 +46,11 @@ position = Vector2(7980, 56)
 
 [node name="Starship" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("8_4qlrn")]
 position = Vector2(8120, 3696)
+spaceshipId = 8
+_level = NodePath("..")
+
+[node name="Starship2" parent="." node_paths=PackedStringArray("_level") instance=ExtResource("8_4qlrn")]
+position = Vector2(11906, 9073)
 spaceshipId = 8
 _level = NodePath("..")
 

@@ -24,16 +24,18 @@ rotation = 2.61799
 scale = Vector2(1.91, 1.91)
 minimum_added_rotation = -90.0
 maximum_added_rotation = 90.0
+sendCratesIndependently = true
+
+[node name="Frozen05-256x256" type="Sprite2D" parent="Planet"]
+rotation = -2.61799
+scale = Vector2(0.628272, 0.628272)
+texture = ExtResource("4_dy4g7")
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ducr7")]
 unique_name_in_owner = true
 position = Vector2(882, 733)
+scale = Vector2(9.655, 9.655)
 level = NodePath("..")
-
-[node name="Frozen05-256x256" type="Sprite2D" parent="."]
-position = Vector2(3285, -747)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("4_dy4g7")
 
 [node name="WormHole" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_7up0d")]
 position = Vector2(2699, -1119)

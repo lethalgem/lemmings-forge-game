@@ -26,6 +26,7 @@ texture = ExtResource("4_qprvi")
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_yfhth")]
 unique_name_in_owner = true
 position = Vector2(777, 903)
+scale = Vector2(9.66, 9.66)
 level = NodePath("..")
 
 [node name="WormHole" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("5_d230t")]
