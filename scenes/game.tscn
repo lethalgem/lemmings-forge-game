@@ -48,76 +48,92 @@ offset_bottom = 30103.0
 texture = ExtResource("7_e00g7")
 stretch_mode = 1
 
-[node name="Level1" parent="." instance=ExtResource("3_a3tgt")]
+[node name="Level1" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("3_a3tgt")]
 unique_name_in_owner = true
 position = Vector2(-1054, -544)
+nextLevel = NodePath("../Level2")
 
-[node name="Level2" parent="." instance=ExtResource("4_qf4ff")]
+[node name="Level2" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("4_qf4ff")]
 unique_name_in_owner = true
 position = Vector2(88, -881)
+nextLevel = NodePath("../Level3")
 
 [node name="Level3" parent="." instance=ExtResource("6_pjsjs")]
 unique_name_in_owner = true
 position = Vector2(670, -1610)
 
-[node name="Level4" parent="." instance=ExtResource("7_ee6yr")]
+[node name="Level4" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("7_ee6yr")]
 unique_name_in_owner = true
 position = Vector2(1574, -2916)
 debug_enabled = false
+nextLevel = NodePath("../Level5")
 
-[node name="Level5" parent="." instance=ExtResource("8_biq00")]
+[node name="Level5" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("8_biq00")]
 unique_name_in_owner = true
 position = Vector2(1612, -3700)
 debug_enabled = false
 id = 0
+nextLevel = NodePath(".")
 
-[node name="Level6" parent="." instance=ExtResource("9_mv82c")]
+[node name="Level6" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("9_mv82c")]
 unique_name_in_owner = true
 position = Vector2(7050, -5172)
+nextLevel = NodePath("../Level7")
 
-[node name="Level7" parent="." instance=ExtResource("10_v7riw")]
+[node name="Level7" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("10_v7riw")]
 unique_name_in_owner = true
 position = Vector2(5186, -5546)
+nextLevel = NodePath("../Level8")
 
-[node name="Level8" parent="." instance=ExtResource("11_cp4fh")]
+[node name="Level8" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("11_cp4fh")]
 unique_name_in_owner = true
 position = Vector2(4444, -5536)
+nextLevel = NodePath("../Level9")
 
-[node name="Level9" parent="." instance=ExtResource("12_m3ero")]
+[node name="Level9" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("12_m3ero")]
 unique_name_in_owner = true
 position = Vector2(508, -8148)
+nextLevel = NodePath("../Level10")
 
-[node name="Level10" parent="." instance=ExtResource("13_ap38b")]
+[node name="Level10" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("13_ap38b")]
 unique_name_in_owner = true
 position = Vector2(-7051, -17141)
+nextLevel = NodePath("../Level11")
 
-[node name="Level11" parent="." instance=ExtResource("14_k6q3d")]
+[node name="Level11" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("14_k6q3d")]
 unique_name_in_owner = true
 position = Vector2(-7779, -14686)
+nextLevel = NodePath("../Level12")
 
-[node name="Level12" parent="." instance=ExtResource("15_o3xso")]
+[node name="Level12" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("15_o3xso")]
 unique_name_in_owner = true
 position = Vector2(-7267, -13904)
+nextLevel = NodePath("../Level13")
 
-[node name="Level13" parent="." instance=ExtResource("16_deep4")]
+[node name="Level13" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("16_deep4")]
 unique_name_in_owner = true
 position = Vector2(-1917, -12567)
+nextLevel = NodePath("../Level14")
 
-[node name="Level14" parent="." instance=ExtResource("17_axvym")]
+[node name="Level14" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("17_axvym")]
 unique_name_in_owner = true
 position = Vector2(3456, -2473)
+nextLevel = NodePath("../Level15")
 
-[node name="Level15" parent="." instance=ExtResource("18_5aceh")]
+[node name="Level15" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("18_5aceh")]
 unique_name_in_owner = true
 position = Vector2(5773, -4721)
+nextLevel = NodePath("../Level16")
 
-[node name="Level16" parent="." instance=ExtResource("19_rhck7")]
+[node name="Level16" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("19_rhck7")]
 unique_name_in_owner = true
 position = Vector2(-5985, -16662)
+nextLevel = NodePath("../Level17")
 
-[node name="Level17" parent="." instance=ExtResource("20_2tss5")]
+[node name="Level17" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("20_2tss5")]
 unique_name_in_owner = true
 position = Vector2(-78, -8789)
+nextLevel = NodePath("../Level18")
 
 [node name="Level18" parent="." instance=ExtResource("21_ebsa2")]
 unique_name_in_owner = true

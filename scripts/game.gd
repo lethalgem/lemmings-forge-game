@@ -43,7 +43,8 @@ var previous_camera_position: Vector2 = Vector2(0, 0);
 var _moveCamera: bool = false;
 
 func _ready():
-	enter_menu()
+	enter_level_15()
+	#enter_menu()
 
 func _process(_delta):
 	if Input.is_action_pressed("fast_camera_modifier"):

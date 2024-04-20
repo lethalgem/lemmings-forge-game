@@ -10,7 +10,7 @@ extends Node2D
 @onready var reverse_highlight = %ReverseHighlight
 @onready var change_gravity_player: AudioStreamPlayer2D = %ChangeGravityPlayer
 
-const _gravityIncreaseModifier = 4
+const _gravityIncreaseModifier = 1.4 #4
 const _rotationIncreaseModifier = 2
 
 var _currentGravity:float = 10

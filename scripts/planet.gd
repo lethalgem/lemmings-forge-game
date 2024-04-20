@@ -8,6 +8,7 @@ extends Node2D
 
 @export var minimum_added_rotation:float = -45
 @export var maximum_added_rotation:float = 45
+@export var sendCratesIndependently = true # CHANGE THIS false
 
 
 var _level: Level
@@ -116,19 +117,22 @@ func _on_body_entered(body):
 		if body.createdPlanet != self:
 			_level.deleteOre(body)
 
-
+var nextOreId = 0
 func startCrates():
 	%LaunchPad.visible = true
 
 	var ore_instance = ore.instantiate()
 	ore_instance.global_position = Vector2((%LaunchPad.global_position.x + %LaunchPad2.global_position.x) / 2, (%LaunchPad.global_position.y + %LaunchPad2.global_position.y) / 2 )
+	ore_instance.oreId = nextOreId
+	nextOreId += 1
 
 	ore_instance.forceDirection(_launchVector)
 	ore_instance.setCreatePlanet(self, _level.id)
 	_level.crateAdded(ore_instance)
 
-	await get_tree().create_timer(.3).timeout
-	startCrates()
+	if sendCratesIndependently:
+		await get_tree().create_timer(.3).timeout
+		startCrates()
 
 
 func _on_area_mouse_entered():

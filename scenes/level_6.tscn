@@ -15,7 +15,7 @@ planet = NodePath("Planet")
 [node name="BlackHole1" parent="." instance=ExtResource("2_gj47t")]
 position = Vector2(1124, 408)
 initial_gravity = 6.0
-minimum_gravity = 4.0
+minimum_gravity = 2.0
 maximum_gravity = 14.0
 
 [node name="Planet" parent="." instance=ExtResource("2_v8ed8")]

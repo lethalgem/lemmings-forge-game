@@ -7,6 +7,7 @@ signal level_completed(time: float)
 @export var id = 0
 @export var ore_goal = 10
 @export var planet: Planet
+@export var nextLevel: Level
 
 @onready var forge: Forge = %Forge
 
@@ -40,16 +41,33 @@ func crateAdded(ore_instance):
 	move_child(ore_instance, 0)
 	ore_instance.global_position = currentGlobalPosition
 
-func ore_absorbed():
-	if ores_delivered < ore_goal:
+var _lastOreId = -1
+var levelAlreadyCompleted = false
+func ore_absorbed(ore):
+	
+	if ore.oreId == _lastOreId + 1:
 		ores_delivered += 1
-		print_ore_count()
+	else:
+		ores_delivered = 1
+	
+	_lastOreId = ore.oreId
+	
+	#var z = %Forge
+	if ores_delivered >= ore_goal and not levelAlreadyCompleted:
+		#ores_delivered += 1
+		#print_ore_count()
 		check_if_level_completed()
+		levelAlreadyCompleted = true
+	
+	if levelAlreadyCompleted:
+		nextLevel.planet.startCrates()
 
 func check_if_level_completed():
 	if ores_delivered == ore_goal:
 		print("level " + str(id) + " completed")
+		#var z = %Forge
 		forge.show_goal_highlight(false)
+		#forgePassIn.show_goal_highlight(false)
 		emit_signal("level_completed", time_elapsed)
 		level_started = false
 

@@ -67,13 +67,11 @@ visible = false
 scale = Vector2(3, 3)
 
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea"]
-visible = false
 scale = Vector2(61.6225, 61.6225)
 shape = SubResource("CircleShape2D_blx7q")
 
 [node name="OuterArea2" type="Area2D" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="OuterCollision" type="CollisionShape2D" parent="OuterArea2"]
 scale = Vector2(61.6225, 61.6225)

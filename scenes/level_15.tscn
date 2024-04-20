@@ -1,17 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://3wxpojhk8dsv"]
+[gd_scene load_steps=6 format=3 uid="uid://3wxpojhk8dsv"]
 
 [ext_resource type="Script" path="res://scripts/level_15.gd" id="1_lrhbj"]
 [ext_resource type="PackedScene" uid="uid://bwd1ajpap6kfd" path="res://scenes/planet.tscn" id="2_5b2ne"]
 [ext_resource type="PackedScene" uid="uid://c0u3fk2iyjxa4" path="res://scenes/Forge.tscn" id="3_ojegt"]
+[ext_resource type="PackedScene" uid="uid://bpqsk0tteoj51" path="res://scenes/wormhole.tscn" id="4_j7r8m"]
+[ext_resource type="PackedScene" uid="uid://guylsgegxwxb" path="res://scenes/white_hole.tscn" id="5_g7a7p"]
 
 [node name="Level15" type="Node2D" node_paths=PackedStringArray("planet")]
 script = ExtResource("1_lrhbj")
 id = 15
 planet = NodePath("Planet")
 
+[node name="WormHole" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("4_j7r8m")]
+position = Vector2(983, 1163)
+pair = NodePath("../WormHole2")
+
+[node name="WormHole2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("4_j7r8m")]
+position = Vector2(982, -1911)
+pair = NodePath("../WormHole")
+
+[node name="WormHole3" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("4_j7r8m")]
+position = Vector2(1836, -781)
+pair = NodePath("../WormHole4")
+
+[node name="WormHole4" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("4_j7r8m")]
+position = Vector2(2790, -3902)
+pair = NodePath("../WormHole3")
+
+[node name="WhiteHole" parent="." instance=ExtResource("5_g7a7p")]
+position = Vector2(3242, -3136)
+
+[node name="WhiteHole2" parent="." instance=ExtResource("5_g7a7p")]
+position = Vector2(4082, -4119)
+
 [node name="Planet" parent="." instance=ExtResource("2_5b2ne")]
-visible = false
-position = Vector2(124, 940)
+position = Vector2(346, 790)
+rotation = 0.319395
+scale = Vector2(0.99, 0.99)
+minimum_added_rotation = -120.0
+maximum_added_rotation = 120.0
 
 [node name="Forge" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ojegt")]
 unique_name_in_owner = true

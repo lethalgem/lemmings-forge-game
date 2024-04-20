@@ -16,9 +16,12 @@ planet = NodePath("Planet")
 unique_name_in_owner = true
 position = Vector2(1031, 926)
 rotation = -1.5708
+minimum_added_rotation = -80.0
+maximum_added_rotation = 80.0
 
-[node name="Rocky04-256x256" type="Sprite2D" parent="."]
-position = Vector2(1032, 927)
+[node name="Rocky04-256x256" type="Sprite2D" parent="Planet"]
+position = Vector2(-1, 1)
+rotation = 1.5708
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("3_o2nuk")
 
@@ -33,10 +36,13 @@ _parent = NodePath("..")
 
 [node name="WhiteHole1" parent="." instance=ExtResource("5_3flmo")]
 position = Vector2(1911, 146)
+initial_gravity = 20.0
+minimum_gravity = 10.0
+maximum_gravity = 30.0
 
 [node name="BlackHole2" parent="." node_paths=PackedStringArray("_parent") instance=ExtResource("4_5bq7b")]
-position = Vector2(448, 306)
+position = Vector2(1062, -202)
 initial_gravity = 20.0
 minimum_gravity = 15.0
-maximum_gravity = 30.0
+maximum_gravity = 25.0
 _parent = NodePath("..")
