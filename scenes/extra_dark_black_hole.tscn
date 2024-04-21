@@ -87,6 +87,17 @@ modulate = Color(0.235294, 0.34902, 1, 1)
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("4_p8xwi")
 
+[node name="HSlider" type="HSlider" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0.529412, 0.878431, 1)
+offset_left = -21.0
+offset_top = -7.0
+offset_right = 20.0
+offset_bottom = 9.0
+editable = false
+scrollable = false
+
 [connection signal="body_entered" from="InnerBlackHole" to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="InnerBlackHole" to="." method="_on_black_hole_mouse_entered"]
 [connection signal="mouse_exited" from="InnerBlackHole" to="." method="_on_black_hole_mouse_exited"]

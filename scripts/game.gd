@@ -271,7 +271,7 @@ func enter_level_2(fromGameStart = false):
 	game_text.queue_text("Here you go then. Let's see if we can make a trucker out of you yet cowboy.", "As long as I get paid")
 	game_text.queue_text("Oh, you'll get paid kid. CHronus is melting the palantium into amelthor. You tracking the forge yet? ", "Antimatter here we come!")
 	game_text.queue_text("Good, now get the amelthor from Chronus to Draco.", "On it!")
-	game_text.queue_text("Oh, and feel free to pan around the map by clicking and drapping or zoom out with a scroll. Now get to work!.", "Oh, that's cool!")
+	game_text.queue_text("Oh, and feel free to pan around the map by clicking and dragging or zoom out with a scroll. Now get to work!.", "Oh, that's cool!")
 	
 	#game_text.queue_text("There's the next destination. It looks like there are two black holes in the way this time. See if you can get the ingots there... in one piece this time.", "I make no promises.")
 	#game_text.queue_text("(P.S. use WASD to move the camera, and Q or E to change the zoom level)", "Watch me work.")
@@ -297,7 +297,7 @@ func enter_level_3(fromGameStart = false):
 	#game_text.queue_text("I'm placeholder", "test")
 
 	game_text.queue_text("You're catching on!", "I know I'm a king")
-	game_text.queue_text("Okay, oaky, hold your guns taco! The men on Draco on forging the amelthor into iron smelt, one of two thing needed for mexor.", "What is this science?")
+	game_text.queue_text("Okay, oaky, hold your guns taco! The men on Draco on forging the amelthor into iron smelt, one of two things needed for mexor.", "What is this science?")
 	game_text.queue_text("Huh, science! Heck yeah science! Aight, move the iron smelt from Draco to Sirius.", "About time!")
 	game_text.queue_text("Oh, and those white holes? Yeah, that's the opposite of a black hole, it's gravity repulses stuff.", "Let me do my work!")
 	
@@ -354,7 +354,7 @@ func enter_level_5(fromGameStart = false):
 	
 	game_text.queue_text("Finally, we're making mexor! Don Tito can finally get off my back for the backup!", "Don Tito? Don? What's happening here?")
 	game_text.queue_text("Nothing! I said NOTHING! No Dons, nothings happening here. You keep going or you better watch out for your family!", "I.. I.. Yes sir!")
-	game_text.queue_text("Good! Now move move the mexor from Sirius to Nova Prime!", "On it Boss!")
+	game_text.queue_text("Good! Now move the mexor from Sirius to Nova Prime!", "On it Boss!")
 	
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(3871, -3282), Vector2(0.4, 0.4))
@@ -762,7 +762,7 @@ func enter_level_17(fromGameStart = false):
 	move_camera_to(Vector2(4533, -8255), Vector2(0.235, 0.235))
 	await done_moving_camera
 	
-	game_text.queue_text("Alright, Verdante hax processed the extranium. It's now pure Z, a compound of completely unbound particles.", "Amazing, it's a true marvel.")
+	game_text.queue_text("Alright, Verdante has processed the extranium. It's now pure Z, a compound of completely unbound particles.", "Amazing, it's a true marvel.")
 	game_text.queue_text("Move it from Verdante to the anti-matter vault. There, it will continue to accelerate the antimatter reactions.", "Yup, 2/3 substances required! Only one more next!")
 	
 	await game_text.finished_displaying_text

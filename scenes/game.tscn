@@ -135,11 +135,13 @@ nextLevel = NodePath("../Level17")
 [node name="Level17" parent="." node_paths=PackedStringArray("nextLevel") instance=ExtResource("20_2tss5")]
 unique_name_in_owner = true
 position = Vector2(-78, -8789)
+id = 17
 nextLevel = NodePath("../Level18")
 
 [node name="Level18" parent="." instance=ExtResource("21_ebsa2")]
 unique_name_in_owner = true
 position = Vector2(-186, -8618)
+id = 18
 
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
@@ -580,13 +582,97 @@ text = "The Quest for Antimatter"
 [node name="Subtitle2" type="Label" parent="MainMenu"]
 layout_mode = 0
 offset_left = 166.0
-offset_top = 365.0
+offset_top = 342.0
 offset_right = 477.0
-offset_bottom = 405.0
+offset_bottom = 382.0
 scale = Vector2(0.6, 0.6)
 theme_override_fonts/font = ExtResource("24_fu5y4")
 theme_override_font_sizes/font_size = 36
 text = "jump to a level "
+horizontal_alignment = 1
+
+[node name="Subtitle3" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = -131.0
+offset_top = 447.0
+offset_right = 180.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Black Holes"
+horizontal_alignment = 1
+
+[node name="Subtitle7" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = -131.0
+offset_top = 521.0
+offset_right = 180.0
+offset_bottom = 561.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Extra Dark Black Holes"
+horizontal_alignment = 1
+
+[node name="Subtitle8" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 521.0
+offset_right = 504.0
+offset_bottom = 561.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Worm Holes"
+horizontal_alignment = 1
+
+[node name="Subtitle9" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 521.0
+offset_right = 822.0
+offset_bottom = 561.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Finale"
+horizontal_alignment = 1
+
+[node name="Subtitle4" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 447.0
+offset_right = 342.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "White Holes"
+horizontal_alignment = 1
+
+[node name="Subtitle5" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 447.0
+offset_right = 581.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Gravity Bubble"
+horizontal_alignment = 1
+
+[node name="Subtitle6" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 447.0
+offset_right = 664.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "SHips"
 horizontal_alignment = 1
 
 [node name="ControlsButton" type="Button" parent="MainMenu"]
