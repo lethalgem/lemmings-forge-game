@@ -72,7 +72,7 @@ func _ready():
 	%InnerBlackHole.scale.y = _currentGravity / 25 + .5
 	%OuterArea2.scale.x = _currentGravity / 25 + .5
 	%OuterArea2.scale.y = _currentGravity / 25 + .5
-	
+
 	%HSlider.min_value = minimum_gravity
 	%HSlider.max_value = maximum_gravity
 	%HSlider.value = _currentGravity
@@ -151,7 +151,7 @@ func _on_body_entered(body):
 			if _parent != null:
 				_parent.deleteOre(body)
 			else:
-				print('NULL PARENT WHEN TRYING TO REMOVE!!!!!!!!!!!!')				
+				print('NULL PARENT WHEN TRYING TO REMOVE!!!!!!!!!!!!')
 				print(body.oreId)
 				body.queue_free()
 

@@ -33,7 +33,6 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_61p2q")
-debug_enabled = true
 
 [node name="GameMap" type="Sprite2D" parent="."]
 visible = false
@@ -143,6 +142,441 @@ unique_name_in_owner = true
 position = Vector2(-186, -8618)
 id = 18
 
+[node name="MainMenu" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1751.0
+offset_top = -103.0
+offset_right = -1711.0
+offset_bottom = -63.0
+
+[node name="Title" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -140.0
+offset_right = 571.0
+offset_bottom = -2.0
+theme = ExtResource("3_6lea7")
+theme_override_font_sizes/font_size = 128
+text = "Gravity Forge"
+
+[node name="Subtitle" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = -3.0
+offset_right = 571.0
+offset_bottom = 37.0
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "The Quest for Antimatter"
+
+[node name="Subtitle2" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 342.0
+offset_right = 477.0
+offset_bottom = 382.0
+scale = Vector2(0.6, 0.6)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "jump to a level "
+horizontal_alignment = 1
+
+[node name="Subtitle3" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = -131.0
+offset_top = 447.0
+offset_right = 180.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Black Holes"
+horizontal_alignment = 1
+
+[node name="Subtitle7" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = -131.0
+offset_top = 521.0
+offset_right = 180.0
+offset_bottom = 561.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Extra Dark Black Holes"
+horizontal_alignment = 1
+
+[node name="Subtitle8" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 521.0
+offset_right = 504.0
+offset_bottom = 561.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Worm Holes"
+horizontal_alignment = 1
+
+[node name="Subtitle9" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 521.0
+offset_right = 822.0
+offset_bottom = 561.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Finale"
+horizontal_alignment = 1
+
+[node name="Subtitle4" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 447.0
+offset_right = 342.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "White Holes"
+horizontal_alignment = 1
+
+[node name="Subtitle5" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 447.0
+offset_right = 581.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "Gravity Bubble"
+horizontal_alignment = 1
+
+[node name="Subtitle6" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 447.0
+offset_right = 664.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "SHips"
+horizontal_alignment = 1
+
+[node name="ControlsButton" type="Button" parent="MainMenu"]
+visible = false
+layout_mode = 0
+offset_left = 208.0
+offset_top = 216.0
+offset_right = 313.0
+offset_bottom = 259.0
+theme = ExtResource("3_6lea7")
+theme_override_font_sizes/font_size = 32
+text = "Controls"
+
+[node name="StartButton" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 169.0
+offset_right = 330.0
+offset_bottom = 217.0
+theme = ExtResource("3_6lea7")
+text = "Start Game"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/StartButton"]
+unique_name_in_owner = true
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L1" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = 396.0
+offset_right = -42.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L1"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L1"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L2" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 396.0
+offset_right = 38.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L2"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L2"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L3" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 396.0
+offset_right = 118.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L3"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L3"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L4" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 396.0
+offset_right = 198.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L4"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L4"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L5" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 396.0
+offset_right = 278.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L5"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L5"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L6" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 396.0
+offset_right = 358.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L6"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L6"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L7" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 396.0
+offset_right = 438.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L7"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L7"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L8" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 396.0
+offset_right = 518.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L8"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L8"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L9" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 396.0
+offset_right = 598.0
+offset_bottom = 446.0
+theme = ExtResource("3_6lea7")
+text = "L9"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L9"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L10" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = 469.0
+offset_right = -42.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L10"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L10"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L11" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 469.0
+offset_right = 38.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L11"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L11"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L12" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 469.0
+offset_right = 118.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L12"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L12"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L13" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 469.0
+offset_right = 198.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L13"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L13"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L14" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 469.0
+offset_right = 278.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L14"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L14"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L15" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 469.0
+offset_right = 358.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L15"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L15"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L16" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 469.0
+offset_right = 438.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L16"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L16"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L17" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 469.0
+offset_right = 518.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L17"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L17"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="L18" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 469.0
+offset_right = 598.0
+offset_bottom = 519.0
+theme = ExtResource("3_6lea7")
+text = "L18"
+
+[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L18"]
+stream = ExtResource("26_db8pc")
+volume_db = -6.0
+
+[node name="WinScreen" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1762.0
+offset_top = -5771.0
+offset_right = -1722.0
+offset_bottom = -5731.0
+
+[node name="Title" type="Label" parent="WinScreen"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -28.0
+offset_right = 571.0
+offset_bottom = 110.0
+theme = ExtResource("3_6lea7")
+theme_override_font_sizes/font_size = 128
+text = "You win"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="WinScreen"]
+layout_mode = 0
+offset_left = -126.0
+offset_top = 109.0
+offset_right = 689.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("24_fu5y4")
+theme_override_font_sizes/font_size = 36
+text = "The antimatter has been forged. The universe is yours to conquer"
+horizontal_alignment = 1
+
+[node name="ControlsMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1751.0
+offset_top = -103.0
+offset_right = -1711.0
+offset_bottom = -63.0
+
+[node name="ReturnToMenuButton" type="Button" parent="ControlsMenu"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 990.0
+offset_right = 356.0
+offset_bottom = 1038.0
+theme = ExtResource("3_6lea7")
+theme_override_font_sizes/font_size = 36
+text = "Return to menu"
+
 [node name="GameCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-1492, 54)
@@ -157,6 +591,7 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 
 [node name="DebugInfoBox" type="VBoxContainer" parent="GameCamera"]
+visible = false
 offset_left = -960.0
 offset_top = -539.0
 offset_right = -916.0
@@ -550,439 +985,6 @@ offset_bottom = 456.163
 theme = ExtResource("3_6lea7")
 text = "Copy to clipboard"
 
-[node name="MainMenu" type="Control" parent="."]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1751.0
-offset_top = -103.0
-offset_right = -1711.0
-offset_bottom = -63.0
-
-[node name="Title" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = -29.0
-offset_top = -140.0
-offset_right = 571.0
-offset_bottom = -2.0
-theme = ExtResource("3_6lea7")
-theme_override_font_sizes/font_size = 128
-text = "Gravity Forge"
-
-[node name="Subtitle" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = 260.0
-offset_top = -3.0
-offset_right = 571.0
-offset_bottom = 37.0
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "The Quest for Antimatter"
-
-[node name="Subtitle2" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = 166.0
-offset_top = 342.0
-offset_right = 477.0
-offset_bottom = 382.0
-scale = Vector2(0.6, 0.6)
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "jump to a level "
-horizontal_alignment = 1
-
-[node name="Subtitle3" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = -131.0
-offset_top = 447.0
-offset_right = 180.0
-offset_bottom = 487.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "Black Holes"
-horizontal_alignment = 1
-
-[node name="Subtitle7" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = -131.0
-offset_top = 521.0
-offset_right = 180.0
-offset_bottom = 561.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "Extra Dark Black Holes"
-horizontal_alignment = 1
-
-[node name="Subtitle8" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = 193.0
-offset_top = 521.0
-offset_right = 504.0
-offset_bottom = 561.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "Worm Holes"
-horizontal_alignment = 1
-
-[node name="Subtitle9" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = 511.0
-offset_top = 521.0
-offset_right = 822.0
-offset_bottom = 561.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "Finale"
-horizontal_alignment = 1
-
-[node name="Subtitle4" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 447.0
-offset_right = 342.0
-offset_bottom = 487.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "White Holes"
-horizontal_alignment = 1
-
-[node name="Subtitle5" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = 270.0
-offset_top = 447.0
-offset_right = 581.0
-offset_bottom = 487.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "Gravity Bubble"
-horizontal_alignment = 1
-
-[node name="Subtitle6" type="Label" parent="MainMenu"]
-layout_mode = 0
-offset_left = 353.0
-offset_top = 447.0
-offset_right = 664.0
-offset_bottom = 487.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "SHips"
-horizontal_alignment = 1
-
-[node name="ControlsButton" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 208.0
-offset_top = 216.0
-offset_right = 313.0
-offset_bottom = 259.0
-theme = ExtResource("3_6lea7")
-theme_override_font_sizes/font_size = 32
-text = "Controls"
-
-[node name="StartButton" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 185.0
-offset_top = 169.0
-offset_right = 330.0
-offset_bottom = 217.0
-theme = ExtResource("3_6lea7")
-text = "Start Game"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/StartButton"]
-unique_name_in_owner = true
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L1" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = -92.0
-offset_top = 396.0
-offset_right = -42.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L1"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L1"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L2" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = -12.0
-offset_top = 396.0
-offset_right = 38.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L2"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L2"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L3" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 396.0
-offset_right = 118.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L3"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L3"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L4" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 148.0
-offset_top = 396.0
-offset_right = 198.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L4"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L4"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L5" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 228.0
-offset_top = 396.0
-offset_right = 278.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L5"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L5"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L6" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 308.0
-offset_top = 396.0
-offset_right = 358.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L6"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L6"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L7" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 388.0
-offset_top = 396.0
-offset_right = 438.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L7"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L7"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L8" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 468.0
-offset_top = 396.0
-offset_right = 518.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L8"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L8"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L9" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 548.0
-offset_top = 396.0
-offset_right = 598.0
-offset_bottom = 446.0
-theme = ExtResource("3_6lea7")
-text = "L9"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L9"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L10" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = -92.0
-offset_top = 469.0
-offset_right = -42.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L10"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L10"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L11" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = -12.0
-offset_top = 469.0
-offset_right = 38.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L11"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L11"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L12" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 469.0
-offset_right = 118.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L12"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L12"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L13" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 148.0
-offset_top = 469.0
-offset_right = 198.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L13"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L13"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L14" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 228.0
-offset_top = 469.0
-offset_right = 278.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L14"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L14"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L15" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 308.0
-offset_top = 469.0
-offset_right = 358.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L15"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L15"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L16" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 388.0
-offset_top = 469.0
-offset_right = 438.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L16"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L16"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L17" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 468.0
-offset_top = 469.0
-offset_right = 518.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L17"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L17"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="L18" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 548.0
-offset_top = 469.0
-offset_right = 598.0
-offset_bottom = 519.0
-theme = ExtResource("3_6lea7")
-text = "L18"
-
-[node name="StartButtonClickPlayer" type="AudioStreamPlayer" parent="MainMenu/L18"]
-stream = ExtResource("26_db8pc")
-volume_db = -6.0
-
-[node name="WinScreen" type="Control" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1762.0
-offset_top = -5771.0
-offset_right = -1722.0
-offset_bottom = -5731.0
-
-[node name="Title" type="Label" parent="WinScreen"]
-layout_mode = 0
-offset_left = -29.0
-offset_top = -28.0
-offset_right = 571.0
-offset_bottom = 110.0
-theme = ExtResource("3_6lea7")
-theme_override_font_sizes/font_size = 128
-text = "You win"
-horizontal_alignment = 1
-
-[node name="Subtitle" type="Label" parent="WinScreen"]
-layout_mode = 0
-offset_left = -126.0
-offset_top = 109.0
-offset_right = 689.0
-offset_bottom = 149.0
-theme_override_fonts/font = ExtResource("24_fu5y4")
-theme_override_font_sizes/font_size = 36
-text = "The antimatter has been forged. The universe is yours to conquer"
-horizontal_alignment = 1
-
-[node name="ControlsMenu" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1751.0
-offset_top = -103.0
-offset_right = -1711.0
-offset_bottom = -63.0
-
-[node name="ReturnToMenuButton" type="Button" parent="ControlsMenu"]
-layout_mode = 0
-offset_left = 156.0
-offset_top = 990.0
-offset_right = 356.0
-offset_bottom = 1038.0
-theme = ExtResource("3_6lea7")
-theme_override_font_sizes/font_size = 36
-text = "Return to menu"
-
 [node name="AmbiencePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_3bu7j")
 volume_db = -10.0
@@ -1015,10 +1017,6 @@ script = ExtResource("25_w2tsg")
 [connection signal="level_completed" from="Level16" to="." method="_on_level_16_level_completed"]
 [connection signal="level_completed" from="Level17" to="." method="_on_level_17_level_completed"]
 [connection signal="level_completed" from="Level18" to="." method="_on_level_18_level_completed"]
-[connection signal="toggled" from="GameCamera/DebugInfoBox/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]
-[connection signal="button_up" from="GameCamera/TextBox/ContinueButton" to="GameCamera/TextBox/GameText" method="_on_continue_button_button_up"]
-[connection signal="button_up" from="GameCamera/Scorecard/OpenCloseButton" to="GameCamera/Scorecard" method="_on_open_close_button_button_up"]
-[connection signal="button_up" from="GameCamera/Scorecard/ScoreContainer/CopyButton" to="GameCamera/Scorecard" method="_on_copy_button_button_up"]
 [connection signal="button_up" from="MainMenu/ControlsButton" to="." method="_on_controls_button_button_up"]
 [connection signal="button_up" from="MainMenu/StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="MainMenu/L1" to="." method="_on_l1_button_up"]
@@ -1040,3 +1038,7 @@ script = ExtResource("25_w2tsg")
 [connection signal="button_up" from="MainMenu/L17" to="." method="_on_l17_button_up"]
 [connection signal="button_up" from="MainMenu/L18" to="." method="_on_l18_button_up"]
 [connection signal="button_up" from="ControlsMenu/ReturnToMenuButton" to="." method="_on_return_to_menu_button_button_up"]
+[connection signal="toggled" from="GameCamera/DebugInfoBox/HBoxContainer/VsyncButton" to="." method="_on_vsync_button_toggled"]
+[connection signal="button_up" from="GameCamera/TextBox/ContinueButton" to="GameCamera/TextBox/GameText" method="_on_continue_button_button_up"]
+[connection signal="button_up" from="GameCamera/Scorecard/OpenCloseButton" to="GameCamera/Scorecard" method="_on_open_close_button_button_up"]
+[connection signal="button_up" from="GameCamera/Scorecard/ScoreContainer/CopyButton" to="GameCamera/Scorecard" method="_on_copy_button_button_up"]

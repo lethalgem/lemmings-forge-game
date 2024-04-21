@@ -134,10 +134,10 @@ func sendCrate(previousOre):
 	var ore_instance = ore.instantiate()
 	ore_instance.global_position = global_position
 	ore_instance._level_id = previousOre._level_id
-	
+
 	ore_instance.oreId = nextOreId
 	nextOreId += 1
-	
+
 	ore_instance.forceDirection(_launchVector)
 	ore_instance.setCreatePlanet(self, _level.id)
 	_level.crateAdded(ore_instance)

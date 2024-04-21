@@ -43,7 +43,6 @@ var previous_camera_position: Vector2 = Vector2(0, 0);
 var _moveCamera: bool = false;
 
 func _ready():
-	#enter_level_7()
 	enter_menu()
 
 func _process(_delta):
@@ -108,110 +107,110 @@ func _on_start_button_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_1()
-	
+
 func _on_l1_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_1()
-	
+
 func _on_l2_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_2(true)
-	
+
 func _on_l3_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_3(true)
-	
+
 func _on_l4_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_4(true)
-	
+
 func _on_l5_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_5(true)
-	
+
 func _on_l6_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_6(true)
-	
+
 func _on_l7_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_7(true)
-	
+
 func _on_l8_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_8(true)
-	
+
 func _on_l9_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_9(true)
-	
+
 func _on_l10_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_10(true)
-	
+
 func _on_l11_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_11(true)
-	
+
 func _on_l12_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_12(true)
-	
+
 func _on_l13_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_13(true)
-	
+
 func _on_l14_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_14(true)
-	
+
 func _on_l15_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_15(true)
-	
+
 func _on_l16_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_16(true)
-	
+
 func _on_l17_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_17(true)
-	
+
 func _on_l18_button_up():
 	main_menu.visible = false
 	start_click_player.play()
 	enter_level_18(true)
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 func _on_controls_button_button_up():
 	click_player.play()
@@ -230,16 +229,14 @@ func enter_level_1():
 	move_camera_to(Vector2(-74, 54), Vector2(1.2, 1.2), 1.5)
 	await done_moving_camera
 	await get_tree().create_timer(1.5).timeout
-	
+
 	game_text.queue_text("So you think you've got what it takes? Looks like Kenny's just sending anyone our way. I hope your hearts made of stone kid.", "Umm, what??")
 	game_text.queue_text("Where's my manners. Welcome to the 100% legal galactic antimatter forge. We make the make the most valuable item in the galaxy.", "How do we do that?")
 	game_text.queue_text("What do you mean? You don't know how to control planets and gravity? Where have you trucked ore before???", "Just tell me what to do")
 	game_text.queue_text("Left click and right click a planet to turn it. Left click and right blackholes to make them stronger or weaker.", "Got it")
+	game_text.queue_text("And if that ain't enough for ya, you can use the left and right arrow keys too.", "Nifty")
 	game_text.queue_text("Now get to WORK! Move some palantium from Arcadia to Chronus!", "On it boss!")
-	
-	#game_text.queue_text("Howdy Boss! It's a big day in crazyville. Our miners have struck gold! Well not literally, more like iron. But it's as good as gold!", "What are you talking about?")
-	#game_text.queue_text("Boss! Now isn't the time to be playing around It's the first piece to the puzzle for the antimatter recipe.", "Oh right! So what do we do?")
-	#game_text.queue_text("Uh, you're the one in charge... let's start by getting the iron off planet x and to the refinery on x.", "Now that I can do!")
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(-74, 0), camera.zoom)
 	await done_moving_camera
@@ -255,26 +252,22 @@ func enter_level_2(fromGameStart = false):
 	if(fromGameStart):
 		level_1.planet.sendCratesIndependently = true
 		level_2.planet.sendCratesIndependently = true
-	
+
 	camera_controls_enabled = false
-	
+
 	move_camera_to(Vector2(357, 0), camera.zoom)
 	await done_moving_camera
 	game_text.queue_text("Maybe you do have what it takes. Don't get comfy, galatic life ain't for maggots.", "Just give me the next job")
-	
-	#game_text.queue_text("Nice job! Now that iron has arrived, we can get it refined and ready for the next phase", "The next phase...?, of course!")
-	#game_text.queue_text("That's right. Soon it'll be time for you know what and you know who will never see it coming!", "Well let's get this show on the road then.")
 	await game_text.finished_displaying_text
-	
+
 	move_camera_to(Vector2(1057, -200), Vector2(0.8, 0.8))
 	await done_moving_camera
 	game_text.queue_text("Here you go then. Let's see if we can make a trucker out of you yet cowboy.", "As long as I get paid")
-	game_text.queue_text("Oh, you'll get paid kid. CHronus is melting the palantium into amelthor. You tracking the forge yet? ", "Antimatter here we come!")
+	game_text.queue_text("Oh, you'll get paid kid. Chronus is melting the palantium into amelthor. You tracking the forge yet? ", "Antimatter here we come!")
 	game_text.queue_text("Good, now get the amelthor from Chronus to Draco.", "On it!")
 	game_text.queue_text("Oh, and feel free to pan around the map by clicking and dragging or zoom out with a scroll. Now get to work!.", "Oh, that's cool!")
-	
-	#game_text.queue_text("There's the next destination. It looks like there are two black holes in the way this time. See if you can get the ingots there... in one piece this time.", "I make no promises.")
-	#game_text.queue_text("(P.S. use WASD to move the camera, and Q or E to change the zoom level)", "Watch me work.")
+	game_text.queue_text("Or if you prefer, use WASD to pan around and QE to zoom in and out. Now really, get to work!.", "I will as soon as you let me.")
+
 	await game_text.finished_displaying_text
 	level_2.start()
 	camera_controls_enabled = true
@@ -290,17 +283,16 @@ func enter_level_3(fromGameStart = false):
 		level_1.planet.sendCratesIndependently = true
 		level_2.planet.sendCratesIndependently = true
 		level_3.planet.sendCratesIndependently = true
-	
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(1698, -1261), Vector2(0.3, 0.3))
 	await done_moving_camera
-	#game_text.queue_text("I'm placeholder", "test")
 
 	game_text.queue_text("You're catching on!", "I know I'm a king")
-	game_text.queue_text("Okay, oaky, hold your guns taco! The men on Draco on forging the amelthor into iron smelt, one of two things needed for mexor.", "What is this science?")
+	game_text.queue_text("Okay, okay, hold your guns taco! The men on Draco on forging the amelthor into iron smelt, one of two things needed for mexor.", "What is this, science?")
 	game_text.queue_text("Huh, science! Heck yeah science! Aight, move the iron smelt from Draco to Sirius.", "About time!")
-	game_text.queue_text("Oh, and those white holes? Yeah, that's the opposite of a black hole, it's gravity repulses stuff.", "Let me do my work!")
-	
+	game_text.queue_text("Oh, and those white holes? Yeah, that's the opposite of a black hole, its gravity repulses stuff.", "Let me do my work!")
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(1693, -1736), Vector2(0.45, 0.45))
 	await done_moving_camera
@@ -319,15 +311,15 @@ func enter_level_4(fromGameStart = false):
 		level_2.planet.sendCratesIndependently = true
 		level_3.planet.sendCratesIndependently = true
 		level_4.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(2738, -1980), Vector2(0.55, 0.55))
 	await done_moving_camera
-	
+
 	game_text.queue_text("Great work peon! Sirius has the iron smelt, you got the guts to keep moving product?", "I'm catching on chief")
 	game_text.queue_text("We need the mexor from Sirius. Send flexcore from Astralis to Sirius so we can smelt iron smelt and flexcore to make mexor.", "That easy?")
 	game_text.queue_text("Shut up and do your work!", "(to myself) What's his issue")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(2707, -2220), Vector2(0.8, 0.8))
 	await done_moving_camera
@@ -347,15 +339,15 @@ func enter_level_5(fromGameStart = false):
 		level_3.planet.sendCratesIndependently = true
 		level_4.planet.sendCratesIndependently = true
 		level_5.planet.sendCratesIndependently = true
-	
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(3871, -2920), Vector2(0.4, 0.4))
 	await done_moving_camera
-	
+
 	game_text.queue_text("Finally, we're making mexor! Don Tito can finally get off my back for the backup!", "Don Tito? Don? What's happening here?")
 	game_text.queue_text("Nothing! I said NOTHING! No Dons, nothings happening here. You keep going or you better watch out for your family!", "I.. I.. Yes sir!")
 	game_text.queue_text("Good! Now move the mexor from Sirius to Nova Prime!", "On it Boss!")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(3871, -3282), Vector2(0.4, 0.4))
 	await done_moving_camera
@@ -376,16 +368,16 @@ func enter_level_6(fromGameStart = false):
 		level_4.planet.sendCratesIndependently = true
 		level_5.planet.sendCratesIndependently = true
 		level_6.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(7973, -4523), Vector2(1, 1))
 	await done_moving_camera
-	
+
 	game_text.queue_text("Good, mexor delivered! You're sniffing your nose in the wrong hole. I'm moving you to Elysium", "The home of poison ore, you tryin' to kill me?")
 	game_text.queue_text("You scared? Don't have what it takes?", "Just tell me what's going on here?")
 	game_text.queue_text("None of your business! Start moving lithiod from Elysium to Lyra. Oh and...", "And what? 'Boss'...")
 	game_text.queue_text("Watch out for those gravity bubbles, gravity doesn't exist there", "Let me see...")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(7973, -4617), Vector2(1, 1))
 	await done_moving_camera
@@ -408,18 +400,18 @@ func enter_level_7(fromGameStart = false):
 		level_5.planet.sendCratesIndependently = true
 		level_6.planet.sendCratesIndependently = true
 		level_7.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(6261, -4801), Vector2(0.7, 0.7))
 	await done_moving_camera
-	
+
 	game_text.queue_text("You're doing well, Dons Carlo and Lucky will be pleased.", "Alright, tell me what's going on?")
 	game_text.queue_text("Alright, it's time to cut you in. We're the Gotti Mafia. We've created a swarm of black holes to disrupt antimatter production.", "Disrupting production?")
 	game_text.queue_text("Yeah, and now we're getting the operations moving for ourselves.", "And what if I say no?")
 	game_text.queue_text("If you like breathing, you're gonna keep moving ore, trucker!", "You got me, I like breathing.")
 	game_text.queue_text("Good choice! Lyra is crafting the lithiod into hardened neurotox, get it moving to Vespera.", "(to myself) looks like everything is going according to plan")
 	game_text.queue_text("Oh, and feel free to send ore through the spaceships. You can move them just like a planet.", "I like the new tech!")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(6261, -5022), Vector2(0.8, 0.8))
 	await done_moving_camera
@@ -442,13 +434,13 @@ func enter_level_8(fromGameStart = false):
 		level_6.planet.sendCratesIndependently = true
 		level_7.planet.sendCratesIndependently = true
 		level_8.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(5613, -4238), Vector2(0.4, 0.4))
 	await done_moving_camera
-	
+
 	game_text.queue_text("I think you are starting to be my friend. Vespera is breaking the neurotox into liquid neurofil. Get it to Nova Prime asap.", "(to myself) He'll never see it coming!")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(5613, -4570), Vector2(0.5, 0.5))
 	await done_moving_camera
@@ -472,13 +464,13 @@ func enter_level_9(fromGameStart = false):
 		level_7.planet.sendCratesIndependently = true
 		level_8.planet.sendCratesIndependently = true
 		level_9.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(3083, -4894), Vector2(0.15, 0.15))
 	await done_moving_camera
-	
-	game_text.queue_text("Nova Prime is pumping! It's now producing 99.999% pure plutonium, 1/3 elements needed for antimatter. Send it out to the Antimatter Vault! The size of a massive planet! Must be worth $1,000,000,000,000,000,000,000,000!", "I'd for y'all to lose it!")
-	
+
+	game_text.queue_text("Nova Prime is pumping! It's now producing 99.999% pure plutonium, 1/3 elements needed for antimatter. Send it out to the Antimatter Vault! The size of a massive planet! Must be worth $1,000,000,000,000,000,000,000,000!", "I'd hate for y'all to lose it!")
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(3230, -5878), Vector2(0.22, 0.22))
 	await done_moving_camera
@@ -503,13 +495,13 @@ func enter_level_10(fromGameStart = false):
 		level_8.planet.sendCratesIndependently = true
 		level_9.planet.sendCratesIndependently = true
 		level_10.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(-6043, -16406), Vector2(1, 1))
 	await done_moving_camera
-	
-	game_text.queue_text("We're moving to a different quadrant. Get product from Aria to Nocturne. Oh, watch out for those gray black holes, we haven't figured out the science yet to control those!", "I hate it when mafia science fails!")
-	
+
+	game_text.queue_text("We're moving to a different quadrant. Get product from Aria to Nocturne. Oh, and watch out for those gray black holes, we haven't figured out the science yet to control those!", "I hate it when mafia science fails!")
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(-6043, -16562), Vector2(1, 1))
 	await done_moving_camera
@@ -535,14 +527,14 @@ func enter_level_11(fromGameStart = false):
 		level_9.planet.sendCratesIndependently = true
 		level_10.planet.sendCratesIndependently = true
 		level_11.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(-6094, -14502), Vector2(0.27, 0.27))
 	await done_moving_camera
-	
+
 	game_text.queue_text("I think you just might make it in this business. Keep the chain going, get that urium from Nocturne to Indigo. Pup.", "I've been talking to Don Tito, I don't know that you'll make it.")
 	game_text.queue_text("What was that???", "Shut up, I'm moving ore.")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(-6252, -15045), Vector2(0.35, 0.35))
 	await done_moving_camera
@@ -569,15 +561,15 @@ func enter_level_12(fromGameStart = false):
 		level_10.planet.sendCratesIndependently = true
 		level_11.planet.sendCratesIndependently = true
 		level_12.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(-4396, -12567), Vector2(0.3, 0.3))
 	await done_moving_camera
-	
+
 	game_text.queue_text("I'm starting to get tired of you, any last words?", "(knock out goon Bobby)")
 	game_text.queue_text("(Don Tito, who you will now be talking to) Thanks Don Fred (that's you!), the Gotti mafia isn't for everyone.", "We should've gotten rid of him earlier")
 	game_text.queue_text("I agree, Bobby was a flake. You know the plan, let's get the refined uridium moving from Indigo to Hyperion. ", "Yup, that was my plan")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(-4396, -13053), Vector2(0.3, 0.3))
 	await done_moving_camera
@@ -605,14 +597,14 @@ func enter_level_13(fromGameStart = false):
 		level_11.planet.sendCratesIndependently = true
 		level_12.planet.sendCratesIndependently = true
 		level_13.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(5764, -5518), Vector2(0.07, 0.07))
 	await done_moving_camera
-	
+
 	game_text.queue_text("Alright, the big jump with the most dangerouos transfer, pure alpha particles, radioactive and ready to ignite!", "I know, this is the challenging step")
-	game_text.queue_text("You can do it champ, move the alphas from hyperion to xanadu.", "I've been looking forward to this jump!")
-	
+	game_text.queue_text("You can do it champ, move the alphas from Hyperion to Xanadu.", "I've been looking forward to this jump!")
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(4497, -7373), Vector2(0.1, 0.1))
 	await done_moving_camera
@@ -641,15 +633,15 @@ func enter_level_14(fromGameStart = false):
 		level_12.planet.sendCratesIndependently = true
 		level_13.planet.sendCratesIndependently = true
 		level_14.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(6229, -1496), Vector2(0.3, 0.3))
 	await done_moving_camera
-	
+
 	game_text.queue_text("You made it! I was terrified you'd die on that trip.", "I don't fear death, death fears me.")
 	game_text.queue_text("I pitty the men who cross you. Xanadu is packing the alpha particales into solid alphaX. Get it to Astralis to include in their shipments!", "We're almost there my friend.")
-	game_text.queue_text("Also, don't fret to use those worm holes for instant transport. Bet you were those worked on the last jump.", "About time the science figures that out!")
-	
+	game_text.queue_text("Also, don't be afraid to use those worm holes for instant transport. Bet you were those worked on the last jump.", "About time the science figures that out!")
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(6229, -2079), Vector2(0.3, 0.3))
 	await done_moving_camera
@@ -679,16 +671,16 @@ func enter_level_15(fromGameStart = false):
 		level_13.planet.sendCratesIndependently = true
 		level_14.planet.sendCratesIndependently = true
 		level_15.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(7349, -5295), Vector2(0.12, 0.12))
 	await done_moving_camera
-	
-	game_text.queue_text("Only 4 more jumps, I can't believe it's working, we are going to be able to buy the galaxy.", "Our dream")
+
+	game_text.queue_text("Only 4 more jumps, I can't believe it's working, we are going to be able to buy the galaxy.", "Our dream is becoming reality")
 	game_text.queue_text("Let's go to Nova Prime's moon Exoterra, start moving the heavy metals. Let's get extratium moving from Exoterra to Verdante.", "Extratium, only found on Verdante")
 	game_text.queue_text("Keep using those wormholes.", "It's the only way")
-	
-	
+
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(7349, -6543), Vector2(0.17, 0.17))
 	await done_moving_camera
@@ -719,13 +711,13 @@ func enter_level_16(fromGameStart = false):
 		level_14.planet.sendCratesIndependently = true
 		level_15.planet.sendCratesIndependently = true
 		level_16.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(-1147, -11375), Vector2(0.1, 0.1))
 	await done_moving_camera
 
 	game_text.queue_text("Next metal, another moon. Let's get platinum/gold duox moving from Nocturne's moon Icaria to Celestis. ", "Yup, the metal that sank Atlantis.")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(-1163, -12815), Vector2(0.14, 0.14))
 	await done_moving_camera
@@ -757,14 +749,14 @@ func enter_level_17(fromGameStart = false):
 		level_15.planet.sendCratesIndependently = true
 		level_16.planet.sendCratesIndependently = true
 		level_17.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(4533, -8255), Vector2(0.235, 0.235))
 	await done_moving_camera
-	
+
 	game_text.queue_text("Alright, Verdante has processed the extranium. It's now pure Z, a compound of completely unbound particles.", "Amazing, it's a true marvel.")
 	game_text.queue_text("Move it from Verdante to the anti-matter vault. There, it will continue to accelerate the antimatter reactions.", "Yup, 2/3 substances required! Only one more next!")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(4533, -9455), Vector2(0.235, 0.235))
 	await done_moving_camera
@@ -797,17 +789,17 @@ func enter_level_18(fromGameStart = false):
 		level_16.planet.sendCratesIndependently = true
 		level_17.planet.sendCratesIndependently = true
 		level_18.planet.sendCratesIndependently = true
-		
+
 	camera_controls_enabled = false
 	move_camera_to(Vector2(1853, -8303), Vector2(0.44, 0.44))
 	await done_moving_camera
-	
-	game_text.queue_text("We're finally there, Celestis has refined the platinum/gold duox. It is now adamantium, it can only be destroyed in the antimatter processing.", "This is the last step.")
+
+	game_text.queue_text("We're finally there. Celestis has refined the platinum/gold duox. It is now adamantium, it can only be destroyed in the antimatter processing.", "This is the last step.")
 	game_text.queue_text("What do you plan to do with your half of the profits? We'll instantly become the wealthiest in the galaxy.", "Too bad, there can be only one!")
 	game_text.queue_text("What, Don Fred, what do you mean!", "Don't act surprised")
 	game_text.queue_text("We worked together on this!!!", "Up until now! (send Don Tito into a black hole!)")
 	game_text.queue_text("NOOOOOOOOOOOO!!!!!!!!!!!!!!!", "(to myself) It's mine, it's all mine!!!")
-	
+
 	await game_text.finished_displaying_text
 	move_camera_to(Vector2(469, -7751), Vector2(0.265, 0.265))
 	await done_moving_camera
